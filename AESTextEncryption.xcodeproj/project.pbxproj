@@ -22,6 +22,8 @@
 		2B51DADD18288CAB008749DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B51DABC18288CAB008749DA /* UIKit.framework */; };
 		2B51DAE518288CAB008749DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2B51DAE318288CAB008749DA /* InfoPlist.strings */; };
 		2B51DAE718288CAB008749DA /* AESTextEncryptionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B51DAE618288CAB008749DA /* AESTextEncryptionTests.m */; };
+		2B51DAF61828D5E6008749DA /* AESEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B51DAF51828D5E6008749DA /* AESEncryptor.m */; };
+		2B51DAF71828D67F008749DA /* aes.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B51DAF21828D578008749DA /* aes.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,9 @@
 		2B51DAE218288CAB008749DA /* AESTextEncryptionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AESTextEncryptionTests-Info.plist"; sourceTree = "<group>"; };
 		2B51DAE418288CAB008749DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2B51DAE618288CAB008749DA /* AESTextEncryptionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AESTextEncryptionTests.m; sourceTree = "<group>"; };
+		2B51DAF21828D578008749DA /* aes.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = aes.js; sourceTree = "<group>"; };
+		2B51DAF41828D5E6008749DA /* AESEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESEncryptor.h; sourceTree = "<group>"; };
+		2B51DAF51828D5E6008749DA /* AESEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESEncryptor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +119,7 @@
 		2B51DABE18288CAB008749DA /* AESTextEncryption */ = {
 			isa = PBXGroup;
 			children = (
+				2B51DAF21828D578008749DA /* aes.js */,
 				2B51DAC718288CAB008749DA /* AppDelegate.h */,
 				2B51DAC818288CAB008749DA /* AppDelegate.m */,
 				2B51DACA18288CAB008749DA /* Main_iPhone.storyboard */,
@@ -122,6 +128,8 @@
 				2B51DAD118288CAB008749DA /* ViewController.m */,
 				2B51DAD318288CAB008749DA /* Images.xcassets */,
 				2B51DABF18288CAB008749DA /* Supporting Files */,
+				2B51DAF41828D5E6008749DA /* AESEncryptor.h */,
+				2B51DAF51828D5E6008749DA /* AESEncryptor.m */,
 			);
 			path = AESTextEncryption;
 			sourceTree = "<group>";
@@ -231,6 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B51DAF71828D67F008749DA /* aes.js in Resources */,
 				2B51DACF18288CAB008749DA /* Main_iPad.storyboard in Resources */,
 				2B51DAD418288CAB008749DA /* Images.xcassets in Resources */,
 				2B51DACC18288CAB008749DA /* Main_iPhone.storyboard in Resources */,
@@ -253,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B51DAF61828D5E6008749DA /* AESEncryptor.m in Sources */,
 				2B51DAD218288CAB008749DA /* ViewController.m in Sources */,
 				2B51DAC918288CAB008749DA /* AppDelegate.m in Sources */,
 				2B51DAC518288CAB008749DA /* main.m in Sources */,

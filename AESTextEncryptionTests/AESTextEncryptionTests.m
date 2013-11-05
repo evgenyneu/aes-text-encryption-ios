@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "AESEncryptor.h"
 
 @interface AESTextEncryptionTests : XCTestCase
 
@@ -26,9 +27,19 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testEncryptEndDecryptMessage
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    AESEncryptor *encryptor = [[AESEncryptor alloc] init];
+    NSString *encryptedText = [encryptor encrypt:@"My message" withKey:@"my key"];
+    
+    XCTAssertFalse([@"My message" isEqualToString:encryptedText]);
+    
+    NSString *decryptedText = [encryptor decrypt:encryptedText withKey:@"my key"];
+  
+    XCTAssertTrue([@"My message" isEqualToString:decryptedText]);
+    
 }
+
+
 
 @end
