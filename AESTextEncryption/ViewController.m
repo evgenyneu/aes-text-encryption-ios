@@ -8,7 +8,13 @@
 
 #import "ViewController.h"
 
+#define TEXT_PLACEHOLDER @"Enter text to encrypt or decrypt"
+
 @interface ViewController ()
+
+@property (weak, nonatomic) IBOutlet UITextField *keyText;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *textBottomDistance;
 
 @end
 
@@ -17,13 +23,75 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    [self addTopBorder:self.keyText];
+    
+    NSNotificationCenter* center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self
+               selector:@selector(handleKeyboardShow:)
+                   name:UIKeyboardWillShowNotification
+                 object:nil];
+    
+    [center addObserver:self
+               selector:@selector(handleKeyboardHide:)
+                   name:UIKeyboardWillHideNotification
+                 object:nil];
+    
+    [self.keyText setValue: [self placeholderColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [self setTextPlaceholder];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)addTopBorder: (UIView *) view
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    CALayer *border = [CALayer layer];
+    border.frame = CGRectMake(0.0f, view.frame.size.height - 1, view.frame.size.width, 1.0f);
+    border.backgroundColor = [UIColor colorWithWhite:0.8f alpha:1.0f].CGColor;
+    [view.layer addSublayer:border];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.textView resignFirstResponder];
+}
+
+- (void)handleKeyboardShow:(NSNotification *)notification
+{
+    CGRect rect = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    rect = [self.view convertRect:rect fromView:nil]; // to handle orintation
+    CGFloat height = rect.size.height;
+    self.textBottomDistance.constant = height + 10;
+}
+
+- (void)handleKeyboardHide:(NSNotification *)notification
+{
+    self.textBottomDistance.constant = 10;
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    if ([textView.text isEqualToString:TEXT_PLACEHOLDER]) {
+        textView.text = @"";
+        textView.textColor = [UIColor blackColor];
+    }
+    [textView becomeFirstResponder];
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    [self setTextPlaceholder];
+    [textView resignFirstResponder];
+}
+
+- (void)setTextPlaceholder
+{
+    if ([self.textView.text isEqualToString:@""]) {
+        self.textView.text = TEXT_PLACEHOLDER;
+        self.textView.textColor = [self placeholderColor];
+    }
+}
+
+- (UIColor*)placeholderColor
+{
+    return [UIColor colorWithRed:120.0/255.0 green:116.0/255.0 blue:115.0/255.0 alpha:1.0];
 }
 
 @end

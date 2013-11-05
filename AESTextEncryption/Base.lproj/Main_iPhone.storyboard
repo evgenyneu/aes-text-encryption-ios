@@ -1,18 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4451" systemVersion="13A461" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3676"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vda-r8-dK0"/>
+                        <viewControllerLayoutGuide type="bottom" id="OW3-fG-tcd"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ts-cU-XTa">
+                                <rect key="frame" x="15" y="87" width="285" height="471"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="2Aa-GB-Qhl"/>
+                                </connections>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter encryption key" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5cf-P1-s5I">
+                                <rect key="frame" x="20" y="30" width="280" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="e4O-e7-N9S"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5cf-P1-s5I" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="BoX-Qr-kPZ"/>
+                            <constraint firstItem="2ts-cU-XTa" firstAttribute="top" secondItem="5cf-P1-s5I" secondAttribute="bottom" constant="7" id="Hpr-6Q-Gve"/>
+                            <constraint firstAttribute="trailing" secondItem="2ts-cU-XTa" secondAttribute="trailing" constant="20" id="KQ7-Nl-txi"/>
+                            <constraint firstItem="OW3-fG-tcd" firstAttribute="top" secondItem="2ts-cU-XTa" secondAttribute="bottom" constant="10" id="Wee-i2-eCr"/>
+                            <constraint firstAttribute="trailing" secondItem="5cf-P1-s5I" secondAttribute="trailing" constant="20" id="f8V-W8-Cgv"/>
+                            <constraint firstItem="2ts-cU-XTa" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="15" id="jpA-TS-dbr"/>
+                            <constraint firstItem="5cf-P1-s5I" firstAttribute="top" secondItem="vda-r8-dK0" secondAttribute="bottom" constant="10" id="kew-sb-KVb"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="keyText" destination="5cf-P1-s5I" id="GSs-et-ovt"/>
+                        <outlet property="textBottomDistance" destination="Wee-i2-eCr" id="1Gz-18-kkc"/>
+                        <outlet property="textView" destination="2ts-cU-XTa" id="6tC-r8-96I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
