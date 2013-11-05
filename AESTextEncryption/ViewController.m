@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-#define TEXT_PLACEHOLDER @"Enter text to encrypt or decrypt"
+#define TEXT_PLACEHOLDER @"Enter text here. It will be encrypted and copied.\n\nTo decrypt: copy encrypted text from another app and it will be decrypted here. \n\nEncryption type: AES  with 256-bit key."
 
 @interface ViewController ()
 
@@ -25,7 +25,13 @@
     [super viewDidLoad];
     
     [self addTopBorder:self.keyText];
-    
+    [self registerKeyboardNorifications];
+    [self.keyText setValue: [self placeholderColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [self setTextPlaceholder];
+}
+
+- (void)registerKeyboardNorifications
+{
     NSNotificationCenter* center = [NSNotificationCenter defaultCenter];
     [center addObserver:self
                selector:@selector(handleKeyboardShow:)
@@ -36,9 +42,6 @@
                selector:@selector(handleKeyboardHide:)
                    name:UIKeyboardWillHideNotification
                  object:nil];
-    
-    [self.keyText setValue: [self placeholderColor] forKeyPath:@"_placeholderLabel.textColor"];
-    [self setTextPlaceholder];
 }
 
 - (void)addTopBorder: (UIView *) view
