@@ -12,7 +12,6 @@
 
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextField *keyText;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textBottomDistance;
 
@@ -35,7 +34,7 @@
 
 - (TextViewDelegate *) textViewDelegate {
     if (!_textViewDelegate) {
-        _textViewDelegate = [[TextViewDelegate alloc] initWithKeyText:self.keyText];
+        _textViewDelegate = [[TextViewDelegate alloc] initWithVC:self];
     }
     return _textViewDelegate;
 }

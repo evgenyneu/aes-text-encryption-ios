@@ -13,7 +13,7 @@
 
 @interface TextViewDelegate ()
 
-@property (weak, nonatomic) UITextField *keyText;
+@property (weak, nonatomic) ViewController *vc;
 
 @end
 
@@ -24,11 +24,11 @@
     return [UIColor colorWithRed:120.0/255.0 green:116.0/255.0 blue:115.0/255.0 alpha:1.0];
 }
 
-- (id) initWithKeyText: (UITextField*) keyText {
+- (id) initWithVC: (ViewController*) vc {
     self = [super init];
     if( !self ) return nil;
  
-    self.keyText = keyText;
+    self.vc = vc;
 
     return self;
 }
@@ -36,7 +36,7 @@
 - (void)textViewDidChange:(UITextView *)textView
 {
     AESEncryptor *encryptor = [[AESEncryptor alloc] init];
-    NSString *encrypted = [encryptor encrypt:textView.text withKey:self.keyText.text];
+    NSString *encrypted = [encryptor encrypt:textView.text withKey:self.vc.keyText.text];
     NSLog(@"Encrypted text: %@", encrypted);
 }
 

@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ViewController.h"
 
 @interface TextViewDelegate : NSObject <UITextViewDelegate>
 
 + (UIColor*) placeholderColor;
-- (id) initWithKeyText: (UITextField*) keyText;
+- (id) initWithVC: (ViewController*) vc;
 - (void)setTextPlaceholder: (UITextView *)textView;
 
 @end
