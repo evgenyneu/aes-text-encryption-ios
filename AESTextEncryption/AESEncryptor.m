@@ -20,11 +20,8 @@
 - (JSContext *) jsContext {
     if (!_jsContext) {
         _jsContext = [[JSContext alloc] init];
-        NSString *aesScript = [AESEncryptor loadJsFromFile:@"aes.js"];
-
-        [_jsContext evaluateScript: aesScript];
-        [_jsContext evaluateScript: @"function iiEncrypt(text, key) { return CryptoJS.AES.encrypt(text, key).toString(); }"];
-        [_jsContext evaluateScript: @"function iiDecrypt(text, key) { return CryptoJS.AES.decrypt(text, key).toString(CryptoJS.enc.Utf8); }"];
+        [AESEncryptor evaluateJs:_jsContext fromFile: @"aes.js"];
+        [AESEncryptor evaluateJs:_jsContext fromFile: @"aes_helper.js"];
     }
     return _jsContext;
 }
@@ -36,18 +33,36 @@
     return jsScript;
 }
 
++ (void)evaluateJs: (JSContext*)context fromFile: (NSString*)fromFile
+{
+    NSString *script = [AESEncryptor loadJsFromFile:fromFile];
+    [context evaluateScript: script];
+}
+
 - (NSString *) encrypt: (NSString*) text withKey:(NSString*) key
 {
-    JSValue *functionEncrypt = self.jsContext[@"iiEncrypt"];
+    text = [self strip: text];
+    key = [self strip: key];
+
+    JSValue *functionEncrypt = self.jsContext[@"iiAESEncrypt"];
     JSValue *resultEncrypt = [functionEncrypt callWithArguments:@[text, key]];
-    return [resultEncrypt toString];
+    NSString *result = [resultEncrypt toString];
+    return [self strip: result];
 }
 
 - (NSString *) decrypt: (NSString*) text withKey:(NSString*) key
 {
-    JSValue *functionDecrypt = self.jsContext[@"iiDecrypt"];
+    text = [self strip: text];
+    key = [self strip: key];
+
+    JSValue *functionDecrypt = self.jsContext[@"iiAESDecrypt"];
     JSValue* resultDecrypt = [functionDecrypt callWithArguments:@[text, key]];
-    return [resultDecrypt toString];
+    NSString *result = [resultDecrypt toString];
+    return [self strip: result];
+}
+
+- (NSString *) strip: (NSString*) text {
+    return [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
 @end

@@ -24,6 +24,7 @@
 		2B51DAE718288CAB008749DA /* AESTextEncryptionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B51DAE618288CAB008749DA /* AESTextEncryptionTests.m */; };
 		2B51DAF61828D5E6008749DA /* AESEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B51DAF51828D5E6008749DA /* AESEncryptor.m */; };
 		2B51DAF71828D67F008749DA /* aes.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B51DAF21828D578008749DA /* aes.js */; };
+		2B51DAFB1828DF90008749DA /* aes_helper.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B51DAF91828DF86008749DA /* aes_helper.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		2B51DAF21828D578008749DA /* aes.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = aes.js; sourceTree = "<group>"; };
 		2B51DAF41828D5E6008749DA /* AESEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESEncryptor.h; sourceTree = "<group>"; };
 		2B51DAF51828D5E6008749DA /* AESEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESEncryptor.m; sourceTree = "<group>"; };
+		2B51DAF91828DF86008749DA /* aes_helper.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = aes_helper.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +121,7 @@
 		2B51DABE18288CAB008749DA /* AESTextEncryption */ = {
 			isa = PBXGroup;
 			children = (
-				2B51DAF21828D578008749DA /* aes.js */,
+				2B51DAF81828DF75008749DA /* javascript */,
 				2B51DAC718288CAB008749DA /* AppDelegate.h */,
 				2B51DAC818288CAB008749DA /* AppDelegate.m */,
 				2B51DACA18288CAB008749DA /* Main_iPhone.storyboard */,
@@ -161,6 +163,15 @@
 				2B51DAE318288CAB008749DA /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2B51DAF81828DF75008749DA /* javascript */ = {
+			isa = PBXGroup;
+			children = (
+				2B51DAF91828DF86008749DA /* aes_helper.js */,
+				2B51DAF21828D578008749DA /* aes.js */,
+			);
+			name = javascript;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B51DAFB1828DF90008749DA /* aes_helper.js in Resources */,
 				2B51DAF71828D67F008749DA /* aes.js in Resources */,
 				2B51DACF18288CAB008749DA /* Main_iPad.storyboard in Resources */,
 				2B51DAD418288CAB008749DA /* Images.xcassets in Resources */,
