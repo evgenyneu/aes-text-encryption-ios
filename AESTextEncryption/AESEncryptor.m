@@ -20,7 +20,14 @@
 - (JSContext *) jsContext {
     if (!_jsContext) {
         _jsContext = [[JSContext alloc] init];
-         NSArray *jsFiles = @[@"aes.js", @"aes_helper.js"];
+        NSArray *jsFiles = @[ @"core.js",
+                              @"enc-base64.js",
+                              @"md5.js",
+                              @"evpkdf.js",
+                              @"cipher-core.js",
+                              @"aes.js",
+                              @"encryption_helper.js"];
+
         for (NSString *fileName in jsFiles) {
             [AESEncryptor evaluateJs:_jsContext fromFile: fileName];
         }

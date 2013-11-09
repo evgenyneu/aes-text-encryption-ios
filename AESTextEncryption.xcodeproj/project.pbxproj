@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B340DD3182E3E0E00FA36F6 /* aes.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B340DC7182E3DEC00FA36F6 /* aes.js */; };
+		2B340DD4182E3E0E00FA36F6 /* cipher-core.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B340DC8182E3DEC00FA36F6 /* cipher-core.js */; };
+		2B340DD5182E3E0E00FA36F6 /* core.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B340DC9182E3DEC00FA36F6 /* core.js */; };
+		2B340DD6182E3E0E00FA36F6 /* enc-base64.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B340DCA182E3DEC00FA36F6 /* enc-base64.js */; };
+		2B340DD7182E3E0E00FA36F6 /* evpkdf.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B340DCB182E3DEC00FA36F6 /* evpkdf.js */; };
+		2B340DD8182E3E0E00FA36F6 /* md5.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B340DCC182E3DEC00FA36F6 /* md5.js */; };
 		2B51DAB918288CAB008749DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B51DAB818288CAB008749DA /* Foundation.framework */; };
 		2B51DABB18288CAB008749DA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B51DABA18288CAB008749DA /* CoreGraphics.framework */; };
 		2B51DABD18288CAB008749DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B51DABC18288CAB008749DA /* UIKit.framework */; };
@@ -23,7 +29,7 @@
 		2B51DAE518288CAB008749DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2B51DAE318288CAB008749DA /* InfoPlist.strings */; };
 		2B51DAE718288CAB008749DA /* AESEncryptorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B51DAE618288CAB008749DA /* AESEncryptorTests.m */; };
 		2B51DAF61828D5E6008749DA /* AESEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B51DAF51828D5E6008749DA /* AESEncryptor.m */; };
-		2B51DAFB1828DF90008749DA /* aes_helper.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B51DAF91828DF86008749DA /* aes_helper.js */; };
+		2B51DAFB1828DF90008749DA /* encryption_helper.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B51DAF91828DF86008749DA /* encryption_helper.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +43,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B340DC7182E3DEC00FA36F6 /* aes.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = aes.js; sourceTree = "<group>"; };
+		2B340DC8182E3DEC00FA36F6 /* cipher-core.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "cipher-core.js"; sourceTree = "<group>"; };
+		2B340DC9182E3DEC00FA36F6 /* core.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = core.js; sourceTree = "<group>"; };
+		2B340DCA182E3DEC00FA36F6 /* enc-base64.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "enc-base64.js"; sourceTree = "<group>"; };
+		2B340DCB182E3DEC00FA36F6 /* evpkdf.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = evpkdf.js; sourceTree = "<group>"; };
+		2B340DCC182E3DEC00FA36F6 /* md5.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = md5.js; sourceTree = "<group>"; };
 		2B51DAB518288CAB008749DA /* AESTextEncryption.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AESTextEncryption.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B51DAB818288CAB008749DA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2B51DABA18288CAB008749DA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -59,7 +71,7 @@
 		2B51DAE618288CAB008749DA /* AESEncryptorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AESEncryptorTests.m; sourceTree = "<group>"; };
 		2B51DAF41828D5E6008749DA /* AESEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESEncryptor.h; sourceTree = "<group>"; };
 		2B51DAF51828D5E6008749DA /* AESEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESEncryptor.m; sourceTree = "<group>"; };
-		2B51DAF91828DF86008749DA /* aes_helper.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = aes_helper.js; sourceTree = "<group>"; };
+		2B51DAF91828DF86008749DA /* encryption_helper.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = encryption_helper.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +101,12 @@
 		2B340DB8182E3A8800FA36F6 /* crypto-js */ = {
 			isa = PBXGroup;
 			children = (
+				2B340DC7182E3DEC00FA36F6 /* aes.js */,
+				2B340DC8182E3DEC00FA36F6 /* cipher-core.js */,
+				2B340DC9182E3DEC00FA36F6 /* core.js */,
+				2B340DCA182E3DEC00FA36F6 /* enc-base64.js */,
+				2B340DCB182E3DEC00FA36F6 /* evpkdf.js */,
+				2B340DCC182E3DEC00FA36F6 /* md5.js */,
 			);
 			name = "crypto-js";
 			sourceTree = "<group>";
@@ -174,7 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				2B340DB8182E3A8800FA36F6 /* crypto-js */,
-				2B51DAF91828DF86008749DA /* aes_helper.js */,
+				2B51DAF91828DF86008749DA /* encryption_helper.js */,
 			);
 			name = javascript;
 			sourceTree = "<group>";
@@ -255,7 +273,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B51DAFB1828DF90008749DA /* aes_helper.js in Resources */,
+				2B340DD3182E3E0E00FA36F6 /* aes.js in Resources */,
+				2B340DD4182E3E0E00FA36F6 /* cipher-core.js in Resources */,
+				2B340DD5182E3E0E00FA36F6 /* core.js in Resources */,
+				2B340DD6182E3E0E00FA36F6 /* enc-base64.js in Resources */,
+				2B340DD7182E3E0E00FA36F6 /* evpkdf.js in Resources */,
+				2B340DD8182E3E0E00FA36F6 /* md5.js in Resources */,
+				2B51DAFB1828DF90008749DA /* encryption_helper.js in Resources */,
 				2B51DACF18288CAB008749DA /* Main_iPad.storyboard in Resources */,
 				2B51DAD418288CAB008749DA /* Images.xcassets in Resources */,
 				2B51DACC18288CAB008749DA /* Main_iPhone.storyboard in Resources */,
