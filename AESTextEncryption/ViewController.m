@@ -7,14 +7,16 @@
 //
 
 #import "ViewController.h"
-
-#define TEXT_PLACEHOLDER @"Enter text here. It will be encrypted and copied.\n\nTo decrypt: copy encrypted text from another app and it will be decrypted here. \n\nAES encrypton with 256-bit key is used."
+#import "AESEncryptor.h"
+#import "TextViewDelegate.h"
 
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *keyText;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textBottomDistance;
+
+@property (strong, nonatomic) TextViewDelegate *textViewDelegate;
 
 @end
 
@@ -23,11 +25,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.textView.delegate = self.textViewDelegate;
+    [self.textViewDelegate setTextPlaceholder: self.textView];
     
-    [self addTopBorder:self.keyText];
+    [self addBorder:self.keyText];
     [self registerKeyboardNorifications];
-    [self.keyText setValue: [self placeholderColor] forKeyPath:@"_placeholderLabel.textColor"];
-    [self setTextPlaceholder];
+    [self.keyText setValue: [TextViewDelegate placeholderColor] forKeyPath:@"_placeholderLabel.textColor"];
+}
+
+- (TextViewDelegate *) textViewDelegate {
+    if (!_textViewDelegate) {
+        _textViewDelegate = [[TextViewDelegate alloc] initWithKeyText:self.keyText];
+    }
+    return _textViewDelegate;
 }
 
 - (void)registerKeyboardNorifications
@@ -44,16 +54,12 @@
                  object:nil];
 }
 
-- (void)addTopBorder: (UIView *) view
+- (void)addBorder: (UIView *) view
 {
     CALayer *border = [CALayer layer];
     border.frame = CGRectMake(0.0f, view.frame.size.height - 1, view.frame.size.width, 1.0f);
     border.backgroundColor = [UIColor colorWithWhite:0.8f alpha:1.0f].CGColor;
     [view.layer addSublayer:border];
-}
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self.textView resignFirstResponder];
 }
 
 - (void)handleKeyboardShow:(NSNotification *)notification
@@ -69,32 +75,8 @@
     self.textBottomDistance.constant = 10;
 }
 
-- (void)textViewDidBeginEditing:(UITextView *)textView
-{
-    if ([textView.text isEqualToString:TEXT_PLACEHOLDER]) {
-        textView.text = @"";
-        textView.textColor = [UIColor blackColor];
-    }
-    [textView becomeFirstResponder];
-}
 
-- (void)textViewDidEndEditing:(UITextView *)textView
-{
-    [self setTextPlaceholder];
-    [textView resignFirstResponder];
-}
 
-- (void)setTextPlaceholder
-{
-    if ([self.textView.text isEqualToString:@""]) {
-        self.textView.text = TEXT_PLACEHOLDER;
-        self.textView.textColor = [self placeholderColor];
-    }
-}
 
-- (UIColor*)placeholderColor
-{
-    return [UIColor colorWithRed:120.0/255.0 green:116.0/255.0 blue:115.0/255.0 alpha:1.0];
-}
 
 @end
