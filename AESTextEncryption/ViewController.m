@@ -37,7 +37,7 @@
                selector:@selector(handleKeyboardShow:)
                    name:UIKeyboardWillShowNotification
                  object:nil];
-    
+
     [center addObserver:self
                selector:@selector(handleKeyboardHide:)
                    name:UIKeyboardWillHideNotification

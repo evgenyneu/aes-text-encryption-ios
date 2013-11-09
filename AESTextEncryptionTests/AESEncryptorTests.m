@@ -32,6 +32,14 @@
     XCTAssertTrue([@"My message" isEqualToString:decryptedText]);
 }
 
+// Encrypted text should always start with U2FsdGVkX1, which means 'Salted__' in Base64
+// This is standard in openssl
+- (void)testEncryptedMessageStart
+{
+    NSString *encryptedText = [self.encryptor encrypt:@"My message" withKey:@"my key"];
+    XCTAssertTrue([encryptedText hasPrefix:@"U2FsdGVkX1"]);
+}
+
 - (void)testEncryptionRemovesWhitespacesAndNewlines
 {
     NSString *encryptedText = [self.encryptor encrypt:@" \nmy Text \r\n" withKey:@"  paSS \n"];
