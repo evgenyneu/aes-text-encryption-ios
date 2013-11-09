@@ -20,8 +20,10 @@
 - (JSContext *) jsContext {
     if (!_jsContext) {
         _jsContext = [[JSContext alloc] init];
-        [AESEncryptor evaluateJs:_jsContext fromFile: @"aes.js"];
-        [AESEncryptor evaluateJs:_jsContext fromFile: @"aes_helper.js"];
+         NSArray *jsFiles = @[@"aes.js", @"aes_helper.js"];
+        for (NSString *fileName in jsFiles) {
+            [AESEncryptor evaluateJs:_jsContext fromFile: fileName];
+        }
     }
     return _jsContext;
 }

@@ -9,13 +9,13 @@
 #import <XCTest/XCTest.h>
 #import "AESEncryptor.h"
 
-@interface AESTextEncryptionTests : XCTestCase
+@interface AESEncryptorTests : XCTestCase
 
 @property (strong, nonatomic) AESEncryptor* encryptor;
 
 @end
 
-@implementation AESTextEncryptionTests
+@implementation AESEncryptorTests
 
 - (void)setUp
 {
