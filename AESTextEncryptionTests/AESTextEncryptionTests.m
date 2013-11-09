@@ -43,7 +43,7 @@
 
 // Decryption test. Checks compatibility with openssl.
 // Message was encrypted with following command:
-// echo 'My Test Message' | openssl enc -aes-256-cbc -pass pass:"Secret Passphrase" -e -base64
+// echo 'My Test Message 日本' | openssl enc -aes-256-cbc -pass pass:"Secret Passphrase" -e -base64
 - (void)testDecrypt
 {
     NSString *encryptedText = @"U2FsdGVkX19QoG20T57G9tsv8Vn9VelURHMt+ArpDA878DjrFhtpUgJFn6CyycGi";
