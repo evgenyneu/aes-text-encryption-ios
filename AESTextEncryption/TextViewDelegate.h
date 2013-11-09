@@ -12,6 +12,7 @@
 @interface TextViewDelegate : NSObject <UITextViewDelegate>
 
 + (UIColor*) placeholderColor;
+
 - (id) initWithVC: (ViewController*) vc;
 - (void)setTextPlaceholder: (UITextView *)textView;
 

@@ -9,6 +9,8 @@
 #import "AESEncryptor.h"
 #import <JavaScriptCore/JavaScriptCore.h>
 
+#define ENCRYPTED_PREFIX @"U2FsdGVkX1"
+
 @interface AESEncryptor()
 
 @property (nonatomic, strong) JSContext *jsContext;
@@ -50,28 +52,41 @@
 
 - (NSString *) encrypt: (NSString*) text withKey:(NSString*) key
 {
-    text = [self strip: text];
-    key = [self strip: key];
+    text = [AESEncryptor strip: text];
+    key = [AESEncryptor strip: key];
+
+    if (text.length == 0 || key.length == 0) {
+        return @"";
+    }
 
     JSValue *functionEncrypt = self.jsContext[@"iiAESEncrypt"];
     JSValue *resultEncrypt = [functionEncrypt callWithArguments:@[text, key]];
     NSString *result = [resultEncrypt toString];
-    return [self strip: result];
+    return [AESEncryptor strip: result];
 }
 
 - (NSString *) decrypt: (NSString*) text withKey:(NSString*) key
 {
-    text = [self strip: text];
-    key = [self strip: key];
+    text = [AESEncryptor strip: text];
+    key = [AESEncryptor strip: key];
+
+    if (key.length == 0 || ![AESEncryptor isEncrypted:text]) {
+        return @"";
+    }
 
     JSValue *functionDecrypt = self.jsContext[@"iiAESDecrypt"];
     JSValue* resultDecrypt = [functionDecrypt callWithArguments:@[text, key]];
     NSString *result = [resultDecrypt toString];
-    return [self strip: result];
+    return [AESEncryptor strip: result];
 }
 
-- (NSString *) strip: (NSString*) text {
++ (NSString *) strip: (NSString*) text {
     return [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+}
+
++ (BOOL) isEncrypted: (NSString*) text {
+    text = [AESEncryptor strip: text];
+    return [text hasPrefix:ENCRYPTED_PREFIX];
 }
 
 @end

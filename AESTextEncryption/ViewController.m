@@ -28,8 +28,26 @@
     [self.textViewDelegate setTextPlaceholder: self.textView];
     
     [self addBorder:self.keyText];
-    [self registerKeyboardNorifications];
+    [self registerKeyboardNotifications];
+    [self registerActiveNotification];
     [self.keyText setValue: [TextViewDelegate placeholderColor] forKeyPath:@"_placeholderLabel.textColor"];
+}
+
+- (void) encrypt
+{
+    AESEncryptor *encryptor = [[AESEncryptor alloc] init];
+    NSString *encrypted = [encryptor encrypt:self.textView.text withKey:self.keyText.text];
+    if (![AESEncryptor isEncrypted: encrypted]) return;
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    pasteboard.string = encrypted;
+}
+
+- (void) decrypt
+{
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    if (![AESEncryptor isEncrypted: pasteboard.string]) return;
+
+//    AESEncryptor *encryptor = [[AESEncryptor alloc] init];
 }
 
 - (TextViewDelegate *) textViewDelegate {
@@ -39,7 +57,7 @@
     return _textViewDelegate;
 }
 
-- (void)registerKeyboardNorifications
+- (void)registerKeyboardNotifications
 {
     NSNotificationCenter* center = [NSNotificationCenter defaultCenter];
     [center addObserver:self
@@ -53,12 +71,25 @@
                  object:nil];
 }
 
+- (void) registerActiveNotification{
+    NSNotificationCenter* center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self
+               selector:@selector(handleBecomeActive:)
+                   name:UIApplicationDidBecomeActiveNotification
+                 object:nil];
+}
+
 - (void)addBorder: (UIView *) view
 {
     CALayer *border = [CALayer layer];
     border.frame = CGRectMake(0.0f, view.frame.size.height - 1, view.frame.size.width, 1.0f);
     border.backgroundColor = [UIColor colorWithWhite:0.8f alpha:1.0f].CGColor;
     [view.layer addSublayer:border];
+}
+
+- (void)handleBecomeActive:(NSNotification *)notification
+{
+    [self decrypt];
 }
 
 - (void)handleKeyboardShow:(NSNotification *)notification

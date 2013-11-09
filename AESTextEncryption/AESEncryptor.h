@@ -10,6 +10,8 @@
 
 @interface AESEncryptor : NSObject
 
++ (BOOL) isEncrypted: (NSString*) text;
+
 - (NSString *) encrypt: (NSString*) text withKey:(NSString*) key;
 - (NSString *) decrypt: (NSString*) text withKey:(NSString*) key;
 

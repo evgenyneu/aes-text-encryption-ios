@@ -12,4 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *keyText;
 
+- (void) encrypt;
+
 @end

@@ -35,9 +35,7 @@
 
 - (void)textViewDidChange:(UITextView *)textView
 {
-    AESEncryptor *encryptor = [[AESEncryptor alloc] init];
-    NSString *encrypted = [encryptor encrypt:textView.text withKey:self.vc.keyText.text];
-    NSLog(@"Encrypted text: %@", encrypted);
+    [self.vc encrypt];
 }
 
 - (void)setTextPlaceholder: (UITextView *)textView

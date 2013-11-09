@@ -60,6 +60,20 @@
     XCTAssertTrue([@"My Test Message 日本" isEqualToString:decryptedText]);
 }
 
+- (void)testCheckEncryptedMessage
+{
+    XCTAssertTrue([AESEncryptor isEncrypted: @"U2FsdGVkX1asdhkajshdka"]);
+}
+
+- (void)testCheckEncryptedMessageWithWhitespace
+{
+    XCTAssertTrue([AESEncryptor isEncrypted: @" \r\n\n U2FsdGVkX1asdhkajshdka"]);
+}
+
+- (void)testCheckNotEncryptedMessage
+{
+    XCTAssertFalse([AESEncryptor isEncrypted: @"some text"]);
+}
 
 
 @end
