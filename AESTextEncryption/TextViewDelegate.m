@@ -21,44 +21,44 @@
 @implementation TextViewDelegate
 
 + (UIColor*) placeholderColor {
-    return [UIColor colorWithRed:120.0/255.0 green:116.0/255.0 blue:115.0/255.0 alpha:1.0];
+  return [UIColor colorWithRed:120.0/255.0 green:116.0/255.0 blue:115.0/255.0 alpha:1.0];
 }
 
 - (id) initWithVC: (ViewController*) vc {
-    self = [super init];
-    if( !self ) return nil;
- 
-    self.vc = vc;
+  self = [super init];
+  if( !self ) return nil;
 
-    return self;
+  self.vc = vc;
+
+  return self;
 }
 
 - (void)textViewDidChange:(UITextView *)textView
 {
-    [self.vc encrypt];
+  [self.vc encrypt];
 }
 
 - (void)setTextPlaceholder: (UITextView *)textView
 {
-    if ([textView.text isEqualToString:@""]) {
-        textView.text = TEXT_PLACEHOLDER;
-        textView.textColor = [TextViewDelegate placeholderColor];
-    }
+  if ([textView.text isEqualToString:@""]) {
+    textView.text = TEXT_PLACEHOLDER;
+    textView.textColor = [TextViewDelegate placeholderColor];
+  }
 }
 
 - (void)textViewDidBeginEditing:(UITextView *)textView
 {
-    if ([textView.text isEqualToString:TEXT_PLACEHOLDER]) {
-        textView.text = @"";
-        textView.textColor = [UIColor blackColor];
-    }
-    [textView becomeFirstResponder];
+  if ([textView.text isEqualToString:TEXT_PLACEHOLDER]) {
+    textView.text = @"";
+    textView.textColor = [UIColor blackColor];
+  }
+  [textView becomeFirstResponder];
 }
 
 - (void)textViewDidEndEditing:(UITextView *)textView
 {
-    [self setTextPlaceholder: textView];
-    [textView resignFirstResponder];
+  [self setTextPlaceholder: textView];
+  [textView resignFirstResponder];
 }
 
 @end

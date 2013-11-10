@@ -20,73 +20,73 @@
 @implementation AESEncryptor
 
 - (JSContext *) jsContext {
-    if (!_jsContext) {
-        _jsContext = [[JSContext alloc] init];
-        NSArray *jsFiles = @[ @"core.js",
-                              @"enc-base64.js",
-                              @"md5.js",
-                              @"evpkdf.js",
-                              @"cipher-core.js",
-                              @"aes.js",
-                              @"encryption_helper.js"];
+  if (!_jsContext) {
+    _jsContext = [[JSContext alloc] init];
+    NSArray *jsFiles = @[ @"core.js",
+                          @"enc-base64.js",
+                          @"md5.js",
+                          @"evpkdf.js",
+                          @"cipher-core.js",
+                          @"aes.js",
+                          @"encryption_helper.js"];
 
-        for (NSString *fileName in jsFiles) {
-            [AESEncryptor evaluateJs:_jsContext fromFile: fileName];
-        }
+    for (NSString *fileName in jsFiles) {
+      [AESEncryptor evaluateJs:_jsContext fromFile: fileName];
     }
-    return _jsContext;
+  }
+  return _jsContext;
 }
 
 + (NSString *)loadJsFromFile: (NSString *) name
 {
-    NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:nil];
-    NSString *jsScript = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-    return jsScript;
+  NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:nil];
+  NSString *jsScript = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+  return jsScript;
 }
 
 + (void)evaluateJs: (JSContext*)context fromFile: (NSString*)fromFile
 {
-    NSString *script = [AESEncryptor loadJsFromFile:fromFile];
-    [context evaluateScript: script];
+  NSString *script = [AESEncryptor loadJsFromFile:fromFile];
+  [context evaluateScript: script];
 }
 
 - (NSString *) encrypt: (NSString*) text withKey:(NSString*) key
 {
-    text = [AESEncryptor strip: text];
-    key = [AESEncryptor strip: key];
+  text = [AESEncryptor strip: text];
+  key = [AESEncryptor strip: key];
 
-    if (text.length == 0 || key.length == 0) {
-        return @"";
-    }
+  if (text.length == 0 || key.length == 0) {
+    return @"";
+  }
 
-    JSValue *functionEncrypt = self.jsContext[@"iiAESEncrypt"];
-    JSValue *resultEncrypt = [functionEncrypt callWithArguments:@[text, key]];
-    NSString *result = [resultEncrypt toString];
-    return [AESEncryptor strip: result];
+  JSValue *functionEncrypt = self.jsContext[@"iiAESEncrypt"];
+  JSValue *resultEncrypt = [functionEncrypt callWithArguments:@[text, key]];
+  NSString *result = [resultEncrypt toString];
+  return [AESEncryptor strip: result];
 }
 
 - (NSString *) decrypt: (NSString*) text withKey:(NSString*) key
 {
-    text = [AESEncryptor strip: text];
-    key = [AESEncryptor strip: key];
+  text = [AESEncryptor strip: text];
+  key = [AESEncryptor strip: key];
 
-    if (key.length == 0 || ![AESEncryptor isEncrypted:text]) {
-        return @"";
-    }
+  if (key.length == 0 || ![AESEncryptor isEncrypted:text]) {
+    return @"";
+  }
 
-    JSValue *functionDecrypt = self.jsContext[@"iiAESDecrypt"];
-    JSValue* resultDecrypt = [functionDecrypt callWithArguments:@[text, key]];
-    NSString *result = [resultDecrypt toString];
-    return [AESEncryptor strip: result];
+  JSValue *functionDecrypt = self.jsContext[@"iiAESDecrypt"];
+  JSValue* resultDecrypt = [functionDecrypt callWithArguments:@[text, key]];
+  NSString *result = [resultDecrypt toString];
+  return [AESEncryptor strip: result];
 }
 
 + (NSString *) strip: (NSString*) text {
-    return [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+  return [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
 + (BOOL) isEncrypted: (NSString*) text {
-    text = [AESEncryptor strip: text];
-    return [text hasPrefix:ENCRYPTED_PREFIX];
+  text = [AESEncryptor strip: text];
+  return [text hasPrefix:ENCRYPTED_PREFIX];
 }
 
 @end
