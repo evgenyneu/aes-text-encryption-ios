@@ -16,6 +16,12 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textBottomDistance;
 
 @property (strong, nonatomic) TextViewDelegate *textViewDelegate;
+@property (weak, nonatomic) IBOutlet UIView *decryptView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *decryptViewHeightConstraint;
+
+@property (strong, nonatomic) NSString *textToDecrypt;
+@property (strong, nonatomic) NSString *decryptedText;
+@property (weak, nonatomic) IBOutlet UIButton *decryptButton;
 
 @end
 
@@ -31,6 +37,9 @@
   [self registerKeyboardNotifications];
   [self registerActiveNotification];
   [self.keyText setValue: [TextViewDelegate placeholderColor] forKeyPath:@"_placeholderLabel.textColor"];
+
+  self.decryptView.backgroundColor = [UIColor greenColor];
+  self.decryptViewHeightConstraint.constant = 0;
 }
 
 - (void) encrypt
@@ -44,12 +53,12 @@
 
 - (void) decrypt
 {
-  UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-  if (![AESEncryptor isEncrypted: pasteboard.string]) return;
+  if (!self.textToDecrypt) return;
 
   AESEncryptor *encryptor = [[AESEncryptor alloc] init];
-  NSString *decrypted = [encryptor decrypt:pasteboard.string withKey:self.keyText.text];
-  if (decrypted.length > 0) self.textView.text = decrypted;
+  NSString *decrypted = [encryptor decrypt:self.textToDecrypt withKey:self.keyText.text];
+  if (decrypted.length == 0) return;
+  self.decryptedText = decrypted;
 }
 
 - (TextViewDelegate *) textViewDelegate {
@@ -91,7 +100,9 @@
 
 - (void)handleBecomeActive:(NSNotification *)notification
 {
+  [self getTextToDecryptFromPasteboard];
   [self decrypt];
+  [self updateDecryptedView];
 }
 
 - (void)handleKeyboardShow:(NSNotification *)notification
@@ -107,8 +118,32 @@
   self.textBottomDistance.constant = 10;
 }
 
+- (void) updateDecryptedView {
+  [self toggleDecryptView:!!self.decryptedText];
+  [self.decryptButton setTitle:self.decryptedText forState:UIControlStateNormal];
+}
 
+- (void) toggleDecryptView: (BOOL) isShowing {
+  NSLog(@"toggleDecryptView %i", isShowing);
+  int height = 0;
+  if (isShowing) height = 40;
+  if (self.decryptViewHeightConstraint.constant == height) return;
+  self.decryptViewHeightConstraint.constant = height;
+  [UIView animateWithDuration:0.3 animations:^{[self.view layoutIfNeeded];}];
+}
 
+- (IBAction)keyTextEditingChanged:(id)sender {
+  [self encrypt];
+  [self decrypt];
+  [self updateDecryptedView];
+}
 
+- (void) getTextToDecryptFromPasteboard {
+  UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+  if (self.keyText.text.length == 0 ||
+      ![AESEncryptor isEncrypted: pasteboard.string]) return;
+
+  self.textToDecrypt = pasteboard.string;
+}
 
 @end
