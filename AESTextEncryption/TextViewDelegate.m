@@ -29,6 +29,11 @@
   return text;
 }
 
++ (void) setText:(NSString *) text forTextView:(UITextView *) textView {
+  textView.text = text;
+  textView.textColor = [UIColor blackColor];
+}
+
 - (id) initWithVC: (ViewController*) vc {
   self = [super init];
   if( !self ) return nil;

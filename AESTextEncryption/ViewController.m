@@ -38,7 +38,6 @@
   [self registerActiveNotification];
   [self.keyText setValue: [TextViewDelegate placeholderColor] forKeyPath:@"_placeholderLabel.textColor"];
 
-  self.decryptView.backgroundColor = [UIColor greenColor];
   self.decryptView.clipsToBounds = true;
   self.decryptViewHeightConstraint.constant = 0;
   [self.view setNeedsDisplay];
@@ -47,11 +46,12 @@
 - (void) encrypt
 {
   AESEncryptor *encryptor = [[AESEncryptor alloc] init];
-  NSString *encrypted = [encryptor encrypt:self.textView.text withKey:self.keyText.text];
+  NSString *encrypted = [encryptor encrypt:[self text] withKey:self.keyText.text];
   if (![AESEncryptor isEncrypted: encrypted]) return;
   UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
   pasteboard.string = encrypted;
 }
+
 
 - (void) decrypt
 {
@@ -61,6 +61,10 @@
   NSString *decrypted = [encryptor decrypt:self.textToDecrypt withKey:self.keyText.text];
   if (decrypted.length == 0) return;
   self.decryptedText = decrypted;
+}
+
+- (NSString *) text {
+  return [TextViewDelegate text:self.textView.text];
 }
 
 - (TextViewDelegate *) textViewDelegate {
@@ -121,7 +125,12 @@
 }
 
 - (void) updateDecryptedView {
-  [self toggleDecryptView:!!self.decryptedText];
+  BOOL decryptedViewVisible = false;
+  if (self.decryptedText && ![self.decryptedText isEqualToString:[self text]]) {
+    decryptedViewVisible = true;
+  }
+
+  [self toggleDecryptView:decryptedViewVisible];
   [self.decryptButton setTitle:self.decryptedText forState:UIControlStateNormal];
 }
 
@@ -141,10 +150,14 @@
 
 - (void) getTextToDecryptFromPasteboard {
   UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-  if (self.keyText.text.length == 0 ||
-      ![AESEncryptor isEncrypted: pasteboard.string]) return;
-
+  if (![AESEncryptor isEncrypted: pasteboard.string]) return;
   self.textToDecrypt = pasteboard.string;
+}
+
+- (IBAction)viewDecryptedTextButtonClicked {
+  if (!self.decryptedText || self.decryptedText.length == 0) return;
+  [TextViewDelegate setText:self.decryptedText forTextView:self.textView];
+  [self updateDecryptedView];
 }
 
 @end

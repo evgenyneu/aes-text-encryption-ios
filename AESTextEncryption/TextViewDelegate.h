@@ -13,6 +13,7 @@
 
 + (UIColor*) placeholderColor;
 + (NSString*) text: (NSString*)text;
++ (void) setText:(NSString *) text forTextView:(UITextView *) textView;
 
 - (id) initWithVC: (ViewController*) vc;
 - (void)setTextPlaceholder: (UITextView *)textView;
