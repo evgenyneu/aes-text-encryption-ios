@@ -1,6 +1,4 @@
-#define EXP_SHORTHAND
-#import "Expecta.h"
-#import "Specta.h"
+#import "TestIncludes.h"
 
 #import "AESEncryptor.h"
 
