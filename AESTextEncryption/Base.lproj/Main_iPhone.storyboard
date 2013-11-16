@@ -39,8 +39,8 @@
                                 <rect key="frame" x="15" y="88" width="291" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMv-6b-okw">
-                                        <rect key="frame" x="6" y="11" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asu-uU-DVZ">
+                                        <rect key="frame" x="7" y="11" width="46" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -49,9 +49,9 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="OMv-6b-okw" firstAttribute="leading" secondItem="Ncv-NT-qEj" secondAttribute="leading" constant="6" id="NpP-Ct-Hlw"/>
-                                    <constraint firstAttribute="centerY" secondItem="OMv-6b-okw" secondAttribute="centerY" constant="-0.5" id="eKT-cy-zlg"/>
+                                    <constraint firstAttribute="centerY" secondItem="asu-uU-DVZ" secondAttribute="centerY" constant="-0.5" id="ZBi-l9-qmf"/>
                                     <constraint firstAttribute="height" constant="51" id="kfb-r9-2ls"/>
+                                    <constraint firstItem="asu-uU-DVZ" firstAttribute="leading" secondItem="Ncv-NT-qEj" secondAttribute="leading" constant="7" id="xM0-Yj-OGy"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -70,7 +70,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="decryptButton" destination="OMv-6b-okw" id="4yO-w4-6lj"/>
+                        <outlet property="decryptButton" destination="asu-uU-DVZ" id="ECT-dx-0GK"/>
                         <outlet property="decryptView" destination="Ncv-NT-qEj" id="NIC-hk-EsX"/>
                         <outlet property="decryptViewHeightConstraint" destination="kfb-r9-2ls" id="Ldi-wQ-bPC"/>
                         <outlet property="keyText" destination="5cf-P1-s5I" id="GSs-et-ovt"/>

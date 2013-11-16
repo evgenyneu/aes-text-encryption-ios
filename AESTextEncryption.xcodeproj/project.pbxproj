@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B1CEB131837295100D3346C /* arrow_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B1CEB121837295100D3346C /* arrow_down@2x.png */; };
 		2B340DD3182E3E0E00FA36F6 /* aes.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B340DC7182E3DEC00FA36F6 /* aes.js */; };
 		2B340DD4182E3E0E00FA36F6 /* cipher-core.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B340DC8182E3DEC00FA36F6 /* cipher-core.js */; };
 		2B340DD5182E3E0E00FA36F6 /* core.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B340DC9182E3DEC00FA36F6 /* core.js */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B1CEB121837295100D3346C /* arrow_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_down@2x.png"; sourceTree = "<group>"; };
 		2B340DC7182E3DEC00FA36F6 /* aes.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = aes.js; sourceTree = "<group>"; };
 		2B340DC8182E3DEC00FA36F6 /* cipher-core.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "cipher-core.js"; sourceTree = "<group>"; };
 		2B340DC9182E3DEC00FA36F6 /* core.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = core.js; sourceTree = "<group>"; };
@@ -105,6 +107,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B1CEB141837295700D3346C /* images */ = {
+			isa = PBXGroup;
+			children = (
+				2B1CEB121837295100D3346C /* arrow_down@2x.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		2B340DB8182E3A8800FA36F6 /* crypto-js */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +163,7 @@
 		2B51DABE18288CAB008749DA /* AESTextEncryption */ = {
 			isa = PBXGroup;
 			children = (
+				2B1CEB141837295700D3346C /* images */,
 				2B51DAF81828DF75008749DA /* javascript */,
 				2B51DAC718288CAB008749DA /* AppDelegate.h */,
 				2B51DAC818288CAB008749DA /* AppDelegate.m */,
@@ -293,6 +304,7 @@
 				2B340DD7182E3E0E00FA36F6 /* evpkdf.js in Resources */,
 				2B340DD8182E3E0E00FA36F6 /* md5.js in Resources */,
 				2B51DAFB1828DF90008749DA /* encryption_helper.js in Resources */,
+				2B1CEB131837295100D3346C /* arrow_down@2x.png in Resources */,
 				2B51DACF18288CAB008749DA /* Main_iPad.storyboard in Resources */,
 				2B51DAD418288CAB008749DA /* Images.xcassets in Resources */,
 				2B51DACC18288CAB008749DA /* Main_iPhone.storyboard in Resources */,
