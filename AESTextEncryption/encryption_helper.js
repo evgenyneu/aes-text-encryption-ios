@@ -1,7 +1,17 @@
 function iiAESEncrypt(text, key) {
-  return CryptoJS.AES.encrypt(text, key).toString();
+  try {
+    return CryptoJS.AES.encrypt(text, key).toString();
+  }
+  catch(err) {
+    return '';
+  }
 }
 
 function iiAESDecrypt(text, key) {
-  return CryptoJS.AES.decrypt(text, key).toString(CryptoJS.enc.Utf8);
+  try {
+    return CryptoJS.AES.decrypt(text, key).toString(CryptoJS.enc.Utf8);
+  }
+  catch(err) {
+    return '';
+  }
 }
