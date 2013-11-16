@@ -24,6 +24,11 @@
   return [UIColor colorWithRed:120.0/255.0 green:116.0/255.0 blue:115.0/255.0 alpha:1.0];
 }
 
++ (NSString*) text:(NSString *)text {
+  if ([text isEqualToString: TEXT_PLACEHOLDER]) return @"";
+  return text;
+}
+
 - (id) initWithVC: (ViewController*) vc {
   self = [super init];
   if( !self ) return nil;
