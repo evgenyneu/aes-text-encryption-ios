@@ -48,6 +48,8 @@
   if (![AESEncryptor isEncrypted: pasteboard.string]) return;
 
   AESEncryptor *encryptor = [[AESEncryptor alloc] init];
+  NSString *decrypted = [encryptor decrypt:pasteboard.string withKey:self.keyText.text];
+  if (decrypted.length > 0) self.textView.text = decrypted;
 }
 
 - (TextViewDelegate *) textViewDelegate {
