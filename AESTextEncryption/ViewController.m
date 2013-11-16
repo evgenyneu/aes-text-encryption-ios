@@ -39,7 +39,9 @@
   [self.keyText setValue: [TextViewDelegate placeholderColor] forKeyPath:@"_placeholderLabel.textColor"];
 
   self.decryptView.backgroundColor = [UIColor greenColor];
+  self.decryptView.clipsToBounds = true;
   self.decryptViewHeightConstraint.constant = 0;
+  [self.view setNeedsDisplay];
 }
 
 - (void) encrypt
@@ -124,7 +126,6 @@
 }
 
 - (void) toggleDecryptView: (BOOL) isShowing {
-  NSLog(@"toggleDecryptView %i", isShowing);
   int height = 0;
   if (isShowing) height = 40;
   if (self.decryptViewHeightConstraint.constant == height) return;

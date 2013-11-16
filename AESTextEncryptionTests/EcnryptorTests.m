@@ -61,4 +61,10 @@ SpecBegin(EncryptorTests)
       expect([AESEncryptor isEncrypted: @"some text"]).to.equal(false);
     });
   });
+
+  describe(@"get text", ^{
+    it(@"return empty string when text contains placeholder text", ^{
+
+    });
+  });
 SpecEnd

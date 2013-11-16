@@ -32,6 +32,7 @@
 		2B51DAE518288CAB008749DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2B51DAE318288CAB008749DA /* InfoPlist.strings */; };
 		2B51DAF61828D5E6008749DA /* AESEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B51DAF51828D5E6008749DA /* AESEncryptor.m */; };
 		2B51DAFB1828DF90008749DA /* encryption_helper.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B51DAF91828DF86008749DA /* encryption_helper.js */; };
+		2BD31AE118374E150075A33B /* TextViewDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD31AE018374E150075A33B /* TextViewDelegateTests.m */; };
 		DF333DE401CD4B4FBC954189 /* libPods-AESTextEncryptionTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDD2CCE0CC9418698675B22 /* libPods-AESTextEncryptionTests.a */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		2B51DAF41828D5E6008749DA /* AESEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESEncryptor.h; sourceTree = "<group>"; };
 		2B51DAF51828D5E6008749DA /* AESEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESEncryptor.m; sourceTree = "<group>"; };
 		2B51DAF91828DF86008749DA /* encryption_helper.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = encryption_helper.js; sourceTree = "<group>"; };
+		2BD31AE018374E150075A33B /* TextViewDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewDelegateTests.m; sourceTree = "<group>"; };
 		6EC354497DB541E7AF760775 /* Pods-AESTextEncryptionTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AESTextEncryptionTests.xcconfig"; path = "Pods/Pods-AESTextEncryptionTests.xcconfig"; sourceTree = "<group>"; };
 		8CDD2CCE0CC9418698675B22 /* libPods-AESTextEncryptionTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AESTextEncryptionTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -197,6 +199,7 @@
 			children = (
 				2B51DAE118288CAB008749DA /* Supporting Files */,
 				2B4500F8182F02B50030C217 /* EcnryptorTests.m */,
+				2BD31AE018374E150075A33B /* TextViewDelegateTests.m */,
 			);
 			path = AESTextEncryptionTests;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BD31AE118374E150075A33B /* TextViewDelegateTests.m in Sources */,
 				2B4500F9182F02B50030C217 /* EcnryptorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
