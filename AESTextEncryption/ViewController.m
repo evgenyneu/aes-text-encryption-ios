@@ -23,6 +23,8 @@
 @property (strong, nonatomic) NSString *decryptedText;
 @property (weak, nonatomic) IBOutlet UIButton *decryptButton;
 
+@property (strong, nonatomic) CALayer *passwordBorder;
+
 @end
 
 @implementation ViewController
@@ -33,7 +35,7 @@
   self.textView.delegate = self.textViewDelegate;
   [self.textViewDelegate setTextPlaceholder: self.textView];
 
-  [self addBorder:self.keyText];
+  [self addPasswordBorder];
   [self registerKeyboardNotifications];
   [self registerActiveNotification];
   [self.keyText setValue: [TextViewDelegate placeholderColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -96,12 +98,22 @@
                object:nil];
 }
 
-- (void)addBorder: (UIView *) view
+- (CALayer *) passwordBorder {
+  if (!_passwordBorder) _passwordBorder = [CALayer layer];
+  return _passwordBorder;
+}
+
+- (void)addPasswordBorder
 {
-  CALayer *border = [CALayer layer];
-  border.frame = CGRectMake(0.0f, view.frame.size.height - 1, view.frame.size.width, 1.0f);
-  border.backgroundColor = [UIColor colorWithWhite:0.8f alpha:1.0f].CGColor;
-  [view.layer addSublayer:border];
+  [self updatePasswordBorderFrame];
+  self.passwordBorder.backgroundColor = [UIColor colorWithWhite:0.8f alpha:1.0f].CGColor;
+  [self.keyText.layer addSublayer:self.passwordBorder];
+}
+
+- (void) updatePasswordBorderFrame {
+  self.passwordBorder.frame = CGRectMake(0.0f,
+                                         self.keyText.frame.size.height - 1,
+                                         self.keyText.frame.size.width, 1.0f);
 }
 
 - (void)handleBecomeActive:(NSNotification *)notification
@@ -109,6 +121,10 @@
   [self getTextToDecryptFromPasteboard];
   [self decrypt];
   [self updateDecryptedView];
+}
+
+- (void) viewDidLayoutSubviews {
+  [self updatePasswordBorderFrame];
 }
 
 - (void)handleKeyboardShow:(NSNotification *)notification
