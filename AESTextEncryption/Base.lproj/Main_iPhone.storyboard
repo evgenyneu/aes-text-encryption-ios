@@ -17,17 +17,17 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ts-cU-XTa">
-                                <rect key="frame" x="15" y="141" width="291" height="417"/>
+                                <rect key="frame" x="15" y="131" width="291" height="427"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5cf-P1-s5I">
-                                <rect key="frame" x="20" y="30" width="280" height="50"/>
+                                <rect key="frame" x="20" y="30" width="280" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="e4O-e7-N9S"/>
+                                    <constraint firstAttribute="height" constant="45" id="e4O-e7-N9S"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
@@ -36,15 +36,16 @@
                                 </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ncv-NT-qEj">
-                                <rect key="frame" x="15" y="88" width="291" height="51"/>
+                                <rect key="frame" x="15" y="78" width="291" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asu-uU-DVZ">
-                                        <rect key="frame" x="7" y="15" width="80" height="22"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asu-uU-DVZ">
+                                        <rect key="frame" x="7" y="16" width="277" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Button" image="arrow_down.png">
-                                            <color key="titleColor" red="0.75017936862244894" green="0.75017936862244894" blue="0.75017936862244894" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -54,16 +55,16 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="asu-uU-DVZ" secondAttribute="trailing" constant="7" id="6TF-00-MMF"/>
                                     <constraint firstAttribute="centerY" secondItem="asu-uU-DVZ" secondAttribute="centerY" constant="-0.5" id="ZBi-l9-qmf"/>
                                     <constraint firstAttribute="height" constant="51" id="kfb-r9-2ls"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="asu-uU-DVZ" secondAttribute="trailing" constant="20" id="lNE-tU-LJS"/>
                                     <constraint firstItem="asu-uU-DVZ" firstAttribute="leading" secondItem="Ncv-NT-qEj" secondAttribute="leading" constant="7" id="xM0-Yj-OGy"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Ncv-NT-qEj" firstAttribute="top" secondItem="5cf-P1-s5I" secondAttribute="bottom" constant="8" id="0AZ-tE-ca0"/>
+                            <constraint firstItem="Ncv-NT-qEj" firstAttribute="top" secondItem="5cf-P1-s5I" secondAttribute="bottom" constant="3" id="0AZ-tE-ca0"/>
                             <constraint firstItem="5cf-P1-s5I" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="BoX-Qr-kPZ"/>
                             <constraint firstItem="2ts-cU-XTa" firstAttribute="top" secondItem="Ncv-NT-qEj" secondAttribute="bottom" constant="2" id="IXn-fe-gNw"/>
                             <constraint firstAttribute="trailing" secondItem="2ts-cU-XTa" secondAttribute="trailing" constant="14" id="KQ7-Nl-txi"/>

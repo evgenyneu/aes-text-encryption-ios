@@ -106,7 +106,7 @@
 - (void)addPasswordBorder
 {
   [self updatePasswordBorderFrame];
-  self.passwordBorder.backgroundColor = [UIColor colorWithWhite:0.8f alpha:1.0f].CGColor;
+  self.passwordBorder.backgroundColor = [UIColor colorWithWhite:0.9f alpha:1.0f].CGColor;
   [self.keyText.layer addSublayer:self.passwordBorder];
 }
 
