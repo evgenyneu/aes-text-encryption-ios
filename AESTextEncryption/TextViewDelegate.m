@@ -9,7 +9,9 @@
 #import "TextViewDelegate.h"
 #import "AESEncryptor.h"
 
-#define TEXT_PLACEHOLDER @"Enter text here. It will be encrypted and copied.\n\nTo decrypt: copy encrypted text from another app and it will be decrypted here. \n\nAES encrypton with 256-bit key is used."
+#define TEXT_PLACEHOLDER @"Message"
+
+//#define TEXT_PLACEHOLDER @"Enter text here. It will be encrypted and copied.\n\nTo decrypt: copy encrypted text from another app and it will be decrypted here. \n\nAES encrypton with 256-bit key is used."
 
 @interface TextViewDelegate ()
 
