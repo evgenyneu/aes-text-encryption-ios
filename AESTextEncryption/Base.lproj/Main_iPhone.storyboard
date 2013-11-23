@@ -16,12 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5cf-P1-s5I">
-                                <rect key="frame" x="15" y="64" width="290" height="45"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5cf-P1-s5I">
+                                <rect key="frame" x="9" y="73" width="302" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="nWV-MX-qyx"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <connections>
@@ -29,7 +26,7 @@
                                 </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ncv-NT-qEj">
-                                <rect key="frame" x="15" y="110" width="290" height="50"/>
+                                <rect key="frame" x="15" y="104" width="290" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asu-uU-DVZ">
@@ -52,7 +49,7 @@
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="162-fu-lgA">
-                                <rect key="frame" x="10" y="163" width="300" height="395"/>
+                                <rect key="frame" x="10" y="157" width="300" height="401"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -61,16 +58,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5cf-P1-s5I" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="15" id="27n-2I-eIE"/>
+                            <constraint firstItem="5cf-P1-s5I" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="9" id="27n-2I-eIE"/>
                             <constraint firstItem="162-fu-lgA" firstAttribute="top" secondItem="Ncv-NT-qEj" secondAttribute="bottom" constant="3" id="AQE-JD-73n"/>
-                            <constraint firstItem="5cf-P1-s5I" firstAttribute="top" secondItem="vda-r8-dK0" secondAttribute="bottom" id="IwQ-uw-Tpz"/>
+                            <constraint firstItem="5cf-P1-s5I" firstAttribute="top" secondItem="vda-r8-dK0" secondAttribute="bottom" constant="9" id="IwQ-uw-Tpz"/>
                             <constraint firstAttribute="trailing" secondItem="162-fu-lgA" secondAttribute="trailing" constant="10" id="ML2-Mb-sjH"/>
                             <constraint firstItem="Ncv-NT-qEj" firstAttribute="top" secondItem="5cf-P1-s5I" secondAttribute="bottom" constant="1" id="RcH-pa-UdO"/>
                             <constraint firstItem="162-fu-lgA" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="10" id="Ti3-Ew-tZF"/>
                             <constraint firstItem="Ncv-NT-qEj" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="15" id="iib-3h-94K"/>
                             <constraint firstItem="OW3-fG-tcd" firstAttribute="top" secondItem="162-fu-lgA" secondAttribute="bottom" constant="10" id="oSB-K5-qZ6"/>
                             <constraint firstAttribute="trailing" secondItem="Ncv-NT-qEj" secondAttribute="trailing" constant="15" id="ofP-yM-dMY"/>
-                            <constraint firstAttribute="trailing" secondItem="5cf-P1-s5I" secondAttribute="trailing" constant="15" id="vAm-Rp-IwR"/>
+                            <constraint firstAttribute="trailing" secondItem="5cf-P1-s5I" secondAttribute="trailing" constant="9" id="vAm-Rp-IwR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="AES Encryption" id="Hdh-ZU-9az">

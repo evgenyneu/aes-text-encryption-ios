@@ -35,7 +35,6 @@
   self.textView.delegate = self.textViewDelegate;
   [self.textViewDelegate setTextPlaceholder: self.textView];
 
-  [self addPasswordBorder];
   [self registerKeyboardNotifications];
   [self registerActiveNotification];
   [self.keyText setValue: [TextViewDelegate placeholderColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -103,28 +102,11 @@
   return _passwordBorder;
 }
 
-- (void)addPasswordBorder
-{
-  [self updatePasswordBorderFrame];
-  self.passwordBorder.backgroundColor = [UIColor colorWithWhite:0.9f alpha:1.0f].CGColor;
-  [self.keyText.layer addSublayer:self.passwordBorder];
-}
-
-- (void) updatePasswordBorderFrame {
-  self.passwordBorder.frame = CGRectMake(0.0f,
-                                         self.keyText.frame.size.height - 1,
-                                         self.keyText.frame.size.width, 1.0f);
-}
-
 - (void)handleBecomeActive:(NSNotification *)notification
 {
   [self getTextToDecryptFromPasteboard];
   [self decrypt];
   [self updateDecryptedView];
-}
-
-- (void) viewDidLayoutSubviews {
-  [self updatePasswordBorderFrame];
 }
 
 - (void)handleKeyboardShow:(NSNotification *)notification
