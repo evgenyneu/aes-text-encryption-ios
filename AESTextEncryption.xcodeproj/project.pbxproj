@@ -8,14 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2B1CEB131837295100D3346C /* arrow_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B1CEB121837295100D3346C /* arrow_down@2x.png */; };
-		2B229E1218374FEB0054A6F8 /* TextViewDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B229E1118374FEB0054A6F8 /* TextViewDelegateTests.m */; };
 		2B340DD3182E3E0E00FA36F6 /* aes.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B340DC7182E3DEC00FA36F6 /* aes.js */; };
 		2B340DD4182E3E0E00FA36F6 /* cipher-core.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B340DC8182E3DEC00FA36F6 /* cipher-core.js */; };
 		2B340DD5182E3E0E00FA36F6 /* core.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B340DC9182E3DEC00FA36F6 /* core.js */; };
 		2B340DD6182E3E0E00FA36F6 /* enc-base64.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B340DCA182E3DEC00FA36F6 /* enc-base64.js */; };
 		2B340DD7182E3E0E00FA36F6 /* evpkdf.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B340DCB182E3DEC00FA36F6 /* evpkdf.js */; };
 		2B340DD8182E3E0E00FA36F6 /* md5.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B340DCC182E3DEC00FA36F6 /* md5.js */; };
-		2B4500F9182F02B50030C217 /* EcnryptorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4500F8182F02B50030C217 /* EcnryptorTests.m */; };
 		2B4BA71F182EE3E1007CE59E /* TextViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4BA71E182EE3E1007CE59E /* TextViewDelegate.m */; };
 		2B51DAB918288CAB008749DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B51DAB818288CAB008749DA /* Foundation.framework */; };
 		2B51DABB18288CAB008749DA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B51DABA18288CAB008749DA /* CoreGraphics.framework */; };
@@ -27,17 +25,19 @@
 		2B51DACF18288CAB008749DA /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B51DACD18288CAB008749DA /* Main_iPad.storyboard */; };
 		2B51DAD218288CAB008749DA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B51DAD118288CAB008749DA /* ViewController.m */; };
 		2B51DAD418288CAB008749DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B51DAD318288CAB008749DA /* Images.xcassets */; };
-		2B51DADB18288CAB008749DA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B51DADA18288CAB008749DA /* XCTest.framework */; };
-		2B51DADC18288CAB008749DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B51DAB818288CAB008749DA /* Foundation.framework */; };
-		2B51DADD18288CAB008749DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B51DABC18288CAB008749DA /* UIKit.framework */; };
-		2B51DAE518288CAB008749DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2B51DAE318288CAB008749DA /* InfoPlist.strings */; };
 		2B51DAF61828D5E6008749DA /* AESEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B51DAF51828D5E6008749DA /* AESEncryptor.m */; };
 		2B51DAFB1828DF90008749DA /* encryption_helper.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B51DAF91828DF86008749DA /* encryption_helper.js */; };
-		DF333DE401CD4B4FBC954189 /* libPods-AESTextEncryptionTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDD2CCE0CC9418698675B22 /* libPods-AESTextEncryptionTests.a */; };
+		2B7D27371841B1DF0031F1E7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B51DADA18288CAB008749DA /* XCTest.framework */; };
+		2B7D27381841B1DF0031F1E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B51DAB818288CAB008749DA /* Foundation.framework */; };
+		2B7D27391841B1DF0031F1E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B51DABC18288CAB008749DA /* UIKit.framework */; };
+		2B7D273F1841B1DF0031F1E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2B7D273D1841B1DF0031F1E7 /* InfoPlist.strings */; };
+		2B7D27411841B1DF0031F1E7 /* AESCryptoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7D27401841B1DF0031F1E7 /* AESCryptoTests.m */; };
+		2B7D27481841B21D0031F1E7 /* EcnryptorTests.m.old in Sources */ = {isa = PBXBuildFile; fileRef = 2B4500F8182F02B50030C217 /* EcnryptorTests.m.old */; };
+		2BBF33F11841B4A7008E2866 /* TextViewDelegateTests.m.old in Resources */ = {isa = PBXBuildFile; fileRef = 2B229E1118374FEB0054A6F8 /* TextViewDelegateTests.m.old */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2B51DADE18288CAB008749DA /* PBXContainerItemProxy */ = {
+		2B7D27431841B1DF0031F1E7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2B51DAAD18288CAB008749DA /* Project object */;
 			proxyType = 1;
@@ -48,14 +48,14 @@
 
 /* Begin PBXFileReference section */
 		2B1CEB121837295100D3346C /* arrow_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_down@2x.png"; sourceTree = "<group>"; };
-		2B229E1118374FEB0054A6F8 /* TextViewDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewDelegateTests.m; sourceTree = "<group>"; };
+		2B229E1118374FEB0054A6F8 /* TextViewDelegateTests.m.old */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TextViewDelegateTests.m.old; path = ../AESTextEncryptionTests/TextViewDelegateTests.m.old; sourceTree = "<group>"; };
 		2B340DC7182E3DEC00FA36F6 /* aes.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = aes.js; sourceTree = "<group>"; };
 		2B340DC8182E3DEC00FA36F6 /* cipher-core.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "cipher-core.js"; sourceTree = "<group>"; };
 		2B340DC9182E3DEC00FA36F6 /* core.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = core.js; sourceTree = "<group>"; };
 		2B340DCA182E3DEC00FA36F6 /* enc-base64.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "enc-base64.js"; sourceTree = "<group>"; };
 		2B340DCB182E3DEC00FA36F6 /* evpkdf.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = evpkdf.js; sourceTree = "<group>"; };
 		2B340DCC182E3DEC00FA36F6 /* md5.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = md5.js; sourceTree = "<group>"; };
-		2B4500F8182F02B50030C217 /* EcnryptorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EcnryptorTests.m; sourceTree = "<group>"; };
+		2B4500F8182F02B50030C217 /* EcnryptorTests.m.old */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = EcnryptorTests.m.old; path = ../AESTextEncryptionTests/EcnryptorTests.m.old; sourceTree = "<group>"; };
 		2B4BA71D182EE3E1007CE59E /* TextViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewDelegate.h; sourceTree = "<group>"; };
 		2B4BA71E182EE3E1007CE59E /* TextViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewDelegate.m; sourceTree = "<group>"; };
 		2B51DAB518288CAB008749DA /* AES Crypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AES Crypto.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,16 +73,16 @@
 		2B51DAD018288CAB008749DA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		2B51DAD118288CAB008749DA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		2B51DAD318288CAB008749DA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		2B51DAD918288CAB008749DA /* AESTextEncryptionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AESTextEncryptionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B51DADA18288CAB008749DA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		2B51DAE218288CAB008749DA /* AESTextEncryptionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AESTextEncryptionTests-Info.plist"; sourceTree = "<group>"; };
-		2B51DAE418288CAB008749DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2B51DAF41828D5E6008749DA /* AESEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESEncryptor.h; sourceTree = "<group>"; };
 		2B51DAF51828D5E6008749DA /* AESEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESEncryptor.m; sourceTree = "<group>"; };
 		2B51DAF91828DF86008749DA /* encryption_helper.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = encryption_helper.js; sourceTree = "<group>"; };
-		2BDFAE78183755F90088BABE /* TestIncludes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestIncludes.h; sourceTree = "<group>"; };
-		6EC354497DB541E7AF760775 /* Pods-AESTextEncryptionTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AESTextEncryptionTests.xcconfig"; path = "Pods/Pods-AESTextEncryptionTests.xcconfig"; sourceTree = "<group>"; };
-		8CDD2CCE0CC9418698675B22 /* libPods-AESTextEncryptionTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AESTextEncryptionTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B7D27361841B1DF0031F1E7 /* AESCryptoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AESCryptoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B7D273C1841B1DF0031F1E7 /* AESCryptoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AESCryptoTests-Info.plist"; sourceTree = "<group>"; };
+		2B7D273E1841B1DF0031F1E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2B7D27401841B1DF0031F1E7 /* AESCryptoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AESCryptoTests.m; sourceTree = "<group>"; };
+		2B7D27421841B1DF0031F1E7 /* AESCryptoTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AESCryptoTests-Prefix.pch"; sourceTree = "<group>"; };
+		2BDFAE78183755F90088BABE /* TestIncludes.h.old */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TestIncludes.h.old; path = ../AESTextEncryptionTests/TestIncludes.h.old; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,14 +96,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2B51DAD618288CAB008749DA /* Frameworks */ = {
+		2B7D27331841B1DF0031F1E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B51DADB18288CAB008749DA /* XCTest.framework in Frameworks */,
-				2B51DADD18288CAB008749DA /* UIKit.framework in Frameworks */,
-				2B51DADC18288CAB008749DA /* Foundation.framework in Frameworks */,
-				DF333DE401CD4B4FBC954189 /* libPods-AESTextEncryptionTests.a in Frameworks */,
+				2B7D27371841B1DF0031F1E7 /* XCTest.framework in Frameworks */,
+				2B7D27391841B1DF0031F1E7 /* UIKit.framework in Frameworks */,
+				2B7D27381841B1DF0031F1E7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,10 +134,9 @@
 			isa = PBXGroup;
 			children = (
 				2B51DABE18288CAB008749DA /* AESTextEncryption */,
-				2B51DAE018288CAB008749DA /* AESTextEncryptionTests */,
+				2B7D273A1841B1DF0031F1E7 /* AESCryptoTests */,
 				2B51DAB718288CAB008749DA /* Frameworks */,
 				2B51DAB618288CAB008749DA /* Products */,
-				6EC354497DB541E7AF760775 /* Pods-AESTextEncryptionTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,7 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				2B51DAB518288CAB008749DA /* AES Crypto.app */,
-				2B51DAD918288CAB008749DA /* AESTextEncryptionTests.xctest */,
+				2B7D27361841B1DF0031F1E7 /* AESCryptoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -158,7 +156,6 @@
 				2B51DABA18288CAB008749DA /* CoreGraphics.framework */,
 				2B51DABC18288CAB008749DA /* UIKit.framework */,
 				2B51DADA18288CAB008749DA /* XCTest.framework */,
-				8CDD2CCE0CC9418698675B22 /* libPods-AESTextEncryptionTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -195,26 +192,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2B51DAE018288CAB008749DA /* AESTextEncryptionTests */ = {
-			isa = PBXGroup;
-			children = (
-				2B51DAE118288CAB008749DA /* Supporting Files */,
-				2B4500F8182F02B50030C217 /* EcnryptorTests.m */,
-				2B229E1118374FEB0054A6F8 /* TextViewDelegateTests.m */,
-				2BDFAE78183755F90088BABE /* TestIncludes.h */,
-			);
-			path = AESTextEncryptionTests;
-			sourceTree = "<group>";
-		};
-		2B51DAE118288CAB008749DA /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				2B51DAE218288CAB008749DA /* AESTextEncryptionTests-Info.plist */,
-				2B51DAE318288CAB008749DA /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		2B51DAF81828DF75008749DA /* javascript */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +199,28 @@
 				2B51DAF91828DF86008749DA /* encryption_helper.js */,
 			);
 			name = javascript;
+			sourceTree = "<group>";
+		};
+		2B7D273A1841B1DF0031F1E7 /* AESCryptoTests */ = {
+			isa = PBXGroup;
+			children = (
+				2B4500F8182F02B50030C217 /* EcnryptorTests.m.old */,
+				2B7D27401841B1DF0031F1E7 /* AESCryptoTests.m */,
+				2B229E1118374FEB0054A6F8 /* TextViewDelegateTests.m.old */,
+				2BDFAE78183755F90088BABE /* TestIncludes.h.old */,
+				2B7D273B1841B1DF0031F1E7 /* Supporting Files */,
+			);
+			path = AESCryptoTests;
+			sourceTree = "<group>";
+		};
+		2B7D273B1841B1DF0031F1E7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2B7D273C1841B1DF0031F1E7 /* AESCryptoTests-Info.plist */,
+				2B7D273D1841B1DF0031F1E7 /* InfoPlist.strings */,
+				2B7D27421841B1DF0031F1E7 /* AESCryptoTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,24 +243,22 @@
 			productReference = 2B51DAB518288CAB008749DA /* AES Crypto.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2B51DAD818288CAB008749DA /* AESTextEncryptionTests */ = {
+		2B7D27351841B1DF0031F1E7 /* AESCryptoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2B51DAED18288CAB008749DA /* Build configuration list for PBXNativeTarget "AESTextEncryptionTests" */;
+			buildConfigurationList = 2B7D27451841B1DF0031F1E7 /* Build configuration list for PBXNativeTarget "AESCryptoTests" */;
 			buildPhases = (
-				5AD6201D10A140F8B7933235 /* Check Pods Manifest.lock */,
-				2B51DAD518288CAB008749DA /* Sources */,
-				2B51DAD618288CAB008749DA /* Frameworks */,
-				2B51DAD718288CAB008749DA /* Resources */,
-				709AAD483AEE4F938DAC1F7E /* Copy Pods Resources */,
+				2B7D27321841B1DF0031F1E7 /* Sources */,
+				2B7D27331841B1DF0031F1E7 /* Frameworks */,
+				2B7D27341841B1DF0031F1E7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2B51DADF18288CAB008749DA /* PBXTargetDependency */,
+				2B7D27441841B1DF0031F1E7 /* PBXTargetDependency */,
 			);
-			name = AESTextEncryptionTests;
-			productName = AESTextEncryptionTests;
-			productReference = 2B51DAD918288CAB008749DA /* AESTextEncryptionTests.xctest */;
+			name = AESCryptoTests;
+			productName = AESCryptoTests;
+			productReference = 2B7D27361841B1DF0031F1E7 /* AESCryptoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -273,7 +270,7 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Evgenii Neumerzhitckii";
 				TargetAttributes = {
-					2B51DAD818288CAB008749DA = {
+					2B7D27351841B1DF0031F1E7 = {
 						TestTargetID = 2B51DAB418288CAB008749DA;
 					};
 				};
@@ -292,7 +289,7 @@
 			projectRoot = "";
 			targets = (
 				2B51DAB418288CAB008749DA /* AESTextEncryption */,
-				2B51DAD818288CAB008749DA /* AESTextEncryptionTests */,
+				2B7D27351841B1DF0031F1E7 /* AESCryptoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -317,48 +314,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2B51DAD718288CAB008749DA /* Resources */ = {
+		2B7D27341841B1DF0031F1E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B51DAE518288CAB008749DA /* InfoPlist.strings in Resources */,
+				2B7D273F1841B1DF0031F1E7 /* InfoPlist.strings in Resources */,
+				2BBF33F11841B4A7008E2866 /* TextViewDelegateTests.m.old in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		5AD6201D10A140F8B7933235 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		709AAD483AEE4F938DAC1F7E /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-AESTextEncryptionTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2B51DAB118288CAB008749DA /* Sources */ = {
@@ -373,22 +338,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2B51DAD518288CAB008749DA /* Sources */ = {
+		2B7D27321841B1DF0031F1E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B229E1218374FEB0054A6F8 /* TextViewDelegateTests.m in Sources */,
-				2B4500F9182F02B50030C217 /* EcnryptorTests.m in Sources */,
+				2B7D27481841B21D0031F1E7 /* EcnryptorTests.m.old in Sources */,
+				2B7D27411841B1DF0031F1E7 /* AESCryptoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2B51DADF18288CAB008749DA /* PBXTargetDependency */ = {
+		2B7D27441841B1DF0031F1E7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2B51DAB418288CAB008749DA /* AESTextEncryption */;
-			targetProxy = 2B51DADE18288CAB008749DA /* PBXContainerItemProxy */;
+			targetProxy = 2B7D27431841B1DF0031F1E7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -417,10 +382,10 @@
 			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
-		2B51DAE318288CAB008749DA /* InfoPlist.strings */ = {
+		2B7D273D1841B1DF0031F1E7 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2B51DAE418288CAB008749DA /* en */,
+				2B7D273E1841B1DF0031F1E7 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -528,44 +493,42 @@
 			};
 			name = Release;
 		};
-		2B51DAEE18288CAB008749DA /* Debug */ = {
+		2B7D27461841B1DF0031F1E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6EC354497DB541E7AF760775 /* Pods-AESTextEncryptionTests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AESTextEncryption.app/AESTextEncryption";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AES Crypto.app/AES Crypto";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AESTextEncryption/AESTextEncryption-Prefix.pch";
+				GCC_PREFIX_HEADER = "AESCryptoTests/AESCryptoTests-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "AESTextEncryptionTests/AESTextEncryptionTests-Info.plist";
+				INFOPLIST_FILE = "AESCryptoTests/AESCryptoTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
-		2B51DAEF18288CAB008749DA /* Release */ = {
+		2B7D27471841B1DF0031F1E7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6EC354497DB541E7AF760775 /* Pods-AESTextEncryptionTests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AESTextEncryption.app/AESTextEncryption";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AES Crypto.app/AES Crypto";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AESTextEncryption/AESTextEncryption-Prefix.pch";
-				INFOPLIST_FILE = "AESTextEncryptionTests/AESTextEncryptionTests-Info.plist";
+				GCC_PREFIX_HEADER = "AESCryptoTests/AESCryptoTests-Prefix.pch";
+				INFOPLIST_FILE = "AESCryptoTests/AESCryptoTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -593,11 +556,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2B51DAED18288CAB008749DA /* Build configuration list for PBXNativeTarget "AESTextEncryptionTests" */ = {
+		2B7D27451841B1DF0031F1E7 /* Build configuration list for PBXNativeTarget "AESCryptoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2B51DAEE18288CAB008749DA /* Debug */,
-				2B51DAEF18288CAB008749DA /* Release */,
+				2B7D27461841B1DF0031F1E7 /* Debug */,
+				2B7D27471841B1DF0031F1E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
