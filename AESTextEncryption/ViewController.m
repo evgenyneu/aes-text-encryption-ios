@@ -60,10 +60,16 @@
 
 - (void) decrypt
 {
-  if (!self.textToDecrypt) return;
+  if (!self.textToDecrypt) {
+    self.decryptedText = nil;
+    return;
+  }
 
   NSString *decrypted = [self.encryptor decrypt:self.textToDecrypt withKey:self.keyText.text];
-  if (decrypted.length == 0) return;
+  if (decrypted.length == 0) {
+    self.decryptedText = nil;
+    return;
+  }
   self.decryptedText = decrypted;
 }
 
