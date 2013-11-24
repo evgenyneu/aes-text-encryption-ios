@@ -10,8 +10,6 @@
 #import "AESEncryptor.h"
 #import "TextViewDelegate.h"
 
-#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
-
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
@@ -26,6 +24,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *decryptButton;
 
 @property (strong, nonatomic) CALayer *passwordBorder;
+
+@property (strong, nonatomic) AESEncryptor* encryptor;
 
 @end
 
@@ -43,27 +43,26 @@
 
   self.decryptView.clipsToBounds = true;
   self.decryptViewHeightConstraint.constant = 0;
-  [self.view setNeedsDisplay];
-//  self.navigationController.navigationBar.barTintColor = UIColorFromRGB(0x74E388);
-//  [self.navigationController.navigationBar.set
+}
+
+- (AESEncryptor *) encryptor {
+  if (!_encryptor) _encryptor = [[AESEncryptor alloc] init];
+  return _encryptor;
 }
 
 - (void) encrypt
 {
-  AESEncryptor *encryptor = [[AESEncryptor alloc] init];
-  NSString *encrypted = [encryptor encrypt:[self text] withKey:self.keyText.text];
+  NSString *encrypted = [self.encryptor encrypt:[self text] withKey:self.keyText.text];
   if (![AESEncryptor isEncrypted: encrypted]) return;
   UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
   pasteboard.string = encrypted;
 }
 
-
 - (void) decrypt
 {
   if (!self.textToDecrypt) return;
 
-  AESEncryptor *encryptor = [[AESEncryptor alloc] init];
-  NSString *decrypted = [encryptor decrypt:self.textToDecrypt withKey:self.keyText.text];
+  NSString *decrypted = [self.encryptor decrypt:self.textToDecrypt withKey:self.keyText.text];
   if (decrypted.length == 0) return;
   self.decryptedText = decrypted;
 }
@@ -133,7 +132,12 @@
   }
 
   [self toggleDecryptView:decryptedViewVisible];
-  [self.decryptButton setTitle:self.decryptedText forState:UIControlStateNormal];
+  NSString *decryptButtonTitle = self.decryptedText;
+  if (decryptButtonTitle.length > 100) {
+    decryptButtonTitle = [decryptButtonTitle substringToIndex:100];
+  }
+
+  [self.decryptButton setTitle:decryptButtonTitle forState:UIControlStateNormal];
 }
 
 - (void) toggleDecryptView: (BOOL) isShowing {
