@@ -29,13 +29,14 @@
                                 <rect key="frame" x="15" y="104" width="290" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asu-uU-DVZ">
-                                        <rect key="frame" x="0.0" y="16" width="291" height="20"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asu-uU-DVZ">
+                                        <rect key="frame" x="0.0" y="16" width="290" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="tintColor" red="0.36750370100000002" green="0.80263768560000004" blue="0.38943349329999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Button" image="arrow_down.png">
-                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.36750370100000002" green="0.80263768560000004" blue="0.38943349329999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -45,7 +46,10 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="asu-uU-DVZ" firstAttribute="leading" secondItem="Ncv-NT-qEj" secondAttribute="leading" id="Ial-v1-99f"/>
                                     <constraint firstAttribute="height" constant="50" id="Sdr-qW-M3g"/>
+                                    <constraint firstItem="asu-uU-DVZ" firstAttribute="top" secondItem="Ncv-NT-qEj" secondAttribute="top" constant="16" id="k0K-YU-3jm"/>
+                                    <constraint firstAttribute="trailing" secondItem="asu-uU-DVZ" secondAttribute="trailing" id="tdQ-cZ-7HF"/>
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="162-fu-lgA">
@@ -70,7 +74,7 @@
                             <constraint firstAttribute="trailing" secondItem="5cf-P1-s5I" secondAttribute="trailing" constant="9" id="vAm-Rp-IwR"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="AES Encryption" id="Hdh-ZU-9az">
+                    <navigationItem key="navigationItem" title="AES Crypto" id="Hdh-ZU-9az">
                         <barButtonItem key="rightBarButtonItem" title="Help" id="EoW-be-Guf">
                             <connections>
                                 <segue destination="gqK-Ki-Ekk" kind="push" id="Ais-sa-DBh"/>
@@ -114,9 +118,11 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a7j-NT-i3N" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mzz-4g-Uag">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="mzz-4g-Uag">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.36750370100440138" green="0.80263768564356441" blue="0.38943349331398275" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2B51DAB418288CAB008749DA"
-               BuildableName = "AESTextEncryption.app"
+               BuildableName = "AES Crypto.app"
                BlueprintName = "AESTextEncryption"
                ReferencedContainer = "container:AESTextEncryption.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2B51DAB418288CAB008749DA"
-            BuildableName = "AESTextEncryption.app"
+            BuildableName = "AES Crypto.app"
             BlueprintName = "AESTextEncryption"
             ReferencedContainer = "container:AESTextEncryption.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2B51DAB418288CAB008749DA"
-            BuildableName = "AESTextEncryption.app"
+            BuildableName = "AES Crypto.app"
             BlueprintName = "AESTextEncryption"
             ReferencedContainer = "container:AESTextEncryption.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2B51DAB418288CAB008749DA"
-            BuildableName = "AESTextEncryption.app"
+            BuildableName = "AES Crypto.app"
             BlueprintName = "AESTextEncryption"
             ReferencedContainer = "container:AESTextEncryption.xcodeproj">
          </BuildableReference>
