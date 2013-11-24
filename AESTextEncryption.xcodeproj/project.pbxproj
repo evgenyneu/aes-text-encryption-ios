@@ -58,7 +58,7 @@
 		2B4500F8182F02B50030C217 /* EcnryptorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EcnryptorTests.m; sourceTree = "<group>"; };
 		2B4BA71D182EE3E1007CE59E /* TextViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewDelegate.h; sourceTree = "<group>"; };
 		2B4BA71E182EE3E1007CE59E /* TextViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewDelegate.m; sourceTree = "<group>"; };
-		2B51DAB518288CAB008749DA /* AESTextEncryption.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AESTextEncryption.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B51DAB518288CAB008749DA /* AES Crypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AES Crypto.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B51DAB818288CAB008749DA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2B51DABA18288CAB008749DA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2B51DABC18288CAB008749DA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -145,7 +145,7 @@
 		2B51DAB618288CAB008749DA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2B51DAB518288CAB008749DA /* AESTextEncryption.app */,
+				2B51DAB518288CAB008749DA /* AES Crypto.app */,
 				2B51DAD918288CAB008749DA /* AESTextEncryptionTests.xctest */,
 			);
 			name = Products;
@@ -241,7 +241,7 @@
 			);
 			name = AESTextEncryption;
 			productName = AESTextEncryption;
-			productReference = 2B51DAB518288CAB008749DA /* AESTextEncryption.app */;
+			productReference = 2B51DAB518288CAB008749DA /* AES Crypto.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2B51DAD818288CAB008749DA /* AESTextEncryptionTests */ = {
@@ -510,7 +510,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AESTextEncryption/AESTextEncryption-Prefix.pch";
 				INFOPLIST_FILE = "AESTextEncryption/AESTextEncryption-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "AES Crypto";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -523,7 +523,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AESTextEncryption/AESTextEncryption-Prefix.pch";
 				INFOPLIST_FILE = "AESTextEncryption/AESTextEncryption-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "AES Crypto";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
