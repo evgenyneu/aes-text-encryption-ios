@@ -32,16 +32,6 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2B51DAD818288CAB008749DA"
-               BuildableName = "AESTextEncryptionTests.xctest"
-               BlueprintName = "AESTextEncryptionTests"
-               ReferencedContainer = "container:AESTextEncryption.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "2B7D27351841B1DF0031F1E7"
                BuildableName = "AESCryptoTests.xctest"
                BlueprintName = "AESCryptoTests"
