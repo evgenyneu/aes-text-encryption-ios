@@ -26,7 +26,6 @@
 		2B51DAD218288CAB008749DA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B51DAD118288CAB008749DA /* ViewController.m */; };
 		2B51DAD418288CAB008749DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B51DAD318288CAB008749DA /* Images.xcassets */; };
 		2B51DAF61828D5E6008749DA /* AESEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B51DAF51828D5E6008749DA /* AESEncryptor.m */; };
-		2B51DAFB1828DF90008749DA /* encryption_helper.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B51DAF91828DF86008749DA /* encryption_helper.js */; };
 		2B7D27371841B1DF0031F1E7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B51DADA18288CAB008749DA /* XCTest.framework */; };
 		2B7D27381841B1DF0031F1E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B51DAB818288CAB008749DA /* Foundation.framework */; };
 		2B7D27391841B1DF0031F1E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B51DABC18288CAB008749DA /* UIKit.framework */; };
@@ -78,7 +77,6 @@
 		2B51DADA18288CAB008749DA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2B51DAF41828D5E6008749DA /* AESEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESEncryptor.h; sourceTree = "<group>"; };
 		2B51DAF51828D5E6008749DA /* AESEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESEncryptor.m; sourceTree = "<group>"; };
-		2B51DAF91828DF86008749DA /* encryption_helper.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = encryption_helper.js; sourceTree = "<group>"; };
 		2B7D27361841B1DF0031F1E7 /* AESCryptoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AESCryptoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B7D273C1841B1DF0031F1E7 /* AESCryptoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AESCryptoTests-Info.plist"; sourceTree = "<group>"; };
 		2B7D273E1841B1DF0031F1E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -207,7 +205,6 @@
 			children = (
 				2BF458851849AFFB007F0821 /* aes_crypto.js */,
 				2B340DB8182E3A8800FA36F6 /* crypto-js */,
-				2B51DAF91828DF86008749DA /* encryption_helper.js */,
 			);
 			name = javascript;
 			sourceTree = "<group>";
@@ -319,7 +316,6 @@
 				2B340DD6182E3E0E00FA36F6 /* enc-base64.js in Resources */,
 				2B340DD7182E3E0E00FA36F6 /* evpkdf.js in Resources */,
 				2B340DD8182E3E0E00FA36F6 /* md5.js in Resources */,
-				2B51DAFB1828DF90008749DA /* encryption_helper.js in Resources */,
 				2B1CEB131837295100D3346C /* arrow_down@2x.png in Resources */,
 				2B51DACF18288CAB008749DA /* Main_iPad.storyboard in Resources */,
 				2B51DAD418288CAB008749DA /* Images.xcassets in Resources */,

@@ -28,7 +28,6 @@
                           @"evpkdf.js",
                           @"cipher-core.js",
                           @"aes.js",
-                          @"encryption_helper.js",
                           @"aes_crypto.js"];
 
     for (NSString *fileName in jsFiles) {
