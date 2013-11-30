@@ -43,6 +43,11 @@
   return self.jsContext[@"aesCrypto"];
 }
 
+- (NSString*) prefix {
+  JSValue *functionEncrypt = self.jsObj[@"formatter"][@"prefix"];
+  return [functionEncrypt toString];
+}
+
 + (NSString *)loadJsFromFile: (NSString *) name
 {
   NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:nil];
@@ -77,11 +82,11 @@
   text = [AESEncryptor strip: text];
   key = [AESEncryptor strip: key];
 
-  if (key.length == 0 || ![AESEncryptor isEncrypted:text]) {
+  if (key.length == 0 || ![self isEncrypted:text]) {
     return @"";
   }
 
-  JSValue *functionDecrypt = self.jsContext[@"iiAESDecrypt"];
+  JSValue *functionDecrypt = self.jsObj[@"decrypt"];
   JSValue* resultDecrypt = [functionDecrypt callWithArguments:@[text, key]];
   NSString *result = [resultDecrypt toString];
   return [AESEncryptor strip: result];
@@ -91,9 +96,9 @@
   return [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
-+ (BOOL) isEncrypted: (NSString*) text {
+- (BOOL) isEncrypted: (NSString*) text {
   text = [AESEncryptor strip: text];
-  return [text hasPrefix:ENCRYPTED_PREFIX];
+  return [text hasPrefix:[self prefix]];
 }
 
 @end

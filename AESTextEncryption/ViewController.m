@@ -53,7 +53,7 @@
 - (void) encrypt
 {
   NSString *encrypted = [self.encryptor encrypt:[self text] withKey:self.keyText.text];
-  if (![AESEncryptor isEncrypted: encrypted]) return;
+  if (![self.encryptor isEncrypted: encrypted]) return;
   UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
   pasteboard.string = encrypted;
 }
@@ -162,7 +162,7 @@
 
 - (void) getTextToDecryptFromPasteboard {
   UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-  if (![AESEncryptor isEncrypted: pasteboard.string]) return;
+  if (![self.encryptor isEncrypted: pasteboard.string]) return;
   self.textToDecrypt = pasteboard.string;
 }
 
