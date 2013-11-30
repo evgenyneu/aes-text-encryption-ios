@@ -32,6 +32,8 @@
 		2B7D27391841B1DF0031F1E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B51DABC18288CAB008749DA /* UIKit.framework */; };
 		2B7D273F1841B1DF0031F1E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2B7D273D1841B1DF0031F1E7 /* InfoPlist.strings */; };
 		2B7D27411841B1DF0031F1E7 /* AESCryptoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7D27401841B1DF0031F1E7 /* AESCryptoTests.m */; };
+		2BF458861849AFFB007F0821 /* aes_crypto.js in Sources */ = {isa = PBXBuildFile; fileRef = 2BF458851849AFFB007F0821 /* aes_crypto.js */; };
+		2BF458871849B027007F0821 /* aes_crypto.js in Resources */ = {isa = PBXBuildFile; fileRef = 2BF458851849AFFB007F0821 /* aes_crypto.js */; };
 		2BFB895B1841B8B10095E9C1 /* TestIncludes.h in Resources */ = {isa = PBXBuildFile; fileRef = 2BFB89581841B8B10095E9C1 /* TestIncludes.h */; };
 		2BFB895E1841B91C0095E9C1 /* TextViewDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB895D1841B91C0095E9C1 /* TextViewDelegateTests.m */; };
 		2BFB89601841B9C20095E9C1 /* EncryptorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB895F1841B9C20095E9C1 /* EncryptorTests.m */; };
@@ -82,6 +84,7 @@
 		2B7D273E1841B1DF0031F1E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2B7D27401841B1DF0031F1E7 /* AESCryptoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AESCryptoTests.m; sourceTree = "<group>"; };
 		2B7D27421841B1DF0031F1E7 /* AESCryptoTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AESCryptoTests-Prefix.pch"; sourceTree = "<group>"; };
+		2BF458851849AFFB007F0821 /* aes_crypto.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = aes_crypto.js; sourceTree = "<group>"; };
 		2BFB89581841B8B10095E9C1 /* TestIncludes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestIncludes.h; sourceTree = "<group>"; };
 		2BFB895D1841B91C0095E9C1 /* TextViewDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewDelegateTests.m; sourceTree = "<group>"; };
 		2BFB895F1841B9C20095E9C1 /* EncryptorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptorTests.m; sourceTree = "<group>"; };
@@ -202,6 +205,7 @@
 		2B51DAF81828DF75008749DA /* javascript */ = {
 			isa = PBXGroup;
 			children = (
+				2BF458851849AFFB007F0821 /* aes_crypto.js */,
 				2B340DB8182E3A8800FA36F6 /* crypto-js */,
 				2B51DAF91828DF86008749DA /* encryption_helper.js */,
 			);
@@ -308,6 +312,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BF458871849B027007F0821 /* aes_crypto.js in Resources */,
 				2B340DD3182E3E0E00FA36F6 /* aes.js in Resources */,
 				2B340DD4182E3E0E00FA36F6 /* cipher-core.js in Resources */,
 				2B340DD5182E3E0E00FA36F6 /* core.js in Resources */,
@@ -375,6 +380,7 @@
 				2B51DAF61828D5E6008749DA /* AESEncryptor.m in Sources */,
 				2B51DAD218288CAB008749DA /* ViewController.m in Sources */,
 				2B51DAC918288CAB008749DA /* AppDelegate.m in Sources */,
+				2BF458861849AFFB007F0821 /* aes_crypto.js in Sources */,
 				2B51DAC518288CAB008749DA /* main.m in Sources */,
 				2B4BA71F182EE3E1007CE59E /* TextViewDelegate.m in Sources */,
 			);
