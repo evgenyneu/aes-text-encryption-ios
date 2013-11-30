@@ -9,7 +9,7 @@
 #import "AESEncryptor.h"
 #import <JavaScriptCore/JavaScriptCore.h>
 
-#define ENCRYPTED_PREFIX @"U2FsdGVkX1"
+#define ENCRYPTED_PREFIX @"AESCrypto4iOS0"
 
 @interface AESEncryptor()
 
@@ -28,13 +28,19 @@
                           @"evpkdf.js",
                           @"cipher-core.js",
                           @"aes.js",
-                          @"encryption_helper.js"];
+                          @"encryption_helper.js",
+                          @"aes_crypto.js"];
 
     for (NSString *fileName in jsFiles) {
       [AESEncryptor evaluateJs:_jsContext fromFile: fileName];
     }
   }
   return _jsContext;
+}
+
+- (JSValue*) jsObj
+{
+  return self.jsContext[@"aesCrypto"];
 }
 
 + (NSString *)loadJsFromFile: (NSString *) name
@@ -59,7 +65,8 @@
     return @"";
   }
 
-  JSValue *functionEncrypt = self.jsContext[@"iiAESEncrypt"];
+  JSValue *functionEncrypt = self.jsObj[@"encrypt"];
+
   JSValue *resultEncrypt = [functionEncrypt callWithArguments:@[text, key]];
   NSString *result = [resultEncrypt toString];
   return [AESEncryptor strip: result];

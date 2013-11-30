@@ -1,8 +1,8 @@
 /* global CryptoJS */
-(function (ext) {
+var aesCrypto = {};
+
+(function (obj) {
   "use strict";
-  var obj = {};
-  ext.aesCrypto = obj;
 
   obj.formatter = {
     prefix: 'AESCrypto4iOS0',
@@ -36,4 +36,4 @@
       return decrypted.toString(CryptoJS.enc.Utf8);
     } catch (err) { return ''; }
   };
-}(window));
+}(aesCrypto));
