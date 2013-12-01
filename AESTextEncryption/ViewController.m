@@ -217,10 +217,7 @@
 
 - (UIBarButtonItem *) doneButton {
   if (!_doneButton) {
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setTitle:@"Copied✓" forState:UIControlStateNormal];
-    [button sizeToFit];
-    _doneButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+    _doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Copied✓" style:UIBarButtonItemStylePlain target:nil action:nil];
   }
   return _doneButton;
 }
