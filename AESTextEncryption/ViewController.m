@@ -47,7 +47,7 @@
 }
 
 - (void) setTitleImage {
-  UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed: @"arrow_down@2x.png"]];
+  UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed: @"title.png"]];
   self.navigationItem.titleView = imageView;
 }
 
