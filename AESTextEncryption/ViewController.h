@@ -10,8 +10,6 @@
 
 @interface ViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITextField *keyText;
-
-- (void) encrypt;
+- (void) updateEncryptButton;
 
 @end

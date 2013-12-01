@@ -12,6 +12,7 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *keyText;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textBottomDistance;
 
@@ -26,6 +27,7 @@
 @property (strong, nonatomic) CALayer *passwordBorder;
 
 @property (strong, nonatomic) AESEncryptor* encryptor;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *encryptButton;
 
 @end
 
@@ -44,6 +46,15 @@
   self.decryptView.clipsToBounds = true;
   self.decryptViewHeightConstraint.constant = 0;
   [self setTitleImage];
+  [self updateEncryptButton];
+}
+
+- (void) toggleEncryptButton: (BOOL) show {
+  if (show) {
+    self.navigationItem.rightBarButtonItem = self.encryptButton;
+  } else {
+    self.navigationItem.rightBarButtonItem = nil;
+  }
 }
 
 - (void) setTitleImage {
@@ -58,7 +69,7 @@
 
 - (void) encrypt
 {
-  NSString *encrypted = [self.encryptor encrypt:[self text] withKey:self.keyText.text];
+  NSString *encrypted = [self.encryptor encrypt:[self messageStripped] withKey:self.keyText.text];
   if (![self.encryptor isEncrypted: encrypted]) return;
   UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
   pasteboard.string = encrypted;
@@ -79,7 +90,11 @@
   self.decryptedText = decrypted;
 }
 
-- (NSString *) text {
+- (NSString *) keyTextStripped {
+  return [AESEncryptor strip: self.keyText.text];
+}
+
+- (NSString *) messageStripped {
   return [TextViewDelegate text:self.textView.text];
 }
 
@@ -139,7 +154,7 @@
 
 - (void) updateDecryptedView {
   BOOL decryptedViewVisible = false;
-  if (self.decryptedText && ![self.decryptedText isEqualToString:[self text]]) {
+  if (self.decryptedText && ![self.decryptedText isEqualToString:[self messageStripped]]) {
     decryptedViewVisible = true;
   }
 
@@ -161,7 +176,7 @@
 }
 
 - (IBAction)keyTextEditingChanged:(id)sender {
-  [self encrypt];
+  [self updateEncryptButton];
   [self decrypt];
   [self updateDecryptedView];
 }
@@ -176,6 +191,17 @@
   if (!self.decryptedText || self.decryptedText.length == 0) return;
   [TextViewDelegate setText:self.decryptedText forTextView:self.textView];
   [self updateDecryptedView];
+}
+
+- (BOOL) isReadyToEncrypt {
+  if ([self keyTextStripped].length == 0) return NO;
+  if ([self messageStripped].length == 0) return NO;
+  return YES;
+}
+
+- (void) updateEncryptButton {
+  NSLog(@"isReadyToEncrypt %i", [self isReadyToEncrypt]);
+  [self toggleEncryptButton:[self isReadyToEncrypt]];
 }
 
 @end

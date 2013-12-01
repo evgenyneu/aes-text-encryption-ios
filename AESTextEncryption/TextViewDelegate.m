@@ -26,7 +26,7 @@
 
 + (NSString*) text:(NSString *)text {
   if ([text isEqualToString: TEXT_PLACEHOLDER]) return @"";
-  return text;
+  return [AESEncryptor strip:text];
 }
 
 + (void) setText:(NSString *) text forTextView:(UITextView *) textView {
@@ -45,7 +45,7 @@
 
 - (void)textViewDidChange:(UITextView *)textView
 {
-  [self.vc encrypt];
+  [self.vc updateEncryptButton];
   [self fixIOS7TextViewBug:textView];
 }
 

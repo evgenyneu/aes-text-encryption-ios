@@ -91,11 +91,16 @@
                             <constraint firstAttribute="trailing" secondItem="Ncv-NT-qEj" secondAttribute="trailing" constant="15" id="ofP-yM-dMY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Hdh-ZU-9az"/>
+                    <navigationItem key="navigationItem" id="Hdh-ZU-9az">
+                        <barButtonItem key="rightBarButtonItem" title="Encrypt" id="4HM-Wu-gX7">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="decryptButton" destination="asu-uU-DVZ" id="ECT-dx-0GK"/>
                         <outlet property="decryptView" destination="Ncv-NT-qEj" id="NIC-hk-EsX"/>
                         <outlet property="decryptViewHeightConstraint" destination="Sdr-qW-M3g" id="icH-LC-IIa"/>
+                        <outlet property="encryptButton" destination="4HM-Wu-gX7" id="xUc-j1-gVn"/>
                         <outlet property="keyText" destination="5cf-P1-s5I" id="GSs-et-ovt"/>
                         <outlet property="textBottomDistance" destination="oSB-K5-qZ6" id="olx-Aa-0rk"/>
                         <outlet property="textView" destination="162-fu-lgA" id="V9z-oZ-rJh"/>
