@@ -27,6 +27,8 @@
 @property (strong, nonatomic) AESEncryptor* encryptor;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *encryptButton;
 
+@property (strong, nonatomic) UIBarButtonItem *doneButton;
+
 @end
 
 @implementation ViewController
@@ -208,9 +210,23 @@
         UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
         pasteboard.string = encrypted;
       }
-      [self toggleEncryptButton:YES];
+      [self showEncryptedMessage];
     });
   });
+}
+
+- (UIBarButtonItem *) doneButton {
+  if (!_doneButton) {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitle:@"Copied✓" forState:UIControlStateNormal];
+    [button sizeToFit];
+    _doneButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+  }
+  return _doneButton;
+}
+
+- (void) showEncryptedMessage {
+  self.navigationItem.rightBarButtonItem = self.doneButton;
 }
 
 
