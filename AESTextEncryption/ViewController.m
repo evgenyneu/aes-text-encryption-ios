@@ -24,8 +24,6 @@
 @property (strong, nonatomic) NSString *decryptedText;
 @property (weak, nonatomic) IBOutlet UIButton *decryptButton;
 
-@property (strong, nonatomic) CALayer *passwordBorder;
-
 @property (strong, nonatomic) AESEncryptor* encryptor;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *encryptButton;
 
@@ -67,12 +65,11 @@
   return _encryptor;
 }
 
-- (void) encrypt
+- (NSString *) encrypt
 {
   NSString *encrypted = [self.encryptor encrypt:[self messageStripped] withKey:self.keyText.text];
-  if (![self.encryptor isEncrypted: encrypted]) return;
-  UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-  pasteboard.string = encrypted;
+  if (![self.encryptor isEncrypted: encrypted]) return nil;
+  return encrypted;
 }
 
 - (void) decrypt
@@ -125,11 +122,6 @@
              selector:@selector(handleBecomeActive:)
                  name:UIApplicationDidBecomeActiveNotification
                object:nil];
-}
-
-- (CALayer *) passwordBorder {
-  if (!_passwordBorder) _passwordBorder = [CALayer layer];
-  return _passwordBorder;
 }
 
 - (void)handleBecomeActive:(NSNotification *)notification
@@ -200,8 +192,26 @@
 }
 
 - (void) updateEncryptButton {
-  NSLog(@"isReadyToEncrypt %i", [self isReadyToEncrypt]);
   [self toggleEncryptButton:[self isReadyToEncrypt]];
 }
+
+- (IBAction)encryptClicked:(UIBarButtonItem *)sender {
+  UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+  [spinner startAnimating];
+  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
+
+  dispatch_queue_t encryptionQueue = dispatch_queue_create("encryption queue", NULL);
+  dispatch_async(encryptionQueue, ^{
+    NSString *encrypted = [self encrypt];
+    dispatch_async(dispatch_get_main_queue(), ^{
+      if (encrypted) {
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        pasteboard.string = encrypted;
+      }
+      [self toggleEncryptButton:YES];
+    });
+  });
+}
+
 
 @end

@@ -94,6 +94,9 @@
                     <navigationItem key="navigationItem" id="Hdh-ZU-9az">
                         <barButtonItem key="rightBarButtonItem" title="Encrypt" id="4HM-Wu-gX7">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="encryptClicked:" destination="vXZ-lx-hvc" id="wy8-FS-igA"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
