@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5cf-P1-s5I">
-                                <rect key="frame" x="15" y="79" width="290" height="30"/>
+                                <rect key="frame" x="15" y="79" width="255" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
@@ -59,6 +59,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkt-ie-lhn">
+                                <rect key="frame" x="283" y="83" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="22" id="Bjq-xR-JLy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="tintColor" red="0.36750370100000002" green="0.80263768560000004" blue="0.38943349329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="gqK-Ki-Ekk" kind="push" id="QaO-GD-9zB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -68,19 +83,15 @@
                             <constraint firstAttribute="trailing" secondItem="162-fu-lgA" secondAttribute="trailing" constant="16" id="ML2-Mb-sjH"/>
                             <constraint firstItem="Ncv-NT-qEj" firstAttribute="top" secondItem="5cf-P1-s5I" secondAttribute="bottom" constant="1" id="RcH-pa-UdO"/>
                             <constraint firstItem="162-fu-lgA" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="Ti3-Ew-tZF"/>
+                            <constraint firstItem="bkt-ie-lhn" firstAttribute="centerY" secondItem="5cf-P1-s5I" secondAttribute="centerY" id="bxI-Z9-JYx"/>
+                            <constraint firstAttribute="trailing" secondItem="bkt-ie-lhn" secondAttribute="trailing" constant="15" id="cdD-Yq-oga"/>
                             <constraint firstItem="Ncv-NT-qEj" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="iib-3h-94K"/>
+                            <constraint firstItem="bkt-ie-lhn" firstAttribute="leading" secondItem="5cf-P1-s5I" secondAttribute="trailing" constant="13" id="lqX-iP-Dlh"/>
                             <constraint firstItem="OW3-fG-tcd" firstAttribute="top" secondItem="162-fu-lgA" secondAttribute="bottom" constant="10" id="oSB-K5-qZ6"/>
                             <constraint firstAttribute="trailing" secondItem="Ncv-NT-qEj" secondAttribute="trailing" constant="15" id="ofP-yM-dMY"/>
-                            <constraint firstAttribute="trailing" secondItem="5cf-P1-s5I" secondAttribute="trailing" constant="15" id="vAm-Rp-IwR"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="AES Crypto" id="Hdh-ZU-9az">
-                        <barButtonItem key="rightBarButtonItem" title="Help" id="EoW-be-Guf">
-                            <connections>
-                                <segue destination="gqK-Ki-Ekk" kind="push" id="Ais-sa-DBh"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="Hdh-ZU-9az"/>
                     <connections>
                         <outlet property="decryptButton" destination="asu-uU-DVZ" id="ECT-dx-0GK"/>
                         <outlet property="decryptView" destination="Ncv-NT-qEj" id="NIC-hk-EsX"/>

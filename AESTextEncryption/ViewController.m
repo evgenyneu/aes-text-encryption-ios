@@ -43,6 +43,12 @@
 
   self.decryptView.clipsToBounds = true;
   self.decryptViewHeightConstraint.constant = 0;
+  [self setTitleImage];
+}
+
+- (void) setTitleImage {
+  UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed: @"arrow_down@2x.png"]];
+  self.navigationItem.titleView = imageView;
 }
 
 - (AESEncryptor *) encryptor {
