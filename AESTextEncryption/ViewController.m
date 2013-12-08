@@ -17,15 +17,13 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textBottomDistance;
 
 @property (strong, nonatomic) TextViewDelegate *textViewDelegate;
-@property (weak, nonatomic) IBOutlet UIView *decryptView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *decryptViewHeightConstraint;
 
 @property (strong, nonatomic) NSString *textToDecrypt;
 @property (strong, nonatomic) NSString *decryptedText;
-@property (weak, nonatomic) IBOutlet UIButton *decryptButton;
 
 @property (strong, nonatomic) AESEncryptor* encryptor;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *encryptButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *decryptBarButton;
 
 @property (strong, nonatomic) UIBarButtonItem *doneButton;
 
@@ -43,18 +41,8 @@
   [self registerActiveNotification];
   [self.keyText setValue: [TextViewDelegate placeholderColor] forKeyPath:@"_placeholderLabel.textColor"];
 
-  self.decryptView.clipsToBounds = true;
-  self.decryptViewHeightConstraint.constant = 0;
   [self setTitleImage];
   [self updateEncryptButton];
-}
-
-- (void) toggleEncryptButton: (BOOL) show {
-  if (show) {
-    self.navigationItem.rightBarButtonItem = self.encryptButton;
-  } else {
-    self.navigationItem.rightBarButtonItem = nil;
-  }
 }
 
 - (void) setTitleImage {
@@ -65,28 +53,6 @@
 - (AESEncryptor *) encryptor {
   if (!_encryptor) _encryptor = [[AESEncryptor alloc] init];
   return _encryptor;
-}
-
-- (NSString *) encrypt
-{
-  NSString *encrypted = [self.encryptor encrypt:[self messageStripped] withKey:self.keyText.text];
-  if (![self.encryptor isEncrypted: encrypted]) return nil;
-  return encrypted;
-}
-
-- (void) decrypt
-{
-  if (!self.textToDecrypt) {
-    self.decryptedText = nil;
-    return;
-  }
-
-  NSString *decrypted = [self.encryptor decrypt:self.textToDecrypt withKey:self.keyText.text];
-  if (decrypted.length == 0) {
-    self.decryptedText = nil;
-    return;
-  }
-  self.decryptedText = decrypted;
 }
 
 - (NSString *) keyTextStripped {
@@ -118,21 +84,6 @@
                object:nil];
 }
 
-- (void) registerActiveNotification{
-  NSNotificationCenter* center = [NSNotificationCenter defaultCenter];
-  [center addObserver:self
-             selector:@selector(handleBecomeActive:)
-                 name:UIApplicationDidBecomeActiveNotification
-               object:nil];
-}
-
-- (void)handleBecomeActive:(NSNotification *)notification
-{
-  [self getTextToDecryptFromPasteboard];
-  [self decrypt];
-  [self updateDecryptedView];
-}
-
 - (void)handleKeyboardShow:(NSNotification *)notification
 {
   CGRect rect = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
@@ -146,46 +97,7 @@
   self.textBottomDistance.constant = 10;
 }
 
-- (void) updateDecryptedView {
-  BOOL decryptedViewVisible = false;
-  if (self.decryptedText && ![self.decryptedText isEqualToString:[self messageStripped]]) {
-    decryptedViewVisible = true;
-  }
-
-  [self toggleDecryptView:decryptedViewVisible];
-  NSString *decryptButtonTitle = self.decryptedText;
-  if (decryptButtonTitle.length > 100) {
-    decryptButtonTitle = [decryptButtonTitle substringToIndex:100];
-  }
-
-  [self.decryptButton setTitle:decryptButtonTitle forState:UIControlStateNormal];
-}
-
-- (void) toggleDecryptView: (BOOL) isShowing {
-  int height = 0;
-  if (isShowing) height = 40;
-  if (self.decryptViewHeightConstraint.constant == height) return;
-  self.decryptViewHeightConstraint.constant = height;
-  [UIView animateWithDuration:0.3 animations:^{[self.view layoutIfNeeded];}];
-}
-
-- (IBAction)keyTextEditingChanged:(id)sender {
-  [self updateEncryptButton];
-  [self decrypt];
-  [self updateDecryptedView];
-}
-
-- (void) getTextToDecryptFromPasteboard {
-  UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-  if (![self.encryptor isEncrypted: pasteboard.string]) return;
-  self.textToDecrypt = pasteboard.string;
-}
-
-- (IBAction)viewDecryptedTextButtonClicked {
-  if (!self.decryptedText || self.decryptedText.length == 0) return;
-  [TextViewDelegate setText:self.decryptedText forTextView:self.textView];
-  [self updateDecryptedView];
-}
+#pragma mark - Encrypt
 
 - (BOOL) isReadyToEncrypt {
   if ([self keyTextStripped].length == 0) return NO;
@@ -224,6 +136,93 @@
 
 - (void) showEncryptedMessage {
   self.navigationItem.rightBarButtonItem = self.doneButton;
+}
+
+- (void) toggleEncryptButton: (BOOL) show {
+  if (show) {
+    self.navigationItem.rightBarButtonItem = self.encryptButton;
+  } else {
+    self.navigationItem.rightBarButtonItem = nil;
+  }
+}
+
+- (NSString *) encrypt
+{
+  NSString *encrypted = [self.encryptor encrypt:[self messageStripped] withKey:self.keyText.text];
+  if (![self.encryptor isEncrypted: encrypted]) return nil;
+  return encrypted;
+}
+
+#pragma mark - Decrypt
+
+- (void) updateDecryptButton {
+  BOOL show = self.decryptedText && ![self.decryptedText isEqualToString:[self messageStripped]];
+  [self updateDecryptButtonTitle: self.decryptedText];
+  [self toggleDecryptButton:show];
+}
+
+- (void) updateDecryptButtonTitle: (NSString*) title {
+  if (!title) return;
+  if (title.length > 10) title = [title substringToIndex:10];
+  self.decryptBarButton.title = [@"↓" stringByAppendingString:title];
+}
+
+- (void) toggleDecryptButton: (BOOL) show {
+  if (show) {
+    self.navigationItem.leftBarButtonItem = self.decryptBarButton;
+  } else {
+    self.navigationItem.leftBarButtonItem = nil;
+  }
+}
+
+- (IBAction)keyTextEditingChanged:(id)sender {
+  [self updateEncryptButton];
+  [self decrypt];
+  [self updateDecryptButton];
+}
+
+- (void) getTextToDecryptFromPasteboard {
+  UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+  if (![self.encryptor isEncrypted: pasteboard.string]) return;
+  self.textToDecrypt = pasteboard.string;
+}
+
+// ----  When decrypt button is clicked
+//
+//- (IBAction)viewDecryptedTextButtonClicked {
+//  if (!self.decryptedText || self.decryptedText.length == 0) return;
+//  [TextViewDelegate setText:self.decryptedText forTextView:self.textView];
+//  [self updateDecryptedView];
+//}
+
+- (void) registerActiveNotification{
+  NSNotificationCenter* center = [NSNotificationCenter defaultCenter];
+  [center addObserver:self
+             selector:@selector(handleBecomeActive:)
+                 name:UIApplicationDidBecomeActiveNotification
+               object:nil];
+}
+
+- (void)handleBecomeActive:(NSNotification *)notification
+{
+  [self getTextToDecryptFromPasteboard];
+  [self decrypt];
+  [self updateDecryptButton];
+}
+
+- (void) decrypt
+{
+  if (!self.textToDecrypt) {
+    self.decryptedText = nil;
+    return;
+  }
+
+  NSString *decrypted = [self.encryptor decrypt:self.textToDecrypt withKey:self.keyText.text];
+  if (decrypted.length == 0) {
+    self.decryptedText = nil;
+    return;
+  }
+  self.decryptedText = decrypted;
 }
 
 

@@ -25,35 +25,8 @@
                                     <action selector="keyTextEditingChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="7Pt-8H-d8H"/>
                                 </connections>
                             </textField>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ncv-NT-qEj">
-                                <rect key="frame" x="20" y="110" width="285" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asu-uU-DVZ">
-                                        <rect key="frame" x="0.0" y="16" width="285" height="20"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="tintColor" red="0.36750370100000002" green="0.80263768560000004" blue="0.38943349329999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Button" image="arrow_down.png">
-                                            <color key="titleColor" red="0.36750370100000002" green="0.80263768560000004" blue="0.38943349329999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="viewDecryptedTextButtonClicked" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3l8-IG-K7t"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="asu-uU-DVZ" firstAttribute="leading" secondItem="Ncv-NT-qEj" secondAttribute="leading" id="Ial-v1-99f"/>
-                                    <constraint firstAttribute="height" constant="50" id="Sdr-qW-M3g"/>
-                                    <constraint firstItem="asu-uU-DVZ" firstAttribute="top" secondItem="Ncv-NT-qEj" secondAttribute="top" constant="16" id="k0K-YU-3jm"/>
-                                    <constraint firstAttribute="trailing" secondItem="asu-uU-DVZ" secondAttribute="trailing" id="tdQ-cZ-7HF"/>
-                                </constraints>
-                            </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="162-fu-lgA">
-                                <rect key="frame" x="16" y="163" width="288" height="395"/>
+                                <rect key="frame" x="16" y="113" width="288" height="445"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -78,20 +51,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5cf-P1-s5I" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="15" id="27n-2I-eIE"/>
-                            <constraint firstItem="162-fu-lgA" firstAttribute="top" secondItem="Ncv-NT-qEj" secondAttribute="bottom" constant="3" id="AQE-JD-73n"/>
                             <constraint firstItem="5cf-P1-s5I" firstAttribute="top" secondItem="vda-r8-dK0" secondAttribute="bottom" constant="15" id="IwQ-uw-Tpz"/>
                             <constraint firstAttribute="trailing" secondItem="162-fu-lgA" secondAttribute="trailing" constant="16" id="ML2-Mb-sjH"/>
-                            <constraint firstItem="Ncv-NT-qEj" firstAttribute="top" secondItem="5cf-P1-s5I" secondAttribute="bottom" constant="1" id="RcH-pa-UdO"/>
                             <constraint firstItem="162-fu-lgA" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="Ti3-Ew-tZF"/>
                             <constraint firstItem="bkt-ie-lhn" firstAttribute="centerY" secondItem="5cf-P1-s5I" secondAttribute="centerY" id="bxI-Z9-JYx"/>
                             <constraint firstAttribute="trailing" secondItem="bkt-ie-lhn" secondAttribute="trailing" constant="15" id="cdD-Yq-oga"/>
-                            <constraint firstItem="Ncv-NT-qEj" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="iib-3h-94K"/>
+                            <constraint firstItem="162-fu-lgA" firstAttribute="top" secondItem="5cf-P1-s5I" secondAttribute="bottom" constant="4" id="epU-NS-gAA"/>
                             <constraint firstItem="bkt-ie-lhn" firstAttribute="leading" secondItem="5cf-P1-s5I" secondAttribute="trailing" constant="13" id="lqX-iP-Dlh"/>
                             <constraint firstItem="OW3-fG-tcd" firstAttribute="top" secondItem="162-fu-lgA" secondAttribute="bottom" constant="10" id="oSB-K5-qZ6"/>
-                            <constraint firstAttribute="trailing" secondItem="Ncv-NT-qEj" secondAttribute="trailing" constant="15" id="ofP-yM-dMY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Hdh-ZU-9az">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="iNy-W2-Yo4">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Encrypt" id="4HM-Wu-gX7">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -100,9 +73,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="decryptButton" destination="asu-uU-DVZ" id="ECT-dx-0GK"/>
-                        <outlet property="decryptView" destination="Ncv-NT-qEj" id="NIC-hk-EsX"/>
-                        <outlet property="decryptViewHeightConstraint" destination="Sdr-qW-M3g" id="icH-LC-IIa"/>
+                        <outlet property="decryptBarButton" destination="iNy-W2-Yo4" id="Hdl-dv-j9f"/>
                         <outlet property="encryptButton" destination="4HM-Wu-gX7" id="xUc-j1-gVn"/>
                         <outlet property="keyText" destination="5cf-P1-s5I" id="GSs-et-ovt"/>
                         <outlet property="textBottomDistance" destination="oSB-K5-qZ6" id="olx-Aa-0rk"/>
@@ -153,9 +124,6 @@
             <point key="canvasLocation" x="246" y="71"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="arrow_down.png" width="14" height="20"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
