@@ -187,13 +187,11 @@
   self.textToDecrypt = pasteboard.string;
 }
 
-// ----  When decrypt button is clicked
-//
-//- (IBAction)viewDecryptedTextButtonClicked {
-//  if (!self.decryptedText || self.decryptedText.length == 0) return;
-//  [TextViewDelegate setText:self.decryptedText forTextView:self.textView];
-//  [self updateDecryptedView];
-//}
+- (IBAction)decryptClicked:(UIBarButtonItem *)sender {
+  if (!self.decryptedText || self.decryptedText.length == 0) return;
+  [TextViewDelegate setText:self.decryptedText forTextView:self.textView];
+  [self updateDecryptButton];
+}
 
 - (void) registerActiveNotification{
   NSNotificationCenter* center = [NSNotificationCenter defaultCenter];

@@ -64,6 +64,9 @@
                     <navigationItem key="navigationItem" id="Hdh-ZU-9az">
                         <barButtonItem key="leftBarButtonItem" title="Item" id="iNy-W2-Yo4">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="decryptClicked:" destination="vXZ-lx-hvc" id="AL8-iz-rdA"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Encrypt" id="4HM-Wu-gX7">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
