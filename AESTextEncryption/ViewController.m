@@ -27,8 +27,7 @@
 
 @property (strong, nonatomic) UIBarButtonItem *doneButton;
 
-@property (assign) BOOL isDecrypting;
-@property (assign) BOOL hasPendingDecryptions;
+@property (nonatomic, weak) NSTimer* passwordDecryptTimer;
 
 @end
 
@@ -180,7 +179,7 @@
 
 - (IBAction)keyTextEditingChanged:(id)sender {
   [self updateEncryptButton];
-  [self decryptAndUpdate];
+  [self decryptAndUpdatedAfterTimeout];
 }
 
 - (void) getTextToDecryptFromPasteboard {
@@ -215,16 +214,29 @@
   return [self.encryptor decrypt:self.textToDecrypt withKey:self.keyText.text];
 }
 
-- (void) decryptAndUpdate {
-  if (self.isDecrypting) {
-    self.hasPendingDecryptions = YES;
-    return;
-  }
-  self.isDecrypting = YES;
+- (void) decryptTimerFired:(NSTimer *)timer {
+  [self decryptAndUpdate];
+}
 
+- (void) decryptAndUpdatedAfterTimeout {
+  if (!self.textToDecrypt) return;
+  [self.passwordDecryptTimer invalidate];
+
+  self.passwordDecryptTimer = [NSTimer scheduledTimerWithTimeInterval:0.5
+                                                               target:self
+                                                             selector:@selector(decryptTimerFired:)
+                                                             userInfo:nil
+                                                              repeats:NO];
+}
+
+- (void) showDecryptingSpinner {
   UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
   [spinner startAnimating];
   self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
+}
+
+- (void) decryptAndUpdate {
+  [self showDecryptingSpinner];
 
   dispatch_queue_t decryptQueue = dispatch_queue_create("descryption queue", NULL);
   dispatch_async(decryptQueue, ^{
@@ -236,14 +248,8 @@
         self.decryptedText = nil;
       }
       [self updateDecryptButton];
-      self.isDecrypting = NO;
-      if (self.hasPendingDecryptions) {
-        self.hasPendingDecryptions = NO;
-        [self decryptAndUpdate];
-      }
     });
   });
 }
-
 
 @end
