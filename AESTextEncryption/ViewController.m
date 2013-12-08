@@ -27,6 +27,9 @@
 
 @property (strong, nonatomic) UIBarButtonItem *doneButton;
 
+@property (assign) BOOL isDecrypting;
+@property (assign) BOOL hasPendingDecryptions;
+
 @end
 
 @implementation ViewController
@@ -177,8 +180,7 @@
 
 - (IBAction)keyTextEditingChanged:(id)sender {
   [self updateEncryptButton];
-  [self decrypt];
-  [self updateDecryptButton];
+  [self decryptAndUpdate];
 }
 
 - (void) getTextToDecryptFromPasteboard {
@@ -204,23 +206,43 @@
 - (void)handleBecomeActive:(NSNotification *)notification
 {
   [self getTextToDecryptFromPasteboard];
-  [self decrypt];
-  [self updateDecryptButton];
+  [self decryptAndUpdate];
 }
 
-- (void) decrypt
+- (NSString*) decrypt
 {
-  if (!self.textToDecrypt) {
-    self.decryptedText = nil;
-    return;
-  }
+  if (!self.textToDecrypt) return nil;
+  return [self.encryptor decrypt:self.textToDecrypt withKey:self.keyText.text];
+}
 
-  NSString *decrypted = [self.encryptor decrypt:self.textToDecrypt withKey:self.keyText.text];
-  if (decrypted.length == 0) {
-    self.decryptedText = nil;
+- (void) decryptAndUpdate {
+  if (self.isDecrypting) {
+    self.hasPendingDecryptions = YES;
     return;
   }
-  self.decryptedText = decrypted;
+  self.isDecrypting = YES;
+
+  UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+  [spinner startAnimating];
+  self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
+
+  dispatch_queue_t decryptQueue = dispatch_queue_create("descryption queue", NULL);
+  dispatch_async(decryptQueue, ^{
+    NSString *decrypted = [self decrypt];
+    dispatch_async(dispatch_get_main_queue(), ^{
+      if (decrypted && decrypted.length > 0) {
+        self.decryptedText = decrypted;
+      } else {
+        self.decryptedText = nil;
+      }
+      [self updateDecryptButton];
+      self.isDecrypting = NO;
+      if (self.hasPendingDecryptions) {
+        self.hasPendingDecryptions = NO;
+        [self decryptAndUpdate];
+      }
+    });
+  });
 }
 
 
