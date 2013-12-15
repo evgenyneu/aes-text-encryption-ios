@@ -154,7 +154,7 @@ https://github.com/evgenyneu/aes-text-encryption-ios</string>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.059766057480357279" green="0.13053063118811881" blue="0.063332435789268615" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.1440848967967191" green="0.3146851794554455" blue="0.15268277445907677" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="JZi-JF-H6x" secondAttribute="trailing" id="E7u-Tx-eFS"/>
                             <constraint firstItem="JZi-JF-H6x" firstAttribute="leading" secondItem="xDA-A6-Lkd" secondAttribute="leading" id="Fog-ZD-WSS"/>
