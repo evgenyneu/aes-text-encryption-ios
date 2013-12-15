@@ -282,6 +282,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Evgenii Neumerzhitckii";
 				TargetAttributes = {
+					2B51DAB418288CAB008749DA = {
+						DevelopmentTeam = BS677JRE62;
+					};
 					2B7D27351841B1DF0031F1E7 = {
 						TestTargetID = 2B51DAB418288CAB008749DA;
 					};
@@ -519,6 +522,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AESTextEncryption/AESTextEncryption-Prefix.pch";
 				INFOPLIST_FILE = "AESTextEncryption/AESTextEncryption-Info.plist";
@@ -532,6 +536,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AESTextEncryption/AESTextEncryption-Prefix.pch";
 				INFOPLIST_FILE = "AESTextEncryption/AESTextEncryption-Info.plist";
