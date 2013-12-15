@@ -126,7 +126,7 @@ https://github.com/evgenyneu/aes-text-encryption-ios</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Help" id="foU-Ru-bi9">
-                        <barButtonItem key="rightBarButtonItem" title="Huh?" id="P9s-Bz-FT7">
+                        <barButtonItem key="rightBarButtonItem" title="Drawing" id="P9s-Bz-FT7">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="W72-iA-Red" kind="push" id="KXw-eP-dOa"/>
@@ -138,7 +138,7 @@ https://github.com/evgenyneu/aes-text-encryption-ios</string>
             </objects>
             <point key="canvasLocation" x="1007" y="71"/>
         </scene>
-        <!--View Controller - Huh?-->
+        <!--View Controller - Crypto and Koo-->
         <scene sceneID="Smf-0l-Lpe">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="W72-iA-Red" sceneMemberID="viewController">
@@ -163,7 +163,7 @@ https://github.com/evgenyneu/aes-text-encryption-ios</string>
                             <constraint firstAttribute="bottom" secondItem="JZi-JF-H6x" secondAttribute="bottom" id="UQw-iA-r9a"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Huh?" id="tRn-Of-mbb"/>
+                    <navigationItem key="navigationItem" title="Crypto and Koo" id="tRn-Of-mbb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qvu-OY-XMq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
