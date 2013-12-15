@@ -5,7 +5,7 @@ var aesCrypto = {};
   "use strict";
 
   obj.formatter = {
-    prefix: 'AESCrypto4iOS0',
+    prefix: 'AESCryptoV10',
     stringify: function (params) {
       var str = this.prefix;
       str += params.salt.toString();

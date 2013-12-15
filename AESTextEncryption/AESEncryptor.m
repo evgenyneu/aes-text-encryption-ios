@@ -9,7 +9,7 @@
 #import "AESEncryptor.h"
 #import <JavaScriptCore/JavaScriptCore.h>
 
-#define ENCRYPTED_PREFIX @"AESCrypto4iOS0"
+#define ENCRYPTED_PREFIX @"AESCryptoV10"
 
 @interface AESEncryptor()
 
