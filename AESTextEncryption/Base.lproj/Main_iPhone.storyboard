@@ -105,7 +105,7 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">This app is used to encrypt and decrypt text messages. Encrypted message is automatically copied to pasteboard.
 
-To decrypt: copy your encrypted message in another app, open this app and enter your password.
+To decrypt: copy encrypted message in another app, open this app and enter password.
 
 This app uses standard AES encryption with a 256-bit key. New salt and IV is generated for each encryption.
 
@@ -127,6 +127,7 @@ https://github.com/evgenyneu/aes-text-encryption-ios</string>
                     </view>
                     <navigationItem key="navigationItem" title="Help" id="foU-Ru-bi9">
                         <barButtonItem key="rightBarButtonItem" title="Huh?" id="P9s-Bz-FT7">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="W72-iA-Red" kind="push" id="KXw-eP-dOa"/>
                             </connections>
