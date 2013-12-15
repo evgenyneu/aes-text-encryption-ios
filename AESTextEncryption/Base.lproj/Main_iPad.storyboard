@@ -29,24 +29,47 @@
                                 </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BoQ-jd-RxF">
-                                <rect key="frame" x="20" y="125" width="728" height="879"/>
+                                <rect key="frame" x="20" y="125" width="728" height="889"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7J-QA-u0W">
+                                <rect key="frame" x="283" y="91" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="22" id="xmK-VE-hQu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="tintColor" red="0.74953589109999996" green="0.74953589109999996" blue="0.74953589109999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="p4z-tV-eQ2" kind="push" id="QlO-fV-jBn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="f7J-QA-u0W" firstAttribute="centerY" secondItem="Ubh-1K-QsO" secondAttribute="centerY" id="VJB-nm-ykX"/>
                             <constraint firstItem="Ubh-1K-QsO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="XGQ-Xl-p9J"/>
                             <constraint firstItem="Ubh-1K-QsO" firstAttribute="top" secondItem="jF1-rC-5MW" secondAttribute="bottom" constant="23" id="ZbP-pM-9Xb"/>
                             <constraint firstAttribute="trailing" secondItem="BoQ-jd-RxF" secondAttribute="trailing" constant="20" id="abV-NI-9ZX"/>
                             <constraint firstItem="BoQ-jd-RxF" firstAttribute="top" secondItem="Ubh-1K-QsO" secondAttribute="bottom" constant="8" id="pCt-nb-4YN"/>
                             <constraint firstItem="BoQ-jd-RxF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="rCm-bO-Ldx"/>
-                            <constraint firstItem="Ozp-TQ-pEA" firstAttribute="top" secondItem="BoQ-jd-RxF" secondAttribute="bottom" constant="20" id="xAO-Jv-rK6"/>
+                            <constraint firstItem="f7J-QA-u0W" firstAttribute="leading" secondItem="Ubh-1K-QsO" secondAttribute="trailing" constant="8" id="vKe-0i-RdQ"/>
+                            <constraint firstItem="Ozp-TQ-pEA" firstAttribute="top" secondItem="BoQ-jd-RxF" secondAttribute="bottom" constant="10" id="xAO-Jv-rK6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qhS-Qr-nqF">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="6P6-qP-PV9">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="decryptClicked:" destination="BYZ-38-t0r" id="F4j-am-cNh"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Encrypt" id="SqE-4R-pqD">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -55,14 +78,74 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="decryptBarButton" destination="6P6-qP-PV9" id="U3W-IW-26l"/>
                         <outlet property="encryptButton" destination="SqE-4R-pqD" id="k1L-Ug-TOJ"/>
                         <outlet property="keyText" destination="Ubh-1K-QsO" id="HYU-mz-kdB"/>
+                        <outlet property="textBottomDistance" destination="xAO-Jv-rK6" id="SWS-hh-q7N"/>
                         <outlet property="textView" destination="BoQ-jd-RxF" id="aVT-cw-Vka"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="832" y="-137"/>
+        </scene>
+        <!--View Controller - Help-->
+        <scene sceneID="9km-9j-Xbj">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="p4z-tV-eQ2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tuX-ZT-fjE"/>
+                        <viewControllerLayoutGuide type="bottom" id="fay-wq-Oux"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HY8-52-CSP">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iaf-v6-Jtu">
+                                <rect key="frame" x="20" y="410" width="728" height="285"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="285" id="N6a-4i-ecw"/>
+                                </constraints>
+                                <string key="text">This app is used to encrypt and decrypt text messages.
+Encrypted message is automatically copied to pasteboard.
+
+To decrypt: copy encrypted message in another app, open this app and enter password.
+
+This app uses standard AES encryption with a 256-bit key. 
+New salt and IV is generated for each encryption.
+
+
+Source code:
+
+https://github.com/evgenyneu/aes-text-encryption-ios</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help.png" translatesAutoresizingMaskIntoConstraints="NO" id="aGW-F3-3zQ">
+                                <rect key="frame" x="84" y="107" width="600" height="255"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="255" id="MdU-Fm-eI6"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iaf-v6-Jtu" firstAttribute="leading" secondItem="HY8-52-CSP" secondAttribute="leading" constant="20" id="0vx-6O-vVW"/>
+                            <constraint firstAttribute="centerX" secondItem="aGW-F3-3zQ" secondAttribute="centerX" id="BSp-rg-Lw1"/>
+                            <constraint firstItem="iaf-v6-Jtu" firstAttribute="top" secondItem="tuX-ZT-fjE" secondAttribute="bottom" constant="346" id="Pbs-F9-ds7"/>
+                            <constraint firstAttribute="trailing" secondItem="iaf-v6-Jtu" secondAttribute="trailing" constant="20" id="b4d-sH-bzZ"/>
+                            <constraint firstItem="aGW-F3-3zQ" firstAttribute="top" secondItem="tuX-ZT-fjE" secondAttribute="bottom" constant="43" id="nwe-gM-Uxg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Help" id="9yp-cH-IRh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OmG-ev-hIN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1692" y="-137"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZVi-Ex-nzc">
@@ -85,6 +168,9 @@
             <point key="canvasLocation" x="-65" y="-137"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="help.png" width="600" height="466"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
         <simulatedOrientationMetrics key="orientation"/>

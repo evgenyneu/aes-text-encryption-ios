@@ -165,7 +165,10 @@
 
 - (void) updateDecryptButtonTitle: (NSString*) title {
   if (!title) return;
-  if (title.length > 10) title = [title substringToIndex:10];
+  if (title.length > 10) {
+    title = [title substringToIndex:10];
+    title = [title stringByAppendingString:@"..."];
+  }
   self.decryptBarButton.title = [@"↓" stringByAppendingString:title];
 }
 
