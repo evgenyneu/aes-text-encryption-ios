@@ -2,7 +2,7 @@
 
 iOS app to encrypt text messages with AES.
 
-<img src='https://raw.github.com/evgenyneu/ios-imagescroll/master/image_scroll.png' width='556' alt='Using image inside a scroll view with autolayout in iOS 7'>
+<img src='https://raw.github.com/evgenyneu/aes-text-encryption-ios/master/Graphics/screenshots/iphone_4_inch/iphone_4_inch_640x1136_2.png' width='556' alt='AES Text Encryption for iOS'>
 
 ## Credits
 
