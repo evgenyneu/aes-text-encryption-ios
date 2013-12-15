@@ -1,4 +1,4 @@
-# AES Encryption
+# AES Crypto
 
 iOS app to encrypt text messages with AES.
 
