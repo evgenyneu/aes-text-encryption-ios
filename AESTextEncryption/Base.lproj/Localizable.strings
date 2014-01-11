@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  AESTextEncryption
+
+  Created by Evgenii Neumerzhitckii on 11/01/2014.
+  Copyright (c) 2014 Evgenii Neumerzhitckii. All rights reserved.
+*/
+
+"HELP_TEXT" = "AES Crypto encrypts text messages. When message is encrypted it is automatically copied to pasteboard.
+
+To decrypt: copy encrypted message in another app, open this app and enter password.
+
+AES Crypto uses standard AES encryption with a 256-bit key. New salt and IV is generated for each encryption.
+
+Source code is publicly available:
+
+https://github.com/evgenyneu/aes-text-encryption-ios";
