@@ -6,4 +6,4 @@ iOS app to encrypt text messages with AES. [App store page](https://itunes.apple
 
 ## Credits
 
-CryptoJS: [https://code.google.com/p/crypto-js](https://code.google.com/p/crypto-js)
+AES Crypto uses CryptoJS JavaScript library for encryption: [https://code.google.com/p/crypto-js](https://code.google.com/p/crypto-js)
