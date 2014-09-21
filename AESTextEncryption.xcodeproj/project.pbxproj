@@ -15,6 +15,7 @@
 		2B340DD6182E3E0E00FA36F6 /* enc-base64.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B340DCA182E3DEC00FA36F6 /* enc-base64.js */; };
 		2B340DD7182E3E0E00FA36F6 /* evpkdf.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B340DCB182E3DEC00FA36F6 /* evpkdf.js */; };
 		2B340DD8182E3E0E00FA36F6 /* md5.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B340DCC182E3DEC00FA36F6 /* md5.js */; };
+		2B3DCCF019CE68DE00A21CDA /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B3DCCEF19CE68DE00A21CDA /* Launch Screen.xib */; };
 		2B4BA71F182EE3E1007CE59E /* TextViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4BA71E182EE3E1007CE59E /* TextViewDelegate.m */; };
 		2B51DAB918288CAB008749DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B51DAB818288CAB008749DA /* Foundation.framework */; };
 		2B51DABB18288CAB008749DA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B51DABA18288CAB008749DA /* CoreGraphics.framework */; };
@@ -59,6 +60,7 @@
 		2B340DCA182E3DEC00FA36F6 /* enc-base64.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "enc-base64.js"; sourceTree = "<group>"; };
 		2B340DCB182E3DEC00FA36F6 /* evpkdf.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = evpkdf.js; sourceTree = "<group>"; };
 		2B340DCC182E3DEC00FA36F6 /* md5.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = md5.js; sourceTree = "<group>"; };
+		2B3DCCEF19CE68DE00A21CDA /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "AESTextEncryption/Launch Screen.xib"; sourceTree = "<group>"; };
 		2B4BA71D182EE3E1007CE59E /* TextViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewDelegate.h; sourceTree = "<group>"; };
 		2B4BA71E182EE3E1007CE59E /* TextViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewDelegate.m; sourceTree = "<group>"; };
 		2B51DAB518288CAB008749DA /* AES Crypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AES Crypto.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +154,7 @@
 				2B51DAB718288CAB008749DA /* Frameworks */,
 				2B51DAB618288CAB008749DA /* Products */,
 				960FB1C5A6B8454A8AC8F4A2 /* Pods-AESCryptoTests.xcconfig */,
+				2B3DCCEF19CE68DE00A21CDA /* Launch Screen.xib */,
 			);
 			sourceTree = "<group>";
 		};
@@ -337,6 +340,7 @@
 				2B51DAD418288CAB008749DA /* Images.xcassets in Resources */,
 				2B51DACC18288CAB008749DA /* Main_iPhone.storyboard in Resources */,
 				2B51DAC318288CAB008749DA /* InfoPlist.strings in Resources */,
+				2B3DCCF019CE68DE00A21CDA /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
