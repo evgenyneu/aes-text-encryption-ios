@@ -1,6 +1,5 @@
 //
-//  AESCryptoTests.m
-//  AESCryptoTests
+//  EncryptorTests.m
 //
 //  Created by Evgenii Neumerzhitckii on 24/11/2013.
 //  Copyright (c) 2013 Evgenii Neumerzhitckii. All rights reserved.
@@ -9,11 +8,11 @@
 #import <XCTest/XCTest.h>
 #import "AESEncryptor.h"
 
-@interface AESCryptoTests : XCTestCase
+@interface EncryptorTests : XCTestCase
 
 @end
 
-@implementation AESCryptoTests
+@implementation EncryptorTests
 
 AESEncryptor *encryptor;
 
