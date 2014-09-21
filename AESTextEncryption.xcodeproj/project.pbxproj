@@ -35,11 +35,9 @@
 		2B7D27391841B1DF0031F1E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B51DABC18288CAB008749DA /* UIKit.framework */; };
 		2B7D273F1841B1DF0031F1E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2B7D273D1841B1DF0031F1E7 /* InfoPlist.strings */; };
 		2B7D27411841B1DF0031F1E7 /* AESCryptoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7D27401841B1DF0031F1E7 /* AESCryptoTests.m */; };
-		2BFB895B1841B8B10095E9C1 /* TestIncludes.h in Resources */ = {isa = PBXBuildFile; fileRef = 2BFB89581841B8B10095E9C1 /* TestIncludes.h */; };
 		2BFB895E1841B91C0095E9C1 /* TextViewDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB895D1841B91C0095E9C1 /* TextViewDelegateTests.m */; };
 		2BFB89601841B9C20095E9C1 /* EncryptorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB895F1841B9C20095E9C1 /* EncryptorTests.m */; };
 		2BFF38ED184AE2E900F5D849 /* title@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BFF38EC184AE2E900F5D849 /* title@2x.png */; };
-		939C2086DFC04E08BC90B670 /* libPods-AESCryptoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A17836BF6CC043F399E586DA /* libPods-AESCryptoTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,12 +89,9 @@
 		2B7D27401841B1DF0031F1E7 /* AESCryptoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AESCryptoTests.m; sourceTree = "<group>"; };
 		2B7D27421841B1DF0031F1E7 /* AESCryptoTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AESCryptoTests-Prefix.pch"; sourceTree = "<group>"; };
 		2BF458851849AFFB007F0821 /* aes_crypto.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = aes_crypto.js; sourceTree = "<group>"; };
-		2BFB89581841B8B10095E9C1 /* TestIncludes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestIncludes.h; sourceTree = "<group>"; };
 		2BFB895D1841B91C0095E9C1 /* TextViewDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewDelegateTests.m; sourceTree = "<group>"; };
 		2BFB895F1841B9C20095E9C1 /* EncryptorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptorTests.m; sourceTree = "<group>"; };
 		2BFF38EC184AE2E900F5D849 /* title@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "title@2x.png"; sourceTree = "<group>"; };
-		960FB1C5A6B8454A8AC8F4A2 /* Pods-AESCryptoTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AESCryptoTests.xcconfig"; path = "Pods/Pods-AESCryptoTests.xcconfig"; sourceTree = "<group>"; };
-		A17836BF6CC043F399E586DA /* libPods-AESCryptoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AESCryptoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +112,6 @@
 				2B7D27371841B1DF0031F1E7 /* XCTest.framework in Frameworks */,
 				2B7D27391841B1DF0031F1E7 /* UIKit.framework in Frameworks */,
 				2B7D27381841B1DF0031F1E7 /* Foundation.framework in Frameworks */,
-				939C2086DFC04E08BC90B670 /* libPods-AESCryptoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,7 +147,6 @@
 				2B7D273A1841B1DF0031F1E7 /* AESCryptoTests */,
 				2B51DAB718288CAB008749DA /* Frameworks */,
 				2B51DAB618288CAB008749DA /* Products */,
-				960FB1C5A6B8454A8AC8F4A2 /* Pods-AESCryptoTests.xcconfig */,
 				2B3DCCEF19CE68DE00A21CDA /* Launch Screen.xib */,
 			);
 			sourceTree = "<group>";
@@ -174,7 +167,6 @@
 				2B51DABA18288CAB008749DA /* CoreGraphics.framework */,
 				2B51DABC18288CAB008749DA /* UIKit.framework */,
 				2B51DADA18288CAB008749DA /* XCTest.framework */,
-				A17836BF6CC043F399E586DA /* libPods-AESCryptoTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -228,7 +220,6 @@
 			children = (
 				2BFB895F1841B9C20095E9C1 /* EncryptorTests.m */,
 				2BFB895D1841B91C0095E9C1 /* TextViewDelegateTests.m */,
-				2BFB89581841B8B10095E9C1 /* TestIncludes.h */,
 				2B7D27401841B1DF0031F1E7 /* AESCryptoTests.m */,
 				2B7D273B1841B1DF0031F1E7 /* Supporting Files */,
 			);
@@ -269,11 +260,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2B7D27451841B1DF0031F1E7 /* Build configuration list for PBXNativeTarget "AESCryptoTests" */;
 			buildPhases = (
-				8C4AE6AF6319488698AC67D6 /* Check Pods Manifest.lock */,
 				2B7D27321841B1DF0031F1E7 /* Sources */,
 				2B7D27331841B1DF0031F1E7 /* Frameworks */,
 				2B7D27341841B1DF0031F1E7 /* Resources */,
-				031B2925A56A4131806DD5F3 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -349,44 +338,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B7D273F1841B1DF0031F1E7 /* InfoPlist.strings in Resources */,
-				2BFB895B1841B8B10095E9C1 /* TestIncludes.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		031B2925A56A4131806DD5F3 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-AESCryptoTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8C4AE6AF6319488698AC67D6 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2B51DAB118288CAB008749DA /* Sources */ = {
@@ -573,7 +528,6 @@
 		};
 		2B7D27461841B1DF0031F1E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 960FB1C5A6B8454A8AC8F4A2 /* Pods-AESCryptoTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AES Crypto.app/AES Crypto";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -596,7 +550,6 @@
 		};
 		2B7D27471841B1DF0031F1E7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 960FB1C5A6B8454A8AC8F4A2 /* Pods-AESCryptoTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AES Crypto.app/AES Crypto";
 				FRAMEWORK_SEARCH_PATHS = (
