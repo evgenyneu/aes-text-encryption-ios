@@ -36,7 +36,6 @@
 		2B7D273F1841B1DF0031F1E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2B7D273D1841B1DF0031F1E7 /* InfoPlist.strings */; };
 		2B7D27411841B1DF0031F1E7 /* AESCryptoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7D27401841B1DF0031F1E7 /* AESCryptoTests.m */; };
 		2BFB895E1841B91C0095E9C1 /* TextViewDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB895D1841B91C0095E9C1 /* TextViewDelegateTests.m */; };
-		2BFB89601841B9C20095E9C1 /* EncryptorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB895F1841B9C20095E9C1 /* EncryptorTests.m */; };
 		2BFF38ED184AE2E900F5D849 /* title@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BFF38EC184AE2E900F5D849 /* title@2x.png */; };
 /* End PBXBuildFile section */
 
@@ -90,7 +89,6 @@
 		2B7D27421841B1DF0031F1E7 /* AESCryptoTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AESCryptoTests-Prefix.pch"; sourceTree = "<group>"; };
 		2BF458851849AFFB007F0821 /* aes_crypto.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = aes_crypto.js; sourceTree = "<group>"; };
 		2BFB895D1841B91C0095E9C1 /* TextViewDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewDelegateTests.m; sourceTree = "<group>"; };
-		2BFB895F1841B9C20095E9C1 /* EncryptorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptorTests.m; sourceTree = "<group>"; };
 		2BFF38EC184AE2E900F5D849 /* title@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "title@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -218,7 +216,6 @@
 		2B7D273A1841B1DF0031F1E7 /* AESCryptoTests */ = {
 			isa = PBXGroup;
 			children = (
-				2BFB895F1841B9C20095E9C1 /* EncryptorTests.m */,
 				2BFB895D1841B91C0095E9C1 /* TextViewDelegateTests.m */,
 				2B7D27401841B1DF0031F1E7 /* AESCryptoTests.m */,
 				2B7D273B1841B1DF0031F1E7 /* Supporting Files */,
@@ -361,7 +358,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BFB89601841B9C20095E9C1 /* EncryptorTests.m in Sources */,
 				2BFB895E1841B91C0095E9C1 /* TextViewDelegateTests.m in Sources */,
 				2B7D27411841B1DF0031F1E7 /* AESCryptoTests.m in Sources */,
 			);

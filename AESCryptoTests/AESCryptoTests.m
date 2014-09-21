@@ -69,4 +69,33 @@ AESEncryptor *encryptor;
   XCTAssertEqualObjects(decryptedText, @"My Test Message 日本");
 }
 
+// Check if text is encrypted
+// ---------------------------
+
+- (void)testIsEncrypted_YES
+{
+  NSString *encrypted = @"AESCryptoV109eb400b7d5f13b7de09c6383c8898d6cfcb4f5f6104de697";
+  XCTAssert([encryptor isEncrypted: encrypted]);
+}
+
+- (void)testIsEncrypted_YES_withWhitespacesAndNewlines
+{
+  NSString *encrypted = @" \r\n\n AESCryptoV109eb400b7d5f13b7de09c6383c8898d6cfcb4f5f6104de697";
+  XCTAssert([encryptor isEncrypted: encrypted]);
+}
+
+- (void)testIsEncrypted_NO
+{
+  XCTAssertFalse([encryptor isEncrypted: @"some text"]);
+}
+
+// Prefix
+// -------
+
+- (void)testReturnPrefix
+{
+  XCTAssertEqualObjects([encryptor prefix], @"AESCryptoV10");
+}
+
+
 @end
