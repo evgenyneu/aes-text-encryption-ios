@@ -92,6 +92,12 @@
   rect = [self.view convertRect:rect fromView:nil]; // to handle orintation
   CGFloat height = rect.size.height;
   self.textBottomDistance.constant = height + 10;
+
+  // Fix bug, when a blank inset appears on top, when cursor is at beginning of text view
+  // and it changes orientation to landscape
+  if (self.textView.contentOffset.y < 0) {
+    self.textView.contentOffset = CGPointMake(self.textView.contentOffset.x, 0);
+  }
 }
 
 - (void)handleKeyboardHide:(NSNotification *)notification
