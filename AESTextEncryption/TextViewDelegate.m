@@ -46,7 +46,6 @@
 - (void)textViewDidChange:(UITextView *)textView
 {
   [self.vc updateEncryptButton];
-  [self fixIOS7TextViewBug:textView];
 }
 
 - (void)setTextPlaceholder: (UITextView *)textView
@@ -70,25 +69,6 @@
 {
   [self setTextPlaceholder: textView];
   [textView resignFirstResponder];
-}
-
-// http://stackoverflow.com/questions/18966675/uitextview-in-ios7-clips-the-last-line-of-text-string
-- (void)fixIOS7TextViewBug:(UITextView *)textView {
-  CGRect line = [textView caretRectForPosition:
-                 textView.selectedTextRange.start];
-  CGFloat overflow = line.origin.y + line.size.height
-  - ( textView.contentOffset.y + textView.bounds.size.height
-     - textView.contentInset.bottom - textView.contentInset.top );
-  if ( overflow > 0 ) {
-    // We are at the bottom of the visible text and introduced a line feed, scroll down (iOS 7 does not do it)
-    // Scroll caret to visible area
-    CGPoint offset = textView.contentOffset;
-    offset.y += overflow + 7; // leave 7 pixels margin
-    // Cannot animate with setContentOffset:animated: or caret will not appear
-    [UIView animateWithDuration:.2 animations:^{
-      [textView setContentOffset:offset];
-    }];
-  }
 }
 
 @end

@@ -77,7 +77,7 @@
   NSNotificationCenter* center = [NSNotificationCenter defaultCenter];
   [center addObserver:self
              selector:@selector(handleKeyboardShow:)
-                 name:UIKeyboardWillShowNotification
+                 name:UIKeyboardDidShowNotification
                object:nil];
 
   [center addObserver:self
