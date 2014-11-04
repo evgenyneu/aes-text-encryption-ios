@@ -78,7 +78,6 @@
 }
 
 - (void)toggleToolbarVisibility:(CGFloat)screenHeight {
-  NSLog(@"Screen height %f", screenHeight);
   if (screenHeight < 450) {
     [self hideToolbar];
   } else {
@@ -99,10 +98,8 @@
   [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
 
   if UIInterfaceOrientationIsPortrait(toInterfaceOrientation) {
-    NSLog(@"Portrait");
     [self toggleToolbarVisibility:MAX(self.view.bounds.size.width,self.view.bounds.size.height)];
   } else {
-    NSLog(@"Landscape");
     [self toggleToolbarVisibility:MIN(self.view.bounds.size.width,self.view.bounds.size.height)];
   }
 }

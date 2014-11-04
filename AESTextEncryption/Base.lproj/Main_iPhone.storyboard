@@ -44,11 +44,17 @@
                                     <segue destination="gqK-Ki-Ekk" kind="show" id="QaO-GD-9zB"/>
                                 </connections>
                             </button>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="L9w-bY-0v6">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9w-bY-0v6">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
-                                    <barButtonItem title="Item" id="X6G-BH-lHn"/>
+                                    <barButtonItem title="Copy" id="X6G-BH-lHn"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="fM2-Ko-81K"/>
+                                    <barButtonItem title="Paste" id="u6R-aQ-mzV"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="na2-i6-317"/>
+                                    <barButtonItem title="Clear" id="aeE-Sb-1c5"/>
                                 </items>
+                                <color key="tintColor" red="0.34421997582964942" green="0.74493634259259256" blue="0.37285033861409733" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
