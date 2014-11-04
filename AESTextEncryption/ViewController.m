@@ -49,12 +49,15 @@
   [self setTitleImage];
 
   [self toggleToolbarVisibility:self.view.bounds.size.height];
+
+  [self.messageTextView setTextContainerInset:UIEdgeInsetsMake(3, 0, 0, 0)];
 }
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
 {
   [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
   [self toggleToolbarVisibility:size.height];
+  [self fixTextViewContentOffsetBug];
 }
 
 // DEPRECATED in iOS 8: Remove this method when iOS7 support is dropped
@@ -121,8 +124,12 @@
   CGFloat height = rect.size.height;
   self.textBottomDistance.constant = height;
 
-  // Fix bug, when a blank inset appears on top, when cursor is at beginning of text view
-  // and it changes orientation to landscape
+  [self fixTextViewContentOffsetBug];
+}
+
+// Fix bug, when a blank inset appears on top, when cursor is at beginning of text view
+// and it changes orientation to landscape
+- (void)fixTextViewContentOffsetBug {
   if (self.messageTextView.contentOffset.y < 0) {
     self.messageTextView.contentOffset = CGPointMake(self.messageTextView.contentOffset.x, 0);
   }
