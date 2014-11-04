@@ -37,7 +37,6 @@
   [self.textViewDelegate setTextPlaceholder: self.messageTextView];
 
   [self registerKeyboardNotifications];
-  [self registerActiveNotification];
   [self.passwordTextField setValue: [TextViewDelegate placeholderColor] forKeyPath:@"_placeholderLabel.textColor"];
 
   [self setTitleImage];
@@ -176,25 +175,6 @@
 
 - (IBAction)decryptClicked:(UIBarButtonItem *)sender {
   [self decryptAndUpdate];
-}
-
-- (void) registerActiveNotification{
-  NSNotificationCenter* center = [NSNotificationCenter defaultCenter];
-  [center addObserver:self
-             selector:@selector(handleBecomeActive:)
-                 name:UIApplicationDidBecomeActiveNotification
-               object:nil];
-}
-
-- (void)handleBecomeActive:(NSNotification *)notification
-{
-  [self showTextToDecryptFromPasteboard];
-}
-
-- (void) showTextToDecryptFromPasteboard {
-  UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-  if (![self.encryptor isEncrypted: pasteboard.string]) return;
-  [self setMessage: pasteboard.string];
 }
 
 - (BOOL) isReadyToDecrypt {
