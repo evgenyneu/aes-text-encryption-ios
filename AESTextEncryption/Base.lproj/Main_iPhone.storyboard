@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="a7j-NT-i3N">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="a7j-NT-i3N">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
         <!--My View-->
@@ -14,11 +14,11 @@
                         <viewControllerLayoutGuide type="bottom" id="OW3-fG-tcd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5cf-P1-s5I">
-                                <rect key="frame" x="15" y="79" width="255" height="30"/>
+                                <rect key="frame" x="15" y="79" width="535" height="30"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <connections>
@@ -26,12 +26,12 @@
                                 </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="162-fu-lgA">
-                                <rect key="frame" x="16" y="113" width="288" height="445"/>
+                                <rect key="frame" x="16" y="113" width="568" height="477"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkt-ie-lhn">
-                                <rect key="frame" x="283" y="83" width="22" height="22"/>
+                                <rect key="frame" x="563" y="83" width="22" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="22" id="Bjq-xR-JLy"/>
                                 </constraints>
@@ -41,7 +41,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="gqK-Ki-Ekk" kind="push" id="QaO-GD-9zB"/>
+                                    <segue destination="gqK-Ki-Ekk" kind="show" id="QaO-GD-9zB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -82,7 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="627" y="71"/>
+            <point key="canvasLocation" x="1175.625" y="75"/>
         </scene>
         <!--Help-->
         <scene sceneID="L4V-cl-Sjt">
@@ -93,11 +93,11 @@
                         <viewControllerLayoutGuide type="bottom" id="f87-ld-bIo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="1Yh-vc-QJG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q82-w3-vbU">
-                                <rect key="frame" x="15" y="74" width="290" height="479"/>
+                                <rect key="frame" x="15" y="74" width="570" height="511"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -116,7 +116,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Drawing" id="P9s-Bz-FT7">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="W72-iA-Red" kind="push" id="KXw-eP-dOa"/>
+                                <segue destination="W72-iA-Red" kind="show" id="KXw-eP-dOa"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -126,7 +126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MjI-gE-S3c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1007" y="71"/>
+            <point key="canvasLocation" x="1888.125" y="75"/>
         </scene>
         <!--Crypto and Koo-->
         <scene sceneID="Smf-0l-Lpe">
@@ -137,11 +137,11 @@
                         <viewControllerLayoutGuide type="bottom" id="5ie-88-uQ3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xDA-A6-Lkd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help.png" translatesAutoresizingMaskIntoConstraints="NO" id="JZi-JF-H6x">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -156,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qvu-OY-XMq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1394" y="71"/>
+            <point key="canvasLocation" x="2613.75" y="75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1rg-oE-Sr6">
@@ -176,15 +176,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4j-KE-MoL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="246" y="71"/>
+            <point key="canvasLocation" x="461.25" y="75"/>
         </scene>
     </scenes>
     <resources>
         <image name="help.png" width="600" height="466"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

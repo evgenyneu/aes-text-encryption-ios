@@ -24,7 +24,6 @@
 		2B51DAC518288CAB008749DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B51DAC418288CAB008749DA /* main.m */; };
 		2B51DAC918288CAB008749DA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B51DAC818288CAB008749DA /* AppDelegate.m */; };
 		2B51DACC18288CAB008749DA /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B51DACA18288CAB008749DA /* Main_iPhone.storyboard */; };
-		2B51DACF18288CAB008749DA /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B51DACD18288CAB008749DA /* Main_iPad.storyboard */; };
 		2B51DAD218288CAB008749DA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B51DAD118288CAB008749DA /* ViewController.m */; };
 		2B51DAD418288CAB008749DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B51DAD318288CAB008749DA /* Images.xcassets */; };
 		2B51DAF61828D5E6008749DA /* AESEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B51DAF51828D5E6008749DA /* AESEncryptor.m */; };
@@ -71,7 +70,6 @@
 		2B51DAC718288CAB008749DA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2B51DAC818288CAB008749DA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2B51DACB18288CAB008749DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		2B51DACE18288CAB008749DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		2B51DAD018288CAB008749DA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		2B51DAD118288CAB008749DA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		2B51DAD318288CAB008749DA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -177,7 +175,6 @@
 				2B51DAC718288CAB008749DA /* AppDelegate.h */,
 				2B51DAC818288CAB008749DA /* AppDelegate.m */,
 				2B51DACA18288CAB008749DA /* Main_iPhone.storyboard */,
-				2B51DACD18288CAB008749DA /* Main_iPad.storyboard */,
 				2B51DAD018288CAB008749DA /* ViewController.h */,
 				2B51DAD118288CAB008749DA /* ViewController.m */,
 				2B51DAD318288CAB008749DA /* Images.xcassets */,
@@ -322,7 +319,6 @@
 				2B130D09185D897700D08633 /* help@2x.png in Resources */,
 				2B340DD8182E3E0E00FA36F6 /* md5.js in Resources */,
 				2BFF38ED184AE2E900F5D849 /* title@2x.png in Resources */,
-				2B51DACF18288CAB008749DA /* Main_iPad.storyboard in Resources */,
 				2B51DAD418288CAB008749DA /* Images.xcassets in Resources */,
 				2B51DACC18288CAB008749DA /* Main_iPhone.storyboard in Resources */,
 				2B51DAC318288CAB008749DA /* InfoPlist.strings in Resources */,
@@ -389,14 +385,6 @@
 				2B51DACB18288CAB008749DA /* Base */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		2B51DACD18288CAB008749DA /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2B51DACE18288CAB008749DA /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		2B64789C1880BC4F00AC0860 /* Localizable.strings */ = {
