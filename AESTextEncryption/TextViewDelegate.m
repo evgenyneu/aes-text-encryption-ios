@@ -45,7 +45,7 @@
 
 - (void)textViewDidChange:(UITextView *)textView
 {
-  [self.vc updateEncryptButton];
+  [self.vc showEncryptButton];
 }
 
 - (void)setTextPlaceholder: (UITextView *)textView

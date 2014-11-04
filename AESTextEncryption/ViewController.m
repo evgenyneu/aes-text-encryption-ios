@@ -43,7 +43,6 @@
   [self.keyText setValue: [TextViewDelegate placeholderColor] forKeyPath:@"_placeholderLabel.textColor"];
 
   [self setTitleImage];
-  [self updateEncryptButton];
 }
 
 - (void) setTitleImage {
@@ -109,22 +108,24 @@
   [TextViewDelegate setText:text forTextView:self.textView];
 }
 
+- (IBAction)onPasswordChanged:(id)sender {
+  [self showEncryptButton];
+}
+
 #pragma mark - Encrypt
 
-- (BOOL) isReadyToEncrypt {
-  if ([self keyTextStripped].length == 0) return NO;
-  if ([self messageStripped].length == 0) return NO;
-  return YES;
+- (void) showEncryptButton {
+  self.navigationItem.rightBarButtonItem = self.encryptButton;
 }
 
-- (void) updateEncryptButton {
-  [self toggleEncryptButton:[self isReadyToEncrypt]];
-}
-
-- (IBAction)encryptClicked:(UIBarButtonItem *)sender {
+- (void) showEncryptingSpinner {
   UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
   [spinner startAnimating];
   self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
+}
+
+- (IBAction)encryptClicked:(UIBarButtonItem *)sender {
+  [self showEncryptingSpinner];
 
   dispatch_queue_t encryptionQueue = dispatch_queue_create("encryption queue", NULL);
   dispatch_async(encryptionQueue, ^{
@@ -133,10 +134,18 @@
       if (encrypted) {
         UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
         pasteboard.string = encrypted;
+        [self setText:encrypted];
       }
-      [self showEncryptedMessage];
+      [self showEncryptionDidFinishMessage];
     });
   });
+}
+
+- (NSString *) encrypt
+{
+  NSString *encrypted = [self.encryptor encrypt:[self messageStripped] withKey:self.keyText.text];
+  if (![self.encryptor isEncrypted: encrypted]) return nil;
+  return encrypted;
 }
 
 - (UIBarButtonItem *) doneButton {
@@ -146,23 +155,8 @@
   return _doneButton;
 }
 
-- (void) showEncryptedMessage {
+- (void) showEncryptionDidFinishMessage {
   self.navigationItem.rightBarButtonItem = self.doneButton;
-}
-
-- (void) toggleEncryptButton: (BOOL) show {
-  if (show) {
-    self.navigationItem.rightBarButtonItem = self.encryptButton;
-  } else {
-    self.navigationItem.rightBarButtonItem = nil;
-  }
-}
-
-- (NSString *) encrypt
-{
-  NSString *encrypted = [self.encryptor encrypt:[self messageStripped] withKey:self.keyText.text];
-  if (![self.encryptor isEncrypted: encrypted]) return nil;
-  return encrypted;
 }
 
 #pragma mark - Decrypt

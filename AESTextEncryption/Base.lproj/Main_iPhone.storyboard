@@ -21,6 +21,9 @@
                                 <rect key="frame" x="15" y="79" width="535" height="30"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                <connections>
+                                    <action selector="onPasswordChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="CCe-T9-NH3"/>
+                                </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="162-fu-lgA">
                                 <rect key="frame" x="16" y="113" width="568" height="477"/>
