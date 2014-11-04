@@ -19,7 +19,6 @@
 @property (strong, nonatomic) TextViewDelegate *textViewDelegate;
 
 @property (strong, nonatomic) NSString *textToDecrypt;
-@property (strong, nonatomic) NSString *decryptedText;
 
 @property (strong, nonatomic) AESEncryptor* encryptor;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *encryptButton;
@@ -105,6 +104,11 @@
   self.textBottomDistance.constant = 10;
 }
 
+- (void)setText: (NSString*)text
+{
+  [TextViewDelegate setText:text forTextView:self.textView];
+}
+
 #pragma mark - Encrypt
 
 - (BOOL) isReadyToEncrypt {
@@ -163,44 +167,24 @@
 
 #pragma mark - Decrypt
 
-- (void) updateDecryptButton {
-  BOOL show = self.decryptedText && ![self.decryptedText isEqualToString:[self messageStripped]];
-  [self updateDecryptButtonTitle: self.decryptedText];
-  [self toggleDecryptButton:show];
+- (void) showDecryptButton {
+  self.navigationItem.leftBarButtonItem = self.decryptBarButton;
 }
 
-- (void) updateDecryptButtonTitle: (NSString*) title {
-  if (!title) return;
-  if (title.length > 10) {
-    title = [title substringToIndex:10];
-    title = [title stringByAppendingString:@"..."];
-  }
-  self.decryptBarButton.title = [@"↓" stringByAppendingString:title];
-}
-
-- (void) toggleDecryptButton: (BOOL) show {
-  if (show) {
-    self.navigationItem.leftBarButtonItem = self.decryptBarButton;
-  } else {
-    self.navigationItem.leftBarButtonItem = nil;
-  }
-}
-
-- (IBAction)keyTextEditingChanged:(id)sender {
-  [self updateEncryptButton];
-  [self decryptAndUpdatedAfterTimeout];
+- (void) showDecryptingSpinner {
+  UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+  [spinner startAnimating];
+  self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
 }
 
 - (void) getTextToDecryptFromPasteboard {
   UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
   if (![self.encryptor isEncrypted: pasteboard.string]) return;
-  self.textToDecrypt = pasteboard.string;
+  [self setText: pasteboard.string];
 }
 
 - (IBAction)decryptClicked:(UIBarButtonItem *)sender {
-  if (!self.decryptedText || self.decryptedText.length == 0) return;
-  [TextViewDelegate setText:self.decryptedText forTextView:self.textView];
-  [self updateDecryptButton];
+  [self decryptAndUpdate];
 }
 
 - (void) registerActiveNotification{
@@ -214,34 +198,12 @@
 - (void)handleBecomeActive:(NSNotification *)notification
 {
   [self getTextToDecryptFromPasteboard];
-  [self decryptAndUpdate];
 }
 
 - (NSString*) decrypt
 {
-  if (!self.textToDecrypt) return nil;
+  if (![self messageStripped]) return nil;
   return [self.encryptor decrypt:self.textToDecrypt withKey:self.keyText.text];
-}
-
-- (void) decryptTimerFired:(NSTimer *)timer {
-  [self decryptAndUpdate];
-}
-
-- (void) decryptAndUpdatedAfterTimeout {
-  if (!self.textToDecrypt) return;
-  [self.passwordDecryptTimer invalidate];
-
-  self.passwordDecryptTimer = [NSTimer scheduledTimerWithTimeInterval:0.5
-                                                               target:self
-                                                             selector:@selector(decryptTimerFired:)
-                                                             userInfo:nil
-                                                              repeats:NO];
-}
-
-- (void) showDecryptingSpinner {
-  UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-  [spinner startAnimating];
-  self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
 }
 
 - (void) decryptAndUpdate {
@@ -252,11 +214,9 @@
     NSString *decrypted = [self decrypt];
     dispatch_async(dispatch_get_main_queue(), ^{
       if (decrypted && decrypted.length > 0) {
-        self.decryptedText = decrypted;
-      } else {
-        self.decryptedText = nil;
+        [self setText:decrypted];
       }
-      [self updateDecryptButton];
+      [self showDecryptButton];
     });
   });
 }

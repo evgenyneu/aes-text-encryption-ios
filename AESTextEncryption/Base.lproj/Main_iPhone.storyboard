@@ -21,9 +21,6 @@
                                 <rect key="frame" x="15" y="79" width="535" height="30"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                                <connections>
-                                    <action selector="keyTextEditingChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="7Pt-8H-d8H"/>
-                                </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="162-fu-lgA">
                                 <rect key="frame" x="16" y="113" width="568" height="477"/>
@@ -59,7 +56,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Hdh-ZU-9az">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="iNy-W2-Yo4">
+                        <barButtonItem key="leftBarButtonItem" title="Decrypt" id="iNy-W2-Yo4">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="decryptClicked:" destination="vXZ-lx-hvc" id="AL8-iz-rdA"/>
