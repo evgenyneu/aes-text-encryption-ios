@@ -26,7 +26,7 @@
                                 </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="162-fu-lgA">
-                                <rect key="frame" x="16" y="113" width="568" height="477"/>
+                                <rect key="frame" x="16" y="113" width="568" height="433"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -44,18 +44,31 @@
                                     <segue destination="gqK-Ki-Ekk" kind="show" id="QaO-GD-9zB"/>
                                 </connections>
                             </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Sp-29-Pwz">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Copy" id="fdz-cR-N9y"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="VHe-is-x1S"/>
+                                    <barButtonItem title="Paste" id="tKA-vN-L3t"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="x2X-k3-t9s"/>
+                                    <barButtonItem title="Clear" id="mkQ-I8-9Yc"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5cf-P1-s5I" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="15" id="27n-2I-eIE"/>
                             <constraint firstItem="5cf-P1-s5I" firstAttribute="top" secondItem="vda-r8-dK0" secondAttribute="bottom" constant="15" id="IwQ-uw-Tpz"/>
+                            <constraint firstItem="OW3-fG-tcd" firstAttribute="top" secondItem="8Sp-29-Pwz" secondAttribute="bottom" id="Jj8-Km-QsV"/>
                             <constraint firstAttribute="trailing" secondItem="162-fu-lgA" secondAttribute="trailing" constant="16" id="ML2-Mb-sjH"/>
+                            <constraint firstItem="8Sp-29-Pwz" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="NRP-IL-SJw"/>
                             <constraint firstItem="162-fu-lgA" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="Ti3-Ew-tZF"/>
                             <constraint firstItem="bkt-ie-lhn" firstAttribute="centerY" secondItem="5cf-P1-s5I" secondAttribute="centerY" id="bxI-Z9-JYx"/>
                             <constraint firstAttribute="trailing" secondItem="bkt-ie-lhn" secondAttribute="trailing" constant="15" id="cdD-Yq-oga"/>
                             <constraint firstItem="162-fu-lgA" firstAttribute="top" secondItem="5cf-P1-s5I" secondAttribute="bottom" constant="4" id="epU-NS-gAA"/>
+                            <constraint firstAttribute="trailing" secondItem="8Sp-29-Pwz" secondAttribute="trailing" id="iw2-Tp-9tb"/>
                             <constraint firstItem="bkt-ie-lhn" firstAttribute="leading" secondItem="5cf-P1-s5I" secondAttribute="trailing" constant="13" id="lqX-iP-Dlh"/>
-                            <constraint firstItem="OW3-fG-tcd" firstAttribute="top" secondItem="162-fu-lgA" secondAttribute="bottom" constant="10" id="oSB-K5-qZ6"/>
+                            <constraint firstItem="8Sp-29-Pwz" firstAttribute="top" secondItem="162-fu-lgA" secondAttribute="bottom" constant="10" id="uKL-MO-sZR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Hdh-ZU-9az">
@@ -78,12 +91,12 @@
                         <outlet property="encryptButton" destination="4HM-Wu-gX7" id="xUc-j1-gVn"/>
                         <outlet property="messageTextView" destination="162-fu-lgA" id="t3a-Jk-YJi"/>
                         <outlet property="passwordTextField" destination="5cf-P1-s5I" id="7UC-LV-SKm"/>
-                        <outlet property="textBottomDistance" destination="oSB-K5-qZ6" id="olx-Aa-0rk"/>
+                        <outlet property="textBottomDistance" destination="Jj8-Km-QsV" id="VJQ-0O-Dbl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1175.625" y="75"/>
+            <point key="canvasLocation" x="1175" y="75"/>
         </scene>
         <!--Help-->
         <scene sceneID="L4V-cl-Sjt">

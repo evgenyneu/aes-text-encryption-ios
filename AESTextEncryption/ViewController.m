@@ -93,7 +93,7 @@
   CGRect rect = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
   rect = [self.view convertRect:rect fromView:nil]; // to handle orintation
   CGFloat height = rect.size.height;
-  self.textBottomDistance.constant = height + 10;
+  self.textBottomDistance.constant = height;
 
   // Fix bug, when a blank inset appears on top, when cursor is at beginning of text view
   // and it changes orientation to landscape
@@ -104,7 +104,7 @@
 
 - (void)handleKeyboardHide:(NSNotification *)notification
 {
-  self.textBottomDistance.constant = 10;
+  self.textBottomDistance.constant = 0;
 }
 
 - (IBAction)onPasswordChanged:(id)sender {
