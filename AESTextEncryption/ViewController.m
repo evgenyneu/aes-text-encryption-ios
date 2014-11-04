@@ -200,13 +200,16 @@
   [self getTextToDecryptFromPasteboard];
 }
 
-- (NSString*) decrypt
-{
-  if (![self messageStripped]) return nil;
-  return [self.encryptor decrypt:self.textToDecrypt withKey:self.keyText.text];
+- (BOOL) isReadyToDecrypt {
+  if ([self keyTextStripped].length == 0) return NO;
+  if ([self messageStripped].length == 0) return NO;
+  if (![self.encryptor isEncrypted: [self messageStripped]]) return NO;
+  return YES;
 }
 
 - (void) decryptAndUpdate {
+  if (![self isReadyToDecrypt]) { return; }
+
   [self showDecryptingSpinner];
 
   dispatch_queue_t decryptQueue = dispatch_queue_create("descryption queue", NULL);
@@ -219,6 +222,12 @@
       [self showDecryptButton];
     });
   });
+}
+
+- (NSString*) decrypt
+{
+  if (![self messageStripped]) return nil;
+  return [self.encryptor decrypt:self.textToDecrypt withKey:self.keyText.text];
 }
 
 @end
