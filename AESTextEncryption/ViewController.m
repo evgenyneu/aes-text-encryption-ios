@@ -114,10 +114,31 @@
 #pragma mark - Encrypt
 
 - (void) showEncryptButton {
+  [self invalidateEncryptSpinnerTimer];
   self.navigationItem.rightBarButtonItem = self.encryptButton;
 }
 
+- (void) showEncryptionDidFinishMessage {
+  [self invalidateEncryptSpinnerTimer];
+  self.navigationItem.rightBarButtonItem = self.doneButton;
+}
+
+- (void) invalidateEncryptSpinnerTimer {
+  if (self.encryptSpinnerTimer) {
+    [self.encryptSpinnerTimer invalidate];
+    self.encryptSpinnerTimer = nil;
+  }
+}
+
 - (void) showEncryptingSpinner {
+  self.encryptSpinnerTimer = [NSTimer scheduledTimerWithTimeInterval:0.1
+                                                              target:self
+                                                            selector:@selector(onShowEncryptSpinnerTimer:)
+                                                            userInfo:nil
+                                                             repeats:NO];
+}
+
+- (void) onShowEncryptSpinnerTimer:(NSTimer*)timer {
   UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
   [spinner startAnimating];
   self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
@@ -158,11 +179,6 @@
   return _doneButton;
 }
 
-- (void) showEncryptionDidFinishMessage {
-  self.navigationItem.rightBarButtonItem = self.doneButton;
-}
-
-
 #pragma mark - Decrypt
 
 - (void) showDecryptButton {
@@ -177,13 +193,13 @@
 - (void) showDecryptingSpinner {
   self.decryptSpinnerTimer = [NSTimer scheduledTimerWithTimeInterval:0.1
                                                        target:self
-                                                     selector:@selector(onShowDecryptSpinnerOnTimer:)
+                                                     selector:@selector(onShowDecryptSpinnerTimer:)
                                                      userInfo:nil
                                                       repeats:NO];
 
 }
 
-- (void) onShowDecryptSpinnerOnTimer:(NSTimer*)timer {
+- (void) onShowDecryptSpinnerTimer:(NSTimer*)timer {
   UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
   [spinner startAnimating];
   self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
