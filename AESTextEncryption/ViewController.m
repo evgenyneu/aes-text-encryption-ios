@@ -148,7 +148,9 @@
 
 - (UIBarButtonItem *) doneButton {
   if (!_doneButton) {
-    _doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Copied✓" style:UIBarButtonItemStylePlain target:nil action:nil];
+    _doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Copied✓"
+                                                   style:UIBarButtonItemStylePlain
+                                                  target:self action:@selector(encryptClicked:)];
   }
   return _doneButton;
 }
@@ -156,6 +158,7 @@
 - (void) showEncryptionDidFinishMessage {
   self.navigationItem.rightBarButtonItem = self.doneButton;
 }
+
 
 #pragma mark - Decrypt
 
@@ -212,6 +215,7 @@
         [self setMessage:decrypted];
       }
       [self showDecryptButton];
+      [self showEncryptButton];
     });
   });
 }
