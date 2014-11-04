@@ -133,8 +133,10 @@
         UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
         pasteboard.string = encrypted;
         [self setMessage:encrypted];
+        [self showEncryptionDidFinishMessage];
+      } else {
+        [self showEncryptButton];
       }
-      [self showEncryptionDidFinishMessage];
     });
   });
 }
