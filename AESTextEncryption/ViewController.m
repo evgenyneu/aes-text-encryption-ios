@@ -24,7 +24,9 @@
 
 @property (strong, nonatomic) UIBarButtonItem *doneButton;
 
-@property (nonatomic, weak) NSTimer* passwordDecryptTimer;
+@property (nonatomic, weak) NSTimer* decryptSpinnerTimer;
+@property (nonatomic, weak) NSTimer* encryptSpinnerTimer;
+
 
 @end
 
@@ -164,10 +166,24 @@
 #pragma mark - Decrypt
 
 - (void) showDecryptButton {
+  if (self.decryptSpinnerTimer) {
+    [self.decryptSpinnerTimer invalidate];
+    self.decryptSpinnerTimer = nil;
+  }
+
   self.navigationItem.leftBarButtonItem = self.decryptBarButton;
 }
 
 - (void) showDecryptingSpinner {
+  self.decryptSpinnerTimer = [NSTimer scheduledTimerWithTimeInterval:0.1
+                                                       target:self
+                                                     selector:@selector(onShowDecryptSpinnerOnTimer:)
+                                                     userInfo:nil
+                                                      repeats:NO];
+
+}
+
+- (void) onShowDecryptSpinnerOnTimer:(NSTimer*)timer {
   UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
   [spinner startAnimating];
   self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
