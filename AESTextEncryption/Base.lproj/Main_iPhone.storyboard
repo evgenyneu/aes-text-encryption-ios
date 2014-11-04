@@ -48,11 +48,23 @@
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
-                                    <barButtonItem title="Copy" id="X6G-BH-lHn"/>
+                                    <barButtonItem title="Copy" id="X6G-BH-lHn">
+                                        <connections>
+                                            <action selector="onCopyTapped:" destination="vXZ-lx-hvc" id="uNe-i6-ECg"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="fM2-Ko-81K"/>
-                                    <barButtonItem title="Paste" id="u6R-aQ-mzV"/>
+                                    <barButtonItem title="Paste" id="u6R-aQ-mzV">
+                                        <connections>
+                                            <action selector="onPasteTapped:" destination="vXZ-lx-hvc" id="K9D-DL-D3Z"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="na2-i6-317"/>
-                                    <barButtonItem title="Clear" id="aeE-Sb-1c5"/>
+                                    <barButtonItem title="Clear" id="aeE-Sb-1c5">
+                                        <connections>
+                                            <action selector="onClearTapped:" destination="vXZ-lx-hvc" id="VmY-xa-HfM"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                                 <color key="tintColor" red="0.34421997582964942" green="0.74493634259259256" blue="0.37285033861409733" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>

@@ -51,40 +51,6 @@
   [self toggleToolbarVisibility:self.view.bounds.size.height];
 }
 
-- (void)hideToolbar {
-  if (!self.toolbarZeroHeightConstraint) {
-    self.toolbarZeroHeightConstraint = [NSLayoutConstraint constraintWithItem:self.toolbar
-                                                                    attribute:NSLayoutAttributeHeight
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:nil
-                                                                    attribute:NSLayoutAttributeHeight
-                                                                   multiplier:1
-                                                                     constant:0];
-    
-    [self.toolbar addConstraint:self.toolbarZeroHeightConstraint];
-  }
-
-
-  self.toolbar.hidden = true;
-}
-
-- (void)showToolbar {
-  if (self.toolbarZeroHeightConstraint) {
-    [self.toolbar removeConstraint:self.toolbarZeroHeightConstraint];
-    self.toolbarZeroHeightConstraint = nil;
-  }
-  self.toolbar.hidden = false;
-  [self.toolbar layoutIfNeeded];
-}
-
-- (void)toggleToolbarVisibility:(CGFloat)screenHeight {
-  if (screenHeight < 450) {
-    [self hideToolbar];
-  } else {
-    [self showToolbar];
-  }
-}
-
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
 {
   [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
@@ -169,6 +135,56 @@
 
 - (IBAction)onPasswordChanged:(id)sender {
   [self showEncryptButton];
+}
+
+#pragma mark - Toolbar
+
+- (void)hideToolbar {
+  if (!self.toolbarZeroHeightConstraint) {
+    self.toolbarZeroHeightConstraint = [NSLayoutConstraint constraintWithItem:self.toolbar
+                                                                    attribute:NSLayoutAttributeHeight
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:nil
+                                                                    attribute:NSLayoutAttributeHeight
+                                                                   multiplier:1
+                                                                     constant:0];
+
+    [self.toolbar addConstraint:self.toolbarZeroHeightConstraint];
+  }
+
+  self.toolbar.hidden = true;
+}
+
+- (void)showToolbar {
+  if (self.toolbarZeroHeightConstraint) {
+    [self.toolbar removeConstraint:self.toolbarZeroHeightConstraint];
+    self.toolbarZeroHeightConstraint = nil;
+  }
+  self.toolbar.hidden = false;
+  [self.toolbar layoutIfNeeded];
+}
+
+- (void)toggleToolbarVisibility:(CGFloat)screenHeight {
+  if (screenHeight < 450) {
+    [self hideToolbar];
+  } else {
+    [self showToolbar];
+  }
+}
+
+- (IBAction)onCopyTapped:(id)sender {
+  if ([self messageStripped].length == 0) { return; }
+  UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+  pasteboard.string = [self messageStripped];
+}
+
+- (IBAction)onPasteTapped:(id)sender {
+  UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+  [self setMessage: pasteboard.string];
+}
+
+- (IBAction)onClearTapped:(id)sender {
+  [self setMessage: @""];
 }
 
 #pragma mark - Encrypt
