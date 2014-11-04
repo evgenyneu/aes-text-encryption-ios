@@ -16,6 +16,10 @@
 @property (weak, nonatomic) IBOutlet UITextView *messageTextView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textBottomDistance;
 
+@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
+
+@property (nonatomic, strong) NSLayoutConstraint *toolbarZeroHeightConstraint;
+
 @property (strong, nonatomic) TextViewDelegate *textViewDelegate;
 
 @property (strong, nonatomic) AESEncryptor* encryptor;
@@ -24,8 +28,8 @@
 
 @property (strong, nonatomic) UIBarButtonItem *doneButton;
 
-@property (nonatomic, weak) NSTimer* decryptSpinnerTimer;
-@property (nonatomic, weak) NSTimer* encryptSpinnerTimer;
+@property (strong, nonatomic) NSTimer* decryptSpinnerTimer;
+@property (strong, nonatomic) NSTimer* encryptSpinnerTimer;
 
 
 @end
@@ -41,7 +45,66 @@
   [self registerKeyboardNotifications];
   [self.passwordTextField setValue: [TextViewDelegate placeholderColor] forKeyPath:@"_placeholderLabel.textColor"];
 
+  [self showToolbar];
   [self setTitleImage];
+
+  [self toggleToolbarVisibility:self.view.bounds.size.height];
+}
+
+- (void)hideToolbar {
+  if (!self.toolbarZeroHeightConstraint) {
+    self.toolbarZeroHeightConstraint = [NSLayoutConstraint constraintWithItem:self.toolbar
+                                                                    attribute:NSLayoutAttributeHeight
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:nil
+                                                                    attribute:NSLayoutAttributeHeight
+                                                                   multiplier:1
+                                                                     constant:0];
+    
+    [self.toolbar addConstraint:self.toolbarZeroHeightConstraint];
+  }
+
+
+  self.toolbar.hidden = true;
+}
+
+- (void)showToolbar {
+  if (self.toolbarZeroHeightConstraint) {
+    [self.toolbar removeConstraint:self.toolbarZeroHeightConstraint];
+    self.toolbarZeroHeightConstraint = nil;
+  }
+  self.toolbar.hidden = false;
+  [self.toolbar layoutIfNeeded];
+}
+
+- (void)toggleToolbarVisibility:(CGFloat)screenHeight {
+  NSLog(@"Screen height %f", screenHeight);
+  if (screenHeight < 450) {
+    [self hideToolbar];
+  } else {
+    [self showToolbar];
+  }
+}
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
+{
+  [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+  [self toggleToolbarVisibility:size.height];
+}
+
+// DEPRECATED in iOS 8: Remove this method when iOS7 support is dropped
+// viewWillTransitionToSize is replacing it in iOS 8.
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+  [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+
+  if UIInterfaceOrientationIsPortrait(toInterfaceOrientation) {
+    NSLog(@"Portrait");
+    [self toggleToolbarVisibility:MAX(self.view.bounds.size.width,self.view.bounds.size.height)];
+  } else {
+    NSLog(@"Landscape");
+    [self toggleToolbarVisibility:MIN(self.view.bounds.size.width,self.view.bounds.size.height)];
+  }
 }
 
 - (void) setTitleImage {

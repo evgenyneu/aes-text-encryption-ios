@@ -44,31 +44,27 @@
                                     <segue destination="gqK-Ki-Ekk" kind="show" id="QaO-GD-9zB"/>
                                 </connections>
                             </button>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Sp-29-Pwz">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="L9w-bY-0v6">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem title="Copy" id="fdz-cR-N9y"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="VHe-is-x1S"/>
-                                    <barButtonItem title="Paste" id="tKA-vN-L3t"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="x2X-k3-t9s"/>
-                                    <barButtonItem title="Clear" id="mkQ-I8-9Yc"/>
+                                    <barButtonItem title="Item" id="X6G-BH-lHn"/>
                                 </items>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5cf-P1-s5I" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="15" id="27n-2I-eIE"/>
+                            <constraint firstItem="L9w-bY-0v6" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="3OE-GK-l8p"/>
                             <constraint firstItem="5cf-P1-s5I" firstAttribute="top" secondItem="vda-r8-dK0" secondAttribute="bottom" constant="15" id="IwQ-uw-Tpz"/>
-                            <constraint firstItem="OW3-fG-tcd" firstAttribute="top" secondItem="8Sp-29-Pwz" secondAttribute="bottom" id="Jj8-Km-QsV"/>
                             <constraint firstAttribute="trailing" secondItem="162-fu-lgA" secondAttribute="trailing" constant="16" id="ML2-Mb-sjH"/>
-                            <constraint firstItem="8Sp-29-Pwz" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="NRP-IL-SJw"/>
                             <constraint firstItem="162-fu-lgA" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="Ti3-Ew-tZF"/>
+                            <constraint firstAttribute="trailing" secondItem="L9w-bY-0v6" secondAttribute="trailing" id="ToD-BA-z5k"/>
+                            <constraint firstItem="OW3-fG-tcd" firstAttribute="top" secondItem="L9w-bY-0v6" secondAttribute="bottom" id="VdY-9Y-thA"/>
                             <constraint firstItem="bkt-ie-lhn" firstAttribute="centerY" secondItem="5cf-P1-s5I" secondAttribute="centerY" id="bxI-Z9-JYx"/>
                             <constraint firstAttribute="trailing" secondItem="bkt-ie-lhn" secondAttribute="trailing" constant="15" id="cdD-Yq-oga"/>
                             <constraint firstItem="162-fu-lgA" firstAttribute="top" secondItem="5cf-P1-s5I" secondAttribute="bottom" constant="4" id="epU-NS-gAA"/>
-                            <constraint firstAttribute="trailing" secondItem="8Sp-29-Pwz" secondAttribute="trailing" id="iw2-Tp-9tb"/>
                             <constraint firstItem="bkt-ie-lhn" firstAttribute="leading" secondItem="5cf-P1-s5I" secondAttribute="trailing" constant="13" id="lqX-iP-Dlh"/>
-                            <constraint firstItem="8Sp-29-Pwz" firstAttribute="top" secondItem="162-fu-lgA" secondAttribute="bottom" constant="10" id="uKL-MO-sZR"/>
+                            <constraint firstItem="L9w-bY-0v6" firstAttribute="top" secondItem="162-fu-lgA" secondAttribute="bottom" constant="10" id="sBA-6w-S21"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Hdh-ZU-9az">
@@ -91,7 +87,8 @@
                         <outlet property="encryptButton" destination="4HM-Wu-gX7" id="xUc-j1-gVn"/>
                         <outlet property="messageTextView" destination="162-fu-lgA" id="t3a-Jk-YJi"/>
                         <outlet property="passwordTextField" destination="5cf-P1-s5I" id="7UC-LV-SKm"/>
-                        <outlet property="textBottomDistance" destination="Jj8-Km-QsV" id="VJQ-0O-Dbl"/>
+                        <outlet property="textBottomDistance" destination="VdY-9Y-thA" id="TVo-XN-7OD"/>
+                        <outlet property="toolbar" destination="L9w-bY-0v6" id="jJV-8s-Yh0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
