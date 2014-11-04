@@ -181,10 +181,12 @@
 - (IBAction)onPasteTapped:(id)sender {
   UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
   [self setMessage: pasteboard.string];
+  [self showEncryptButton];
 }
 
 - (IBAction)onClearTapped:(id)sender {
   [self setMessage: @""];
+  [self showEncryptButton];
 }
 
 #pragma mark - Encrypt
