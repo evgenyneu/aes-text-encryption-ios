@@ -12,13 +12,11 @@
 
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextField *keyText;
-@property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UITextView *messageTextView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textBottomDistance;
 
 @property (strong, nonatomic) TextViewDelegate *textViewDelegate;
-
-@property (strong, nonatomic) NSString *textToDecrypt;
 
 @property (strong, nonatomic) AESEncryptor* encryptor;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *encryptButton;
@@ -35,12 +33,12 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  self.textView.delegate = self.textViewDelegate;
-  [self.textViewDelegate setTextPlaceholder: self.textView];
+  self.messageTextView.delegate = self.textViewDelegate;
+  [self.textViewDelegate setTextPlaceholder: self.messageTextView];
 
   [self registerKeyboardNotifications];
   [self registerActiveNotification];
-  [self.keyText setValue: [TextViewDelegate placeholderColor] forKeyPath:@"_placeholderLabel.textColor"];
+  [self.passwordTextField setValue: [TextViewDelegate placeholderColor] forKeyPath:@"_placeholderLabel.textColor"];
 
   [self setTitleImage];
 }
@@ -56,11 +54,16 @@
 }
 
 - (NSString *) keyTextStripped {
-  return [AESEncryptor strip: self.keyText.text];
+  return [AESEncryptor strip: self.passwordTextField.text];
 }
 
 - (NSString *) messageStripped {
-  return [TextViewDelegate text:self.textView.text];
+  return [TextViewDelegate text:self.messageTextView.text];
+}
+
+- (void)setMessage: (NSString*)text
+{
+  [TextViewDelegate setText:text forTextView:self.messageTextView];
 }
 
 - (TextViewDelegate *) textViewDelegate {
@@ -93,19 +96,14 @@
 
   // Fix bug, when a blank inset appears on top, when cursor is at beginning of text view
   // and it changes orientation to landscape
-  if (self.textView.contentOffset.y < 0) {
-    self.textView.contentOffset = CGPointMake(self.textView.contentOffset.x, 0);
+  if (self.messageTextView.contentOffset.y < 0) {
+    self.messageTextView.contentOffset = CGPointMake(self.messageTextView.contentOffset.x, 0);
   }
 }
 
 - (void)handleKeyboardHide:(NSNotification *)notification
 {
   self.textBottomDistance.constant = 10;
-}
-
-- (void)setText: (NSString*)text
-{
-  [TextViewDelegate setText:text forTextView:self.textView];
 }
 
 - (IBAction)onPasswordChanged:(id)sender {
@@ -134,7 +132,7 @@
       if (encrypted) {
         UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
         pasteboard.string = encrypted;
-        [self setText:encrypted];
+        [self setMessage:encrypted];
       }
       [self showEncryptionDidFinishMessage];
     });
@@ -143,7 +141,7 @@
 
 - (NSString *) encrypt
 {
-  NSString *encrypted = [self.encryptor encrypt:[self messageStripped] withKey:self.keyText.text];
+  NSString *encrypted = [self.encryptor encrypt:[self messageStripped] withKey:[self keyTextStripped]];
   if (![self.encryptor isEncrypted: encrypted]) return nil;
   return encrypted;
 }
@@ -171,12 +169,6 @@
   self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
 }
 
-- (void) getTextToDecryptFromPasteboard {
-  UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-  if (![self.encryptor isEncrypted: pasteboard.string]) return;
-  [self setText: pasteboard.string];
-}
-
 - (IBAction)decryptClicked:(UIBarButtonItem *)sender {
   [self decryptAndUpdate];
 }
@@ -191,7 +183,13 @@
 
 - (void)handleBecomeActive:(NSNotification *)notification
 {
-  [self getTextToDecryptFromPasteboard];
+  [self showTextToDecryptFromPasteboard];
+}
+
+- (void) showTextToDecryptFromPasteboard {
+  UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+  if (![self.encryptor isEncrypted: pasteboard.string]) return;
+  [self setMessage: pasteboard.string];
 }
 
 - (BOOL) isReadyToDecrypt {
@@ -211,7 +209,7 @@
     NSString *decrypted = [self decrypt];
     dispatch_async(dispatch_get_main_queue(), ^{
       if (decrypted && decrypted.length > 0) {
-        [self setText:decrypted];
+        [self setMessage:decrypted];
       }
       [self showDecryptButton];
     });
@@ -221,7 +219,7 @@
 - (NSString*) decrypt
 {
   if (![self messageStripped]) return nil;
-  return [self.encryptor decrypt:self.textToDecrypt withKey:self.keyText.text];
+  return [self.encryptor decrypt:[self messageStripped] withKey:[self keyTextStripped]];
 }
 
 @end

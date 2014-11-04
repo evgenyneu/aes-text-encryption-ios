@@ -75,9 +75,9 @@
                     <connections>
                         <outlet property="decryptBarButton" destination="iNy-W2-Yo4" id="Hdl-dv-j9f"/>
                         <outlet property="encryptButton" destination="4HM-Wu-gX7" id="xUc-j1-gVn"/>
-                        <outlet property="keyText" destination="5cf-P1-s5I" id="GSs-et-ovt"/>
+                        <outlet property="messageTextView" destination="162-fu-lgA" id="t3a-Jk-YJi"/>
+                        <outlet property="passwordTextField" destination="5cf-P1-s5I" id="7UC-LV-SKm"/>
                         <outlet property="textBottomDistance" destination="oSB-K5-qZ6" id="olx-Aa-0rk"/>
-                        <outlet property="textView" destination="162-fu-lgA" id="V9z-oZ-rJh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
