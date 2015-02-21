@@ -195,7 +195,6 @@
     self.toolbarZeroHeightConstraint = nil;
   }
   self.toolbar.hidden = false;
-  [self.toolbar layoutIfNeeded];
 }
 
 - (void)toggleToolbarVisibility:(CGFloat)screenHeight {
