@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="a7j-NT-i3N">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="a7j-NT-i3N">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--My View-->
@@ -18,13 +18,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="162-fu-lgA">
-                                <rect key="frame" x="10" y="108" width="580" height="448"/>
+                                <rect key="frame" x="11" y="125" width="578" height="431"/>
                                 <accessibility key="accessibilityConfiguration" hint="Message" label=""/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkt-ie-lhn">
-                                <rect key="frame" x="563" y="78" width="22" height="22"/>
+                                <rect key="frame" x="563" y="84" width="22" height="22"/>
                                 <accessibility key="accessibilityConfiguration" hint="Help"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="22" id="Bjq-xR-JLy"/>
@@ -62,9 +62,12 @@
                                 </items>
                                 <color key="tintColor" red="0.34421997582964942" green="0.74493634259259256" blue="0.37285033861409733" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5cf-P1-s5I">
-                                <rect key="frame" x="10" y="74" width="540" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="27" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5cf-P1-s5I" customClass="UIPasswordTextField">
+                                <rect key="frame" x="10" y="75" width="540" height="40"/>
                                 <accessibility key="accessibilityConfiguration" hint="Password" label=""/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="SBf-fx-BIT"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                 <connections>
@@ -76,14 +79,14 @@
                         <constraints>
                             <constraint firstItem="5cf-P1-s5I" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="10" id="27n-2I-eIE"/>
                             <constraint firstItem="L9w-bY-0v6" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="3OE-GK-l8p"/>
-                            <constraint firstItem="5cf-P1-s5I" firstAttribute="top" secondItem="vda-r8-dK0" secondAttribute="bottom" constant="10" id="IwQ-uw-Tpz"/>
-                            <constraint firstAttribute="trailing" secondItem="162-fu-lgA" secondAttribute="trailing" constant="10" id="ML2-Mb-sjH"/>
-                            <constraint firstItem="162-fu-lgA" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="10" id="Ti3-Ew-tZF"/>
+                            <constraint firstItem="5cf-P1-s5I" firstAttribute="top" secondItem="vda-r8-dK0" secondAttribute="bottom" constant="11" id="IwQ-uw-Tpz"/>
+                            <constraint firstAttribute="trailing" secondItem="162-fu-lgA" secondAttribute="trailing" constant="11" id="ML2-Mb-sjH"/>
+                            <constraint firstItem="162-fu-lgA" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="11" id="Ti3-Ew-tZF"/>
                             <constraint firstAttribute="trailing" secondItem="L9w-bY-0v6" secondAttribute="trailing" id="ToD-BA-z5k"/>
                             <constraint firstItem="OW3-fG-tcd" firstAttribute="top" secondItem="L9w-bY-0v6" secondAttribute="bottom" id="VdY-9Y-thA"/>
                             <constraint firstItem="bkt-ie-lhn" firstAttribute="centerY" secondItem="5cf-P1-s5I" secondAttribute="centerY" id="bxI-Z9-JYx"/>
                             <constraint firstAttribute="trailing" secondItem="bkt-ie-lhn" secondAttribute="trailing" constant="15" id="cdD-Yq-oga"/>
-                            <constraint firstItem="162-fu-lgA" firstAttribute="top" secondItem="5cf-P1-s5I" secondAttribute="bottom" constant="4" id="epU-NS-gAA"/>
+                            <constraint firstItem="162-fu-lgA" firstAttribute="top" secondItem="5cf-P1-s5I" secondAttribute="bottom" constant="10" id="epU-NS-gAA"/>
                             <constraint firstItem="bkt-ie-lhn" firstAttribute="leading" secondItem="5cf-P1-s5I" secondAttribute="trailing" constant="13" id="lqX-iP-Dlh"/>
                             <constraint firstItem="L9w-bY-0v6" firstAttribute="top" secondItem="162-fu-lgA" secondAttribute="bottom" id="sBA-6w-S21"/>
                         </constraints>
