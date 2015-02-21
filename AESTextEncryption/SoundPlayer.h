@@ -11,4 +11,7 @@
 
 @interface iiSoundPlayer : NSObject
 
+- (id)initWithSoundName:(NSString*) fileName;
+- (void) playAtVolume: (float)volume;
+
 @end

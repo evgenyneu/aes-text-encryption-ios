@@ -10,6 +10,8 @@
 		2B130D09185D897700D08633 /* help@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B130D08185D897700D08633 /* help@2x.png */; };
 		2B130D0A185D974300D08633 /* aes_crypto.js in Resources */ = {isa = PBXBuildFile; fileRef = 2BF458851849AFFB007F0821 /* aes_crypto.js */; };
 		2B2174C41A986A5800E57C33 /* SoundPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2174C31A986A5800E57C33 /* SoundPlayer.m */; };
+		2B2174C91A986EFD00E57C33 /* tick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2B2174C71A986EFD00E57C33 /* tick.mp3 */; };
+		2B2174CA1A986EFD00E57C33 /* twitch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2B2174C81A986EFD00E57C33 /* twitch.mp3 */; };
 		2B340DD3182E3E0E00FA36F6 /* aes.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B340DC7182E3DEC00FA36F6 /* aes.js */; };
 		2B340DD4182E3E0E00FA36F6 /* cipher-core.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B340DC8182E3DEC00FA36F6 /* cipher-core.js */; };
 		2B340DD5182E3E0E00FA36F6 /* core.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B340DC9182E3DEC00FA36F6 /* core.js */; };
@@ -54,6 +56,8 @@
 		2B130D08185D897700D08633 /* help@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "help@2x.png"; sourceTree = "<group>"; };
 		2B2174C31A986A5800E57C33 /* SoundPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundPlayer.m; sourceTree = "<group>"; };
 		2B2174C51A986AA900E57C33 /* SoundPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoundPlayer.h; sourceTree = "<group>"; };
+		2B2174C71A986EFD00E57C33 /* tick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tick.mp3; sourceTree = "<group>"; };
+		2B2174C81A986EFD00E57C33 /* twitch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = twitch.mp3; sourceTree = "<group>"; };
 		2B340DC7182E3DEC00FA36F6 /* aes.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = aes.js; sourceTree = "<group>"; };
 		2B340DC8182E3DEC00FA36F6 /* cipher-core.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "cipher-core.js"; sourceTree = "<group>"; };
 		2B340DC9182E3DEC00FA36F6 /* core.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = core.js; sourceTree = "<group>"; };
@@ -127,6 +131,15 @@
 			name = images;
 			sourceTree = "<group>";
 		};
+		2B2174C61A986EEF00E57C33 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				2B2174C71A986EFD00E57C33 /* tick.mp3 */,
+				2B2174C81A986EFD00E57C33 /* twitch.mp3 */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
 		2B340DB8182E3A8800FA36F6 /* crypto-js */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +189,7 @@
 			children = (
 				2B1CEB141837295700D3346C /* images */,
 				2B51DAF81828DF75008749DA /* javascript */,
+				2B2174C61A986EEF00E57C33 /* Sounds */,
 				2B51DAC718288CAB008749DA /* AppDelegate.h */,
 				2B51DAC818288CAB008749DA /* AppDelegate.m */,
 				2B0B7C571A9822D8002E05E2 /* constants.h */,
@@ -321,11 +335,13 @@
 				2B340DD4182E3E0E00FA36F6 /* cipher-core.js in Resources */,
 				2B64789A1880BC4F00AC0860 /* Localizable.strings in Resources */,
 				2B340DD5182E3E0E00FA36F6 /* core.js in Resources */,
+				2B2174C91A986EFD00E57C33 /* tick.mp3 in Resources */,
 				2B340DD6182E3E0E00FA36F6 /* enc-base64.js in Resources */,
 				2B340DD7182E3E0E00FA36F6 /* evpkdf.js in Resources */,
 				2B130D09185D897700D08633 /* help@2x.png in Resources */,
 				2B340DD8182E3E0E00FA36F6 /* md5.js in Resources */,
 				2BFF38ED184AE2E900F5D849 /* title@2x.png in Resources */,
+				2B2174CA1A986EFD00E57C33 /* twitch.mp3 in Resources */,
 				2B51DAD418288CAB008749DA /* Images.xcassets in Resources */,
 				2B51DACC18288CAB008749DA /* Main_iPhone.storyboard in Resources */,
 				2B51DAC318288CAB008749DA /* InfoPlist.strings in Resources */,

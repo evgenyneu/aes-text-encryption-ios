@@ -10,6 +10,7 @@
 #import "AESEncryptor.h"
 #import "TextViewDelegate.h"
 #import "constants.h"
+#import "SoundPlayer.h"
 
 @interface ViewController ()
 
@@ -35,6 +36,7 @@
 @property (strong, nonatomic) NSTimer* decryptSpinnerTimer;
 @property (strong, nonatomic) NSTimer* encryptSpinnerTimer;
 
+@property (nonatomic, strong) iiSoundPlayer *tickPlayer;
 
 @end
 
@@ -53,6 +55,8 @@
   [self setTitleImage];
 
   [self.messageTextView setTextContainerInset:UIEdgeInsetsMake(3, 0, 0, 0)];
+
+  self.tickPlayer = [[iiSoundPlayer alloc] initWithSoundName:@"tick.mp3"];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -157,6 +161,12 @@
   [self showEncryptButton];
 }
 
+#pragma mark - Sounds
+
+- (void)playTick {
+  [self.tickPlayer playAtVolume:1];
+}
+
 #pragma mark - Compact layout
 
 - (void)toggleCompactLayout:(CGFloat)screenHeight {
@@ -206,6 +216,7 @@
 }
 
 - (IBAction)onCopyTapped:(id)sender {
+  [self playTick];
   if ([self messageStripped].length == 0) { return; }
   UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
   pasteboard.string = [self messageStripped];
@@ -215,11 +226,13 @@
   UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
   [self setMessage: pasteboard.string];
   [self showEncryptButton];
+  [self playTick];
 }
 
 - (IBAction)onClearTapped:(id)sender {
   [self setMessage: @""];
   [self showEncryptButton];
+  [self playTick];
 }
 
 #pragma mark - Encrypt
@@ -267,6 +280,7 @@
         pasteboard.string = encrypted;
         [self setMessage:encrypted];
         [self showEncryptionDidFinishMessage];
+        [self playTick];
       } else {
         [self showEncryptButton];
       }
@@ -338,6 +352,7 @@
     dispatch_async(dispatch_get_main_queue(), ^{
       if (decrypted && decrypted.length > 0) {
         [self setMessage:decrypted];
+        [self playTick];
       }
       [self showDecryptButton];
       [self showEncryptButton];
