@@ -13,5 +13,7 @@
 
 - (id)initWithSoundName:(NSString*) fileName;
 - (void) playAtVolume: (float)volume;
+- (void)playAsyncAtVolume: (float)volume;
+- (void)prepareToPlay;
 
 @end

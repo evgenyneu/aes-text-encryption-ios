@@ -30,20 +30,30 @@
 }
 
 // Allows the sounds to be played with sounds from other apps
-- (void) setAudioSessionToAmbient {
+- (void)setAudioSessionToAmbient {
   NSError *sessionError = nil;
   AVAudioSession *session = [AVAudioSession sharedInstance];
   [session setCategory:AVAudioSessionCategoryAmbient error:&sessionError];
   [session setActive:true error:&sessionError];
-
 }
 
-- (void) playAtVolume: (float)volume {
+- (void)playAtVolume: (float)volume {
   if (!self.player) { return; }
 
   self.player.currentTime = 0;
   self.player.volume = volume;
   [self.player play];
+}
+
+- (void)playAsyncAtVolume: (float)volume {
+  dispatch_queue_t playerQueue = dispatch_queue_create("player queue", NULL);
+  dispatch_async(playerQueue, ^{
+    [self playAtVolume:volume];
+  });
+}
+
+- (void)prepareToPlay {
+  [self.player prepareToPlay];
 }
 
 @end

@@ -37,6 +37,8 @@
 @property (strong, nonatomic) NSTimer* encryptSpinnerTimer;
 
 @property (nonatomic, strong) iiSoundPlayer *tickPlayer;
+@property (nonatomic, strong) iiSoundPlayer *errorPlayer;
+
 
 @end
 
@@ -56,7 +58,10 @@
 
   [self.messageTextView setTextContainerInset:UIEdgeInsetsMake(3, 0, 0, 0)];
 
-  self.tickPlayer = [[iiSoundPlayer alloc] initWithSoundName:@"tick.mp3"];
+  self.tickPlayer = [[iiSoundPlayer alloc] initWithSoundName:@"tick.wav"];
+  [self.tickPlayer prepareToPlay];
+
+  self.errorPlayer = [[iiSoundPlayer alloc] initWithSoundName:@"twitch.wav"];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -164,7 +169,11 @@
 #pragma mark - Sounds
 
 - (void)playTick {
-  [self.tickPlayer playAtVolume:1];
+  [self.tickPlayer playAsyncAtVolume:0.2];
+}
+
+- (void)playError {
+  [self.errorPlayer playAsyncAtVolume:0.5];
 }
 
 #pragma mark - Compact layout
@@ -282,6 +291,7 @@
         [self showEncryptionDidFinishMessage];
         [self playTick];
       } else {
+        [self playError];
         [self showEncryptButton];
       }
     });
@@ -342,7 +352,10 @@
 }
 
 - (void) decryptAndUpdate {
-  if (![self isReadyToDecrypt]) { return; }
+  if (![self isReadyToDecrypt]) {
+    [self playError];
+    return;
+  }
 
   [self showDecryptingSpinner];
 
@@ -353,7 +366,10 @@
       if (decrypted && decrypted.length > 0) {
         [self setMessage:decrypted];
         [self playTick];
+      } else {
+        [self playError];
       }
+
       [self showDecryptButton];
       [self showEncryptButton];
     });

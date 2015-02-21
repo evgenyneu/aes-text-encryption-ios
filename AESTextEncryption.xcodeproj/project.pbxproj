@@ -10,8 +10,6 @@
 		2B130D09185D897700D08633 /* help@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B130D08185D897700D08633 /* help@2x.png */; };
 		2B130D0A185D974300D08633 /* aes_crypto.js in Resources */ = {isa = PBXBuildFile; fileRef = 2BF458851849AFFB007F0821 /* aes_crypto.js */; };
 		2B2174C41A986A5800E57C33 /* SoundPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2174C31A986A5800E57C33 /* SoundPlayer.m */; };
-		2B2174C91A986EFD00E57C33 /* tick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2B2174C71A986EFD00E57C33 /* tick.mp3 */; };
-		2B2174CA1A986EFD00E57C33 /* twitch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2B2174C81A986EFD00E57C33 /* twitch.mp3 */; };
 		2B340DD3182E3E0E00FA36F6 /* aes.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B340DC7182E3DEC00FA36F6 /* aes.js */; };
 		2B340DD4182E3E0E00FA36F6 /* cipher-core.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B340DC8182E3DEC00FA36F6 /* cipher-core.js */; };
 		2B340DD5182E3E0E00FA36F6 /* core.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B340DC9182E3DEC00FA36F6 /* core.js */; };
@@ -32,6 +30,8 @@
 		2B51DAF61828D5E6008749DA /* AESEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B51DAF51828D5E6008749DA /* AESEncryptor.m */; };
 		2B6478901880B4B800AC0860 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B64788F1880B4B800AC0860 /* HelpViewController.m */; };
 		2B64789A1880BC4F00AC0860 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2B64789C1880BC4F00AC0860 /* Localizable.strings */; };
+		2B7890741A98743F002AB355 /* tick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B7890731A98743F002AB355 /* tick.wav */; };
+		2B7890761A9874DB002AB355 /* twitch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B7890751A9874DB002AB355 /* twitch.wav */; };
 		2B7D27371841B1DF0031F1E7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B51DADA18288CAB008749DA /* XCTest.framework */; };
 		2B7D27381841B1DF0031F1E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B51DAB818288CAB008749DA /* Foundation.framework */; };
 		2B7D27391841B1DF0031F1E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B51DABC18288CAB008749DA /* UIKit.framework */; };
@@ -56,8 +56,6 @@
 		2B130D08185D897700D08633 /* help@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "help@2x.png"; sourceTree = "<group>"; };
 		2B2174C31A986A5800E57C33 /* SoundPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundPlayer.m; sourceTree = "<group>"; };
 		2B2174C51A986AA900E57C33 /* SoundPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoundPlayer.h; sourceTree = "<group>"; };
-		2B2174C71A986EFD00E57C33 /* tick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tick.mp3; sourceTree = "<group>"; };
-		2B2174C81A986EFD00E57C33 /* twitch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = twitch.mp3; sourceTree = "<group>"; };
 		2B340DC7182E3DEC00FA36F6 /* aes.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = aes.js; sourceTree = "<group>"; };
 		2B340DC8182E3DEC00FA36F6 /* cipher-core.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "cipher-core.js"; sourceTree = "<group>"; };
 		2B340DC9182E3DEC00FA36F6 /* core.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = core.js; sourceTree = "<group>"; };
@@ -88,6 +86,8 @@
 		2B64788F1880B4B800AC0860 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
 		2B6478931880BA7F00AC0860 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2B64789B1880BC4F00AC0860 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2B7890731A98743F002AB355 /* tick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tick.wav; sourceTree = "<group>"; };
+		2B7890751A9874DB002AB355 /* twitch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = twitch.wav; sourceTree = "<group>"; };
 		2B7D27361841B1DF0031F1E7 /* AESCryptoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AESCryptoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B7D273C1841B1DF0031F1E7 /* AESCryptoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AESCryptoTests-Info.plist"; sourceTree = "<group>"; };
 		2B7D273E1841B1DF0031F1E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -134,8 +134,8 @@
 		2B2174C61A986EEF00E57C33 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				2B2174C71A986EFD00E57C33 /* tick.mp3 */,
-				2B2174C81A986EFD00E57C33 /* twitch.mp3 */,
+				2B7890731A98743F002AB355 /* tick.wav */,
+				2B7890751A9874DB002AB355 /* twitch.wav */,
 			);
 			name = Sounds;
 			sourceTree = "<group>";
@@ -335,13 +335,13 @@
 				2B340DD4182E3E0E00FA36F6 /* cipher-core.js in Resources */,
 				2B64789A1880BC4F00AC0860 /* Localizable.strings in Resources */,
 				2B340DD5182E3E0E00FA36F6 /* core.js in Resources */,
-				2B2174C91A986EFD00E57C33 /* tick.mp3 in Resources */,
 				2B340DD6182E3E0E00FA36F6 /* enc-base64.js in Resources */,
 				2B340DD7182E3E0E00FA36F6 /* evpkdf.js in Resources */,
 				2B130D09185D897700D08633 /* help@2x.png in Resources */,
 				2B340DD8182E3E0E00FA36F6 /* md5.js in Resources */,
+				2B7890761A9874DB002AB355 /* twitch.wav in Resources */,
 				2BFF38ED184AE2E900F5D849 /* title@2x.png in Resources */,
-				2B2174CA1A986EFD00E57C33 /* twitch.mp3 in Resources */,
+				2B7890741A98743F002AB355 /* tick.wav in Resources */,
 				2B51DAD418288CAB008749DA /* Images.xcassets in Resources */,
 				2B51DACC18288CAB008749DA /* Main_iPhone.storyboard in Resources */,
 				2B51DAC318288CAB008749DA /* InfoPlist.strings in Resources */,
