@@ -10,6 +10,12 @@ iOS app to encrypt text messages with AES.
 
 AES Crypto uses CryptoJS JavaScript library for encryption: [https://code.google.com/p/crypto-js](https://code.google.com/p/crypto-js)
 
+### Sounds
+
+* **Tick** Recorded by DeepFrozenApps. http://soundbible.com/2044-Tick.html
+
+* **Twitch** Recorded by Mike Koenig. http://soundbible.com/1138-Twitch.html
+
 ## Android and Web apps
 
 Check out source code for Android and Web apps below.
