@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2B130D09185D897700D08633 /* help@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B130D08185D897700D08633 /* help@2x.png */; };
 		2B130D0A185D974300D08633 /* aes_crypto.js in Resources */ = {isa = PBXBuildFile; fileRef = 2BF458851849AFFB007F0821 /* aes_crypto.js */; };
+		2B2174C41A986A5800E57C33 /* SoundPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2174C31A986A5800E57C33 /* SoundPlayer.m */; };
 		2B340DD3182E3E0E00FA36F6 /* aes.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B340DC7182E3DEC00FA36F6 /* aes.js */; };
 		2B340DD4182E3E0E00FA36F6 /* cipher-core.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B340DC8182E3DEC00FA36F6 /* cipher-core.js */; };
 		2B340DD5182E3E0E00FA36F6 /* core.js in Resources */ = {isa = PBXBuildFile; fileRef = 2B340DC9182E3DEC00FA36F6 /* core.js */; };
@@ -51,6 +52,8 @@
 /* Begin PBXFileReference section */
 		2B0B7C571A9822D8002E05E2 /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
 		2B130D08185D897700D08633 /* help@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "help@2x.png"; sourceTree = "<group>"; };
+		2B2174C31A986A5800E57C33 /* SoundPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundPlayer.m; sourceTree = "<group>"; };
+		2B2174C51A986AA900E57C33 /* SoundPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoundPlayer.h; sourceTree = "<group>"; };
 		2B340DC7182E3DEC00FA36F6 /* aes.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = aes.js; sourceTree = "<group>"; };
 		2B340DC8182E3DEC00FA36F6 /* cipher-core.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "cipher-core.js"; sourceTree = "<group>"; };
 		2B340DC9182E3DEC00FA36F6 /* core.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = core.js; sourceTree = "<group>"; };
@@ -187,6 +190,8 @@
 				2B4BA71E182EE3E1007CE59E /* TextViewDelegate.m */,
 				2B64788E1880B4B800AC0860 /* HelpViewController.h */,
 				2B64788F1880B4B800AC0860 /* HelpViewController.m */,
+				2B2174C51A986AA900E57C33 /* SoundPlayer.h */,
+				2B2174C31A986A5800E57C33 /* SoundPlayer.m */,
 			);
 			path = AESTextEncryption;
 			sourceTree = "<group>";
@@ -349,6 +354,7 @@
 				2B51DAC918288CAB008749DA /* AppDelegate.m in Sources */,
 				2B51DAC518288CAB008749DA /* main.m in Sources */,
 				2B4BA71F182EE3E1007CE59E /* TextViewDelegate.m in Sources */,
+				2B2174C41A986A5800E57C33 /* SoundPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
