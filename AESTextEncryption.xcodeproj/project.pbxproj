@@ -49,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B0B7C571A9822D8002E05E2 /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
 		2B130D08185D897700D08633 /* help@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "help@2x.png"; sourceTree = "<group>"; };
 		2B340DC7182E3DEC00FA36F6 /* aes.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = aes.js; sourceTree = "<group>"; };
 		2B340DC8182E3DEC00FA36F6 /* cipher-core.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "cipher-core.js"; sourceTree = "<group>"; };
@@ -174,6 +175,7 @@
 				2B51DAF81828DF75008749DA /* javascript */,
 				2B51DAC718288CAB008749DA /* AppDelegate.h */,
 				2B51DAC818288CAB008749DA /* AppDelegate.m */,
+				2B0B7C571A9822D8002E05E2 /* constants.h */,
 				2B51DACA18288CAB008749DA /* Main_iPhone.storyboard */,
 				2B51DAD018288CAB008749DA /* ViewController.h */,
 				2B51DAD118288CAB008749DA /* ViewController.m */,

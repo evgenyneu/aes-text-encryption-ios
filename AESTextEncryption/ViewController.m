@@ -9,12 +9,16 @@
 #import "ViewController.h"
 #import "AESEncryptor.h"
 #import "TextViewDelegate.h"
+#import "constants.h"
 
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UITextView *messageTextView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textBottomDistance;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *passwordTopMarginConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *passwordHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *messageTopMarginConstraint;
 
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 
@@ -48,6 +52,7 @@
   [self showToolbar];
   [self setTitleImage];
 
+  [self toggleCompactLayout:self.view.bounds.size.height];
   [self toggleToolbarVisibility:self.view.bounds.size.height];
 
   [self.messageTextView setTextContainerInset:UIEdgeInsetsMake(3, 0, 0, 0)];
@@ -56,6 +61,7 @@
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
 {
   [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+  [self toggleCompactLayout:size.height];
   [self toggleToolbarVisibility:size.height];
   [self fixTextViewContentOffsetBug];
 }
@@ -66,11 +72,14 @@
 {
   [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
 
+  CGFloat screenHeight = MIN(self.view.bounds.size.width,self.view.bounds.size.height);
+
   if UIInterfaceOrientationIsPortrait(toInterfaceOrientation) {
-    [self toggleToolbarVisibility:MAX(self.view.bounds.size.width,self.view.bounds.size.height)];
-  } else {
-    [self toggleToolbarVisibility:MIN(self.view.bounds.size.width,self.view.bounds.size.height)];
+    screenHeight = MAX(self.view.bounds.size.width,self.view.bounds.size.height);
   }
+
+  [self toggleCompactLayout:screenHeight];
+  [self toggleToolbarVisibility:screenHeight];
 }
 
 - (void) setTitleImage {
@@ -142,6 +151,20 @@
 
 - (IBAction)onPasswordChanged:(id)sender {
   [self showEncryptButton];
+}
+
+#pragma mark - Compact layout
+
+- (void)toggleCompactLayout:(CGFloat)screenHeight {
+  if (screenHeight < aesCompactHeight) {
+    self.passwordHeightConstraint.constant = aesPasswordHeightMargin_compact;
+    self.passwordTopMarginConstraint.constant = aesPasswordTopMargin_compact;
+    self.messageTopMarginConstraint.constant = aesMessageTopMargin_compact;
+  } else {
+    self.passwordHeightConstraint.constant = aesPasswordHeightMargin;
+    self.passwordTopMarginConstraint.constant = aesPasswordTopMargin;
+    self.messageTopMarginConstraint.constant = aesMessageTopMargin;
+  }
 }
 
 #pragma mark - Toolbar

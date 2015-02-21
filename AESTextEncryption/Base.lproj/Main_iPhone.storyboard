@@ -110,7 +110,10 @@
                         <outlet property="decryptBarButton" destination="iNy-W2-Yo4" id="Hdl-dv-j9f"/>
                         <outlet property="encryptButton" destination="4HM-Wu-gX7" id="xUc-j1-gVn"/>
                         <outlet property="messageTextView" destination="162-fu-lgA" id="t3a-Jk-YJi"/>
+                        <outlet property="messageTopMarginConstraint" destination="epU-NS-gAA" id="9YW-7a-pb5"/>
+                        <outlet property="passwordHeightConstraint" destination="SBf-fx-BIT" id="IHv-xa-UxW"/>
                         <outlet property="passwordTextField" destination="5cf-P1-s5I" id="7UC-LV-SKm"/>
+                        <outlet property="passwordTopMarginConstraint" destination="IwQ-uw-Tpz" id="ZBC-it-Nky"/>
                         <outlet property="textBottomDistance" destination="VdY-9Y-thA" id="TVo-XN-7OD"/>
                         <outlet property="toolbar" destination="L9w-bY-0v6" id="jJV-8s-Yh0"/>
                     </connections>
