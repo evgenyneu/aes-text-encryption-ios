@@ -52,10 +52,14 @@
   [self showToolbar];
   [self setTitleImage];
 
+  [self.messageTextView setTextContainerInset:UIEdgeInsetsMake(3, 0, 0, 0)];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+
   [self toggleCompactLayout:self.view.bounds.size.height];
   [self toggleToolbarVisibility:self.view.bounds.size.height];
-
-  [self.messageTextView setTextContainerInset:UIEdgeInsetsMake(3, 0, 0, 0)];
 }
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
