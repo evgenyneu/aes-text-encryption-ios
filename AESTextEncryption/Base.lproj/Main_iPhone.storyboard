@@ -62,7 +62,7 @@
                                 </items>
                                 <color key="tintColor" red="0.34421997582964942" green="0.74493634259259256" blue="0.37285033861409733" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="27" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5cf-P1-s5I" customClass="UIPasswordTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="27" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5cf-P1-s5I">
                                 <rect key="frame" x="10" y="75" width="540" height="40"/>
                                 <accessibility key="accessibilityConfiguration" hint="Password" label=""/>
                                 <constraints>
