@@ -6,6 +6,13 @@ iOS app to encrypt text messages with AES.
 
 <img src='https://raw.githubusercontent.com/evgenyneu/aes-text-encryption-ios/master/Graphics/screenshots/iphone_4_inch/4_inch_640x1136_2.png' width='320' alt='AES Text Encryption for iOS'>
 
+
+## Host AES Crypto on your server
+
+Use [this single self-contained html file](http://aescrypto.com/redist/aes_crypto.html) and host it on your server. You can also save it to a local folder and open it in the web browser.
+
+
+
 ## Credits
 
 AES Crypto uses CryptoJS JavaScript library for encryption: [https://code.google.com/p/crypto-js](https://code.google.com/p/crypto-js)
@@ -23,3 +30,7 @@ Check out source code for Android and Web apps below.
 **Android**: [https://github.com/evgenyneu/aes-crypto-android](https://github.com/evgenyneu/aes-crypto-android)
 
 **Web**: [https://github.com/evgenyneu/aes-crypto-web](https://github.com/evgenyneu/aes-crypto-web)
+
+## License
+
+AES Crypto is released under the [MIT License](LICENSE).
