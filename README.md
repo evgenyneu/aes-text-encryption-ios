@@ -9,7 +9,7 @@ iOS app to encrypt text messages with AES.
 
 ## Host AES Crypto on your server
 
-Use [this single self-contained html file](http://aescrypto.com/redist/aes_crypto.html) and host it on your server. You can also save it to a local folder and open it in the web browser.
+Use [this single self-contained html file](http://aescrypto.com/redist/aes_crypto.html) and host it on your server. You can also save it to a local folder and open it in the web browser for offline use.
 
 
 
