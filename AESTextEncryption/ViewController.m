@@ -87,7 +87,7 @@
 
   CGFloat screenHeight = MIN(self.view.bounds.size.width,self.view.bounds.size.height);
 
-  if UIInterfaceOrientationIsPortrait(toInterfaceOrientation) {
+  if (UIInterfaceOrientationIsPortrait(toInterfaceOrientation)) {
     screenHeight = MAX(self.view.bounds.size.width,self.view.bounds.size.height);
   }
 

@@ -295,7 +295,7 @@
 		2B51DAAD18288CAB008749DA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Evgenii Neumerzhitckii";
 				TargetAttributes = {
 					2B51DAB418288CAB008749DA = {
@@ -448,6 +448,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -512,6 +513,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AESTextEncryption/AESTextEncryption-Prefix.pch";
 				INFOPLIST_FILE = "AESTextEncryption/AESTextEncryption-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.evgenii.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "AES Crypto";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -528,6 +530,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AESTextEncryption/AESTextEncryption-Prefix.pch";
 				INFOPLIST_FILE = "AESTextEncryption/AESTextEncryption-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.evgenii.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "AES Crypto";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -550,6 +553,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "AESCryptoTests/AESCryptoTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "evgenii.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -568,6 +572,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AESCryptoTests/AESCryptoTests-Prefix.pch";
 				INFOPLIST_FILE = "AESCryptoTests/AESCryptoTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "evgenii.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
